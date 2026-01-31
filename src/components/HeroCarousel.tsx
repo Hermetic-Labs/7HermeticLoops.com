@@ -175,17 +175,17 @@ export function HeroCarousel({ products, announcements = [] }: Props) {
                   ) : null}
                 </div>
               )}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               {(slide.title || slide.tagline) && (
-                <div className="absolute inset-0 flex items-center px-8 md:px-16">
-                  <div className="max-w-lg">
+                <div className="absolute inset-0 flex items-end px-8 md:px-16 pb-16">
+                  <div className="max-w-2xl">
                     {slide.title && (
-                      <h2 className="text-2xl md:text-4xl font-bold text-white mb-2 text-glow-green">
+                      <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 text-glow-green">
                         {slide.title}
                       </h2>
                     )}
                     {slide.tagline && (
-                      <p className="text-gray-300 mb-4">{slide.tagline}</p>
+                      <p className="text-gray-200 text-lg md:text-xl">{slide.tagline}</p>
                     )}
                   </div>
                 </div>
