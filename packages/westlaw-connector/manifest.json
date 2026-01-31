@@ -63,10 +63,14 @@
         }
     },
     "dependencies": {
-        "npm": [],
+        "npm": [
+            "fs",
+            "path",
+            "lucide-react"
+        ],
         "python": [],
         "packages": []
     },
     "bundle": "/bundles/westlaw-connector.bundle.js",
-    "bundleVersion": "1768911823228"
+    "bundleVersion": "1769793142050"
 }

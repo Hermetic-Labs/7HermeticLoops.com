@@ -1,0 +1,93 @@
+{
+    "name": "bp-pump-connector",
+    "version": "1.0.0",
+    "type": "connector",
+    "displayName": "Blood Pressure Monitor Connector",
+    "description": "Connect to Omron and other BP monitors via their cloud portals for blood pressure data access",
+    "entry": "./frontend/index.ts",
+    "backend": "./backend/routes.py",
+    "icon": "🩺",
+    "iconUrl": "./assets/icon/icon.svg",
+    "sidebar": true,
+    "components": [
+        "bpPumpConnector",
+        "BPPumpPortal"
+    ],
+    "permissions": [
+        "network",
+        "storage"
+    ],
+    "tags": [
+        "medical",
+        "blood-pressure",
+        "omron",
+        "vitals",
+        "healthcare",
+        "hypertension"
+    ],
+    "category": "Healthcare",
+    "author": "Hermetic Labs",
+    "price": "free",
+    "features": [
+        "Systolic/Diastolic monitoring",
+        "Pulse rate tracking",
+        "MAP calculation",
+        "BP history & trends",
+        "Hypertension alerts",
+        "FHIR export"
+    ],
+    "license": "EVE-MARKET-001",
+    "marketId": "bp-pump-connector-1.0.0",
+    "media": [
+        {
+            "type": "image",
+            "url": "./assets/images/hero.png",
+            "caption": "Blood Pressure Monitor Connector hero image"
+        }
+    ],
+    "documentation": {
+        "card": {
+            "title": "BP Monitor Connector",
+            "description": "Access blood pressure data from Omron and compatible monitors",
+            "icon": "Activity",
+            "color": "blue"
+        },
+        "apiTags": [
+            "bp-pump-connector",
+            "blood-pressure",
+            "medical"
+        ],
+        "readme": "./README.md",
+        "summary": {
+            "overview": "Blood Pressure Monitor Connector enables access to systolic, diastolic, and pulse data from Omron and compatible BP monitors through their cloud APIs.",
+            "exampleUseCase": "Sync BP readings from Omron monitors, track blood pressure trends over time, trigger alerts for hypertensive readings, export to FHIR for EHR integration.",
+            "whatMakesThisDifferent": "Portal API integration for BP monitors. Supports multiple vendors including Omron Health Cloud. Pairs with Medical Module for comprehensive vitals monitoring."
+        }
+    },
+    "dependencies": {
+        "npm": [
+            "lucide-react"
+        ],
+        "python": [],
+        "packages": []
+    },
+    "integrations": [
+        "medical-module"
+    ],
+    "devicePatterns": [
+        "omron",
+        "bp.*monitor",
+        "hem-.*",
+        "blood.*pressure"
+    ],
+    "oauthConfig": {
+        "authorizationUrl": "https://api.omronconnect.com/oauth/authorize",
+        "tokenUrl": "https://api.omronconnect.com/oauth/token",
+        "scopes": [
+            "read:bp",
+            "read:history"
+        ]
+    },
+    "bundle": "/bundles/bp-pump-connector.bundle.js",
+    "bundleVersion": "1769791424166"
+}

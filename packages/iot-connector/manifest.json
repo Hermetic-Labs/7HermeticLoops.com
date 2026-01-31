@@ -72,8 +72,14 @@
         }
     },
     "dependencies": {
-        "npm": [],
+        "npm": [
+            "lucide-react"
+        ],
         "python": [],
-        "packages": []
-    }
+        "packages": [
+            "medical-module"
+        ]
+    },
+    "bundle": "/bundles/iot-connector.bundle.js",
+    "bundleVersion": "1769792017536"
 }

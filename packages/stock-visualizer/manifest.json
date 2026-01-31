@@ -56,7 +56,10 @@
             "icon": "Activity",
             "color": "emerald"
         },
-        "apiTags": ["stock-visualizer", "finance"],
+        "apiTags": [
+            "stock-visualizer",
+            "finance"
+        ],
         "readme": "./README.md",
         "summary": {
             "overview": "Interactive 3D candlestick chart with real-time strategy coding. Write trading strategies in a simple DSL, see buy/sell signals visualized, and switch between 2D/3D views with SMA/EMA indicators.",
@@ -69,9 +72,14 @@
             "@react-three/fiber",
             "@react-three/drei",
             "three",
-            "lucide-react"
+            "lucide-react",
+            "@monaco-editor/react",
+            "clsx",
+            "tailwind-merge"
         ],
         "python": [],
         "packages": []
-    }
+    },
+    "bundle": "/bundles/stock-visualizer.bundle.js",
+    "bundleVersion": "1769791157130"
 }

@@ -62,10 +62,12 @@
         }
     },
     "dependencies": {
-        "npm": [],
+        "npm": [
+            "lucide-react"
+        ],
         "python": [],
         "packages": []
     },
     "bundle": "/bundles/azure-blob-connector.bundle.js",
-    "bundleVersion": "1768911818912"
+    "bundleVersion": "1769791351503"
 }

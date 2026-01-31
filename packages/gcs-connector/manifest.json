@@ -62,10 +62,12 @@
         }
     },
     "dependencies": {
-        "npm": [],
+        "npm": [
+            "lucide-react"
+        ],
         "python": [],
         "packages": []
     },
     "bundle": "/bundles/gcs-connector.bundle.js",
-    "bundleVersion": "1768911819233"
+    "bundleVersion": "1769791806304"
 }

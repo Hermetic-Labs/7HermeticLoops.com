@@ -60,10 +60,13 @@
         }
     },
     "dependencies": {
-        "npm": [],
+        "npm": [
+            "crypto",
+            "lucide-react"
+        ],
         "python": [],
         "packages": []
     },
     "bundle": "/bundles/stripe-connector.bundle.js",
-    "bundleVersion": "1768911822903"
+    "bundleVersion": "1769792764868"
 }

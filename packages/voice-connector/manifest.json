@@ -63,8 +63,14 @@
         }
     },
     "dependencies": {
-        "npm": [],
+        "npm": [
+            "lucide-react"
+        ],
         "python": [],
-        "packages": []
-    }
+        "packages": [
+            "iot-connector"
+        ]
+    },
+    "bundle": "/bundles/voice-connector.bundle.js",
+    "bundleVersion": "1769792865466"
 }

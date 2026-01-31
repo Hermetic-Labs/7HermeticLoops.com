@@ -61,10 +61,12 @@
         }
     },
     "dependencies": {
-        "npm": [],
+        "npm": [
+            "lucide-react"
+        ],
         "python": [],
         "packages": []
     },
     "bundle": "/bundles/aws-s3-connector.bundle.js",
-    "bundleVersion": "1768911818815"
+    "bundleVersion": "1769791293961"
 }

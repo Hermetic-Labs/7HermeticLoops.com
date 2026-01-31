@@ -62,10 +62,12 @@
         }
     },
     "dependencies": {
-        "npm": [],
+        "npm": [
+            "lucide-react"
+        ],
         "python": [],
         "packages": []
     },
     "bundle": "/bundles/sap-connector.bundle.js",
-    "bundleVersion": "1768911820448"
+    "bundleVersion": "1769792667864"
 }

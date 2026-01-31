@@ -1,0 +1,91 @@
+{
+    "name": "ichoice-connector",
+    "version": "1.0.0",
+    "type": "connector",
+    "displayName": "iChoice Medical Connector",
+    "description": "Connect to iChoice SpO2 devices via their cloud portal for vitals data access",
+    "entry": "./frontend/index.ts",
+    "backend": "./backend/routes.py",
+    "icon": "💉",
+    "iconUrl": "./assets/icon/icon.svg",
+    "sidebar": true,
+    "components": [
+        "iChoiceConnector",
+        "iChoicePortal"
+    ],
+    "permissions": [
+        "network",
+        "storage"
+    ],
+    "tags": [
+        "medical",
+        "ichoice",
+        "spo2",
+        "vitals",
+        "healthcare",
+        "pulse-oximeter"
+    ],
+    "category": "Healthcare",
+    "author": "Hermetic Labs",
+    "price": "free",
+    "features": [
+        "SpO2 monitoring",
+        "Pulse rate tracking",
+        "Vitals history",
+        "Real-time sync",
+        "FHIR export"
+    ],
+    "license": "EVE-MARKET-001",
+    "marketId": "ichoice-connector-1.0.0",
+    "media": [
+        {
+            "type": "image",
+            "url": "./assets/images/hero.png",
+            "caption": "iChoice Medical Connector hero image"
+        }
+    ],
+    "documentation": {
+        "card": {
+            "title": "iChoice Connector",
+            "description": "Access iChoice SpO2 device data through their cloud portal",
+            "icon": "Heart",
+            "color": "red"
+        },
+        "apiTags": [
+            "ichoice-connector",
+            "ichoice",
+            "medical"
+        ],
+        "readme": "./README.md",
+        "summary": {
+            "overview": "iChoice Medical Connector enables access to SpO2 and pulse data from iChoice devices through their cloud API, bypassing proprietary BLE protocols.",
+            "exampleUseCase": "Sync vitals data from iChoice pulseometer, track SpO2 history, trigger alerts for abnormal readings, export to FHIR for EHR integration.",
+            "whatMakesThisDifferent": "Portal API integration for devices that restrict direct BLE access. Pairs with Medical Module for comprehensive vitals monitoring."
+        }
+    },
+    "dependencies": {
+        "npm": [
+            "lucide-react"
+        ],
+        "python": [],
+        "packages": []
+    },
+    "integrations": [
+        "medical-module"
+    ],
+    "devicePatterns": [
+        "ichoice",
+        "choice.*spo2",
+        "ox200"
+    ],
+    "oauthConfig": {
+        "authorizationUrl": "https://api.ichoicerelax.com/oauth/authorize",
+        "tokenUrl": "https://api.ichoicerelax.com/oauth/token",
+        "scopes": [
+            "read:vitals",
+            "read:history"
+        ]
+    },
+    "bundle": "/bundles/ichoice-connector.bundle.js",
+    "bundleVersion": "1769791964584"
+}

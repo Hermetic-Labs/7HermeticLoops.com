@@ -61,10 +61,12 @@
         }
     },
     "dependencies": {
-        "npm": [],
+        "npm": [
+            "lucide-react"
+        ],
         "python": [],
         "packages": []
     },
     "bundle": "/bundles/sam-gov-connector.bundle.js",
-    "bundleVersion": "1768911820328"
+    "bundleVersion": "1769792620949"
 }

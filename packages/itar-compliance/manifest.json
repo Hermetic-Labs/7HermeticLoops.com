@@ -61,10 +61,12 @@
         }
     },
     "dependencies": {
-        "npm": [],
+        "npm": [
+            "lucide-react"
+        ],
         "python": [],
         "packages": []
     },
     "bundle": "/bundles/itar-compliance.bundle.js",
-    "bundleVersion": "1768911819607"
+    "bundleVersion": "1769792070046"
 }

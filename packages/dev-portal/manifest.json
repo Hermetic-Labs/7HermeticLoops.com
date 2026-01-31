@@ -9,6 +9,7 @@
     "icon": "⚡",
     "iconUrl": "./assets/icon/icon.svg",
     "sidebar": true,
+    "integrated": true,
     "components": [
         "DevPortalPage",
         "EVEGraphEditor",
@@ -58,7 +59,11 @@
             "icon": "Code",
             "color": "purple"
         },
-        "apiTags": ["devportal", "graph", "nodes"],
+        "apiTags": [
+            "devportal",
+            "graph",
+            "nodes"
+        ],
         "readme": "./README.md",
         "summary": {
             "overview": "The Developer Portal is the central hub for building, testing, and remixing EVE-OS components. It provides a visual code graph IDE, node-based workflow editor, and tools for API testing and AI model interaction.",
@@ -69,13 +74,24 @@
     "dependencies": {
         "npm": [
             "@xyflow/react",
-            "zustand"
+            "zustand",
+            "reactflow",
+            "lucide-react",
+            "react-router-dom"
         ],
         "python": [],
         "packages": []
     },
     "capabilities": {
-        "injects": ["graph-editor", "code-writer", "api-harness"],
-        "provides": ["remix-ide", "node-editor", "code-graph"]
+        "injects": [
+            "graph-editor",
+            "code-writer",
+            "api-harness"
+        ],
+        "provides": [
+            "remix-ide",
+            "node-editor",
+            "code-graph"
+        ]
     }
 }

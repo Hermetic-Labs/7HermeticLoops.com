@@ -61,10 +61,16 @@
         }
     },
     "dependencies": {
-        "npm": [],
+        "npm": [
+            "lucide-react"
+        ],
         "python": [],
         "packages": []
     },
     "bundle": "/bundles/fedramp-compliance.bundle.js",
-    "bundleVersion": "1768911819066"
+    "bundleVersion": "1769791476134",
+    "remix": {
+        "original": "",
+        "creatorPercent": 70
+    }
 }

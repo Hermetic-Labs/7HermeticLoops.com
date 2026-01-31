@@ -57,7 +57,10 @@
             "icon": "FileCheck",
             "color": "emerald"
         },
-        "apiTags": ["form-builder", "forms"],
+        "apiTags": [
+            "form-builder",
+            "forms"
+        ],
         "readme": "./README.md",
         "summary": {
             "overview": "Visual drag-and-drop form builder supporting text, email, date, select, checkbox, radio, signature capture, and file uploads. Forms persist locally and can be shared via URL encoding.",
@@ -71,11 +74,17 @@
             "react-dnd-html5-backend",
             "react-hook-form",
             "react-signature-canvas",
+            "prop-types",
             "zod",
             "uuid",
-            "lucide-react"
+            "lucide-react",
+            "clsx",
+            "tailwind-merge",
+            "react-router-dom"
         ],
         "python": [],
         "packages": []
-    }
+    },
+    "bundle": "/bundles/form-builder.bundle.js",
+    "bundleVersion": "1769791585048"
 }

@@ -62,10 +62,14 @@
         }
     },
     "dependencies": {
-        "npm": [],
+        "npm": [
+            "fs",
+            "path",
+            "lucide-react"
+        ],
         "python": [],
         "packages": []
     },
     "bundle": "/bundles/lexisnexis-connector.bundle.js",
-    "bundleVersion": "1768911819791"
+    "bundleVersion": "1769792120395"
 }

@@ -8,6 +8,15 @@ import { ChevronRight, Zap, Clock, Loader2 } from 'lucide-react';
 
 type SortOption = 'popular' | 'newest' | 'price-low' | 'price-high' | 'rating';
 
+// Announcement type for carousel
+interface Announcement {
+  id: string;
+  mediaType: 'video' | 'image';
+  src: string;
+  title?: string;
+  tagline?: string;
+}
+
 export function HomePage() {
   const [searchParams] = useSearchParams();
   const categoryFilter = searchParams.get('category');
@@ -21,6 +30,7 @@ export function HomePage() {
   const [activeCategory, setActiveCategory] = useState<string | null>(categoryFilter);
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
+  const [announcements, setAnnouncements] = useState<Announcement[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -36,6 +46,17 @@ export function HomePage() {
         ]);
         setProducts(productsData);
         setCategories(categoriesData);
+
+        // Load announcements from Videos/manifest.json
+        try {
+          const manifestRes = await fetch(`${import.meta.env.BASE_URL}Videos/manifest.json`);
+          if (manifestRes.ok) {
+            const manifest = await manifestRes.json();
+            setAnnouncements(manifest.announcements || []);
+          }
+        } catch (err) {
+          console.log('No announcements loaded:', err);
+        }
       } catch (err) {
         setError('Failed to load products. Please try again.');
         console.error('Failed to load data:', err);
@@ -149,7 +170,7 @@ export function HomePage() {
             <h1 className="text-4xl md:text-6xl font-bold text-cyber-green text-glow-green text-center mb-8">
               Hermetic Labs Exchange
             </h1>
-            <HeroCarousel products={popularProducts} />
+            <HeroCarousel products={popularProducts} announcements={announcements} />
           </div>
         </section>
       )}

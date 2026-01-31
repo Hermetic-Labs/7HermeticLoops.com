@@ -61,10 +61,12 @@
         }
     },
     "dependencies": {
-        "npm": [],
+        "npm": [
+            "lucide-react"
+        ],
         "python": [],
         "packages": []
     },
     "bundle": "/bundles/fhir-compliance.bundle.js",
-    "bundleVersion": "1768911819127"
+    "bundleVersion": "1769791531627"
 }

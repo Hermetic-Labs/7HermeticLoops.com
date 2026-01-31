@@ -5,6 +5,7 @@ import { Product } from '../types';
 import { MediaCarousel } from '../components/MediaCarousel';
 import { StarRating } from '../components/StarRating';
 import { formatPrice } from '../lib/utils';
+import { handlePackageDownload, shouldUseParentCommunication } from '../lib/download-handler';
 import {
   ShoppingCart,
   Heart,
@@ -389,13 +390,18 @@ export function ProductPage() {
 
               <div className="flex gap-3 mb-6">
                 {product.price === 0 ? (
-                  <a
-                    href={product.downloadUrl}
+                  <button
+                    onClick={() => handlePackageDownload(
+                      product.slug,
+                      product.title,
+                      product.downloadUrl,
+                      { author: product.author?.name, version: product.techSpecs?.find(s => s.label === 'Version')?.value }
+                    )}
                     className="cyber-btn flex-1 flex items-center justify-center gap-2"
-                    download
                   >
-                    <Download className="w-4 h-4" /> Download Free
-                  </a>
+                    <Download className="w-4 h-4" />
+                    {shouldUseParentCommunication() ? 'Get Package' : 'Download Free'}
+                  </button>
                 ) : product.stripePriceId ? (
                   <button
                     onClick={handlePurchase}

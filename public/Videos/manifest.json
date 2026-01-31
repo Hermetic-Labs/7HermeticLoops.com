@@ -1,0 +1,11 @@
+{
+  "announcements": [
+    {
+      "id": "Overview (5)",
+      "mediaType": "video",
+      "src": "/Videos/Overview%20(5).mp4",
+      "title": "EVE OS",
+      "tagline": "Compliant by Design. Sealed by Architecture. We are Hermetic Labs."
+    }
+  ]
+}
