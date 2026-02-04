@@ -69,5 +69,10 @@
         "packages": []
     },
     "bundle": "/bundles/usaspending-connector.bundle.js",
-    "bundleVersion": "1769792815391"
+    "bundleVersion": "1769792815391",
+    "class": "Connector",
+    "domain": "gov",
+    "domains": [
+        "gov"
+    ]
 }

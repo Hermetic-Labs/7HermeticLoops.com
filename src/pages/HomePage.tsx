@@ -3,8 +3,8 @@ import { useSearchParams, Link } from 'react-router-dom';
 import { ProductCard } from '../components/ProductCard';
 import { HeroCarousel } from '../components/HeroCarousel';
 import { fetchProducts, fetchCategories } from '../api/exchange';
-import { Product, Category } from '../types';
-import { ChevronRight, Zap, Clock, Loader2 } from 'lucide-react';
+import { Product, Category, Domain, ALL_DOMAINS, DOMAIN_LABELS } from '../types';
+import { Zap, Clock, Loader2 } from 'lucide-react';
 
 type SortOption = 'popular' | 'newest' | 'price-low' | 'price-high' | 'rating';
 
@@ -28,6 +28,9 @@ export function HomePage() {
   const minRating = parseInt(searchParams.get('rating') || '0', 10);
 
   const [activeCategory, setActiveCategory] = useState<string | null>(categoryFilter);
+  const [activeDomain, setActiveDomain] = useState<Domain | null>(
+    searchParams.get('domain') as Domain | null
+  );
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [announcements, setAnnouncements] = useState<Announcement[]>([]);
@@ -67,17 +70,25 @@ export function HomePage() {
     loadData();
   }, []);
 
-  // Sync activeCategory with URL
+  // Sync activeCategory and activeDomain with URL
   useEffect(() => {
     setActiveCategory(categoryFilter);
-  }, [categoryFilter]);
+    setActiveDomain(searchParams.get('domain') as Domain | null);
+  }, [categoryFilter, searchParams]);
 
   const filteredProducts = useMemo(() => {
     let filtered = products;
 
-    // Category filter
+    // Category filter (legacy)
     if (activeCategory) {
       filtered = filtered.filter((p) => p.category === activeCategory);
+    }
+
+    // Domain filter (new taxonomy)
+    if (activeDomain) {
+      filtered = filtered.filter((p) =>
+        p.domain === activeDomain || p.domains?.includes(activeDomain)
+      );
     }
 
     // Search query
@@ -128,7 +139,15 @@ export function HomePage() {
     }
 
     return filtered;
-  }, [products, activeCategory, searchQuery, currentSort, freeOnly, minRating]);
+  }, [products, activeCategory, activeDomain, searchQuery, currentSort, freeOnly, minRating]);
+
+  // Products for the filtered domain carousel (when viewing a specific domain)
+  const domainProducts = useMemo(() => {
+    if (!activeDomain) return [];
+    return products
+      .filter((p) => p.domain === activeDomain || p.domains?.includes(activeDomain))
+      .sort((a, b) => b.reviewCount - a.reviewCount);
+  }, [products, activeDomain]);
 
   const featuredProducts = useMemo(() => products.filter((p) => p.featured), [products]);
   const newProducts = useMemo(() => products.filter((p) => p.isNew), [products]);
@@ -161,10 +180,14 @@ export function HomePage() {
     );
   }
 
+  // Check if we're viewing a filtered domain page
+  const isViewingDomain = !!activeDomain && !searchQuery;
+
   return (
     <div className="min-h-screen pt-20">
-      {/* Title and Hero Carousel */}
-      {!activeCategory && !searchQuery && (
+      {/* Title and Hero Carousel - Main Page View */}
+      {/* Sequential carousel: [Announcement] → [Domain1: #1 video, #2, #3] → [Domain2: #1 video, #2, #3] → ... */}
+      {!activeCategory && !activeDomain && !searchQuery && (
         <section className="py-8 px-4">
           <div className="max-w-7xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold text-cyber-green text-glow-green text-center mb-8">
@@ -175,20 +198,33 @@ export function HomePage() {
         </section>
       )}
 
-      {/* Featured Products - Just Below Carousel */}
-      {!activeCategory && !searchQuery && featuredProducts.length > 0 && (
+      {/* Domain-Specific View - When clicking into a domain */}
+      {/* Shows the same carousel pattern but only for that domain */}
+      {isViewingDomain && (
         <section className="py-8 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between mb-8">
+              <h1 className="text-3xl md:text-5xl font-bold text-cyber-green text-glow-green">
+                {DOMAIN_LABELS[activeDomain]}
+              </h1>
+              <Link to="/" className="text-cyber-pink text-sm hover:underline">
+                ← Back to All
+              </Link>
+            </div>
+            {/* Domain-specific carousel with only products from this domain */}
+            <HeroCarousel products={domainProducts} announcements={[]} />
+          </div>
+        </section>
+      )}
+
+      {/* Featured Products */}
+      {!activeCategory && !activeDomain && !searchQuery && featuredProducts.length > 0 && (
+        <section className="py-8 px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-6">
               <h2 className="section-title flex items-center gap-2">
                 <Zap className="w-4 h-4" /> Featured
               </h2>
-              <Link
-                to="/?featured=true"
-                className="text-cyber-cyan text-sm flex items-center gap-1 hover:underline"
-              >
-                View All <ChevronRight className="w-4 h-4" />
-              </Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {featuredProducts.slice(0, 6).map((product) => (
@@ -200,7 +236,7 @@ export function HomePage() {
       )}
 
       {/* New Releases */}
-      {!activeCategory && !searchQuery && newProducts.length > 0 && (
+      {!activeCategory && !activeDomain && !searchQuery && newProducts.length > 0 && (
         <section className="py-12 px-4 bg-gradient-to-b from-transparent via-cyber-green/5 to-transparent">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-between mb-6">
@@ -217,18 +253,21 @@ export function HomePage() {
         </section>
       )}
 
-      {/* Popular / Filtered Results */}
+      {/* Popular / Filtered Results - Always shown at bottom */}
       <section className="py-12 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-6">
             <h2 className="section-title">
-              {activeCategory || searchQuery
-                ? `Results ${searchQuery ? `for "${searchQuery}"` : `in ${activeCategory}`}`
+              {activeCategory || activeDomain || searchQuery
+                ? `Results ${searchQuery ? `for "${searchQuery}"` : activeDomain ? `in ${DOMAIN_LABELS[activeDomain]}` : `in ${activeCategory}`}`
                 : 'Popular Modules'}
             </h2>
-            {activeCategory && (
+            {(activeCategory || activeDomain) && (
               <button
-                onClick={() => setActiveCategory(null)}
+                onClick={() => {
+                  setActiveCategory(null);
+                  setActiveDomain(null);
+                }}
                 className="text-cyber-pink text-sm hover:underline"
               >
                 Clear Filter
@@ -236,13 +275,13 @@ export function HomePage() {
             )}
           </div>
 
-          {/* Products Grid */}
+          {/* Products Grid - Filterable */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {(activeCategory || searchQuery ? filteredProducts : popularProducts).map((product) => (
+            {(activeCategory || activeDomain || searchQuery ? filteredProducts : popularProducts).map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
-          {filteredProducts.length === 0 && (activeCategory || searchQuery) && (
+          {filteredProducts.length === 0 && (activeCategory || activeDomain || searchQuery) && (
             <div className="text-center py-12 text-gray-500">No products found</div>
           )}
         </div>

@@ -87,5 +87,15 @@
         ]
     },
     "bundle": "/bundles/ichoice-connector.bundle.js",
-    "bundleVersion": "1769791964584"
+    "bundleVersion": "1769791964584",
+    "class": "Connector",
+    "domain": "health",
+    "domains": [
+        "health"
+    ],
+    "relationships": {
+        "extends": [
+            "medical-module"
+        ]
+    }
 }

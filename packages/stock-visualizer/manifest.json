@@ -81,5 +81,10 @@
         "packages": []
     },
     "bundle": "/bundles/stock-visualizer.bundle.js",
-    "bundleVersion": "1769791157130"
+    "bundleVersion": "1769791157130",
+    "class": "Component",
+    "domain": "finance",
+    "domains": [
+        "finance"
+    ]
 }

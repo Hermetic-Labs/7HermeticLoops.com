@@ -80,5 +80,10 @@
         ]
     },
     "bundle": "/bundles/beat-bubble-vr.bundle.js",
-    "bundleVersion": "1769791403689"
+    "bundleVersion": "1769791403689",
+    "class": "Component",
+    "domain": "creative",
+    "domains": [
+        "creative"
+    ]
 }

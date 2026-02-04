@@ -68,5 +68,10 @@
         "packages": []
     },
     "bundle": "/bundles/sam-gov-connector.bundle.js",
-    "bundleVersion": "1769792620949"
+    "bundleVersion": "1769792620949",
+    "class": "Connector",
+    "domain": "gov",
+    "domains": [
+        "gov"
+    ]
 }

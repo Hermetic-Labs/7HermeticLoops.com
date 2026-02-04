@@ -68,5 +68,10 @@
         "packages": []
     },
     "bundle": "/bundles/pci-compliance.bundle.js",
-    "bundleVersion": "1769792480412"
+    "bundleVersion": "1769792480412",
+    "class": "Module",
+    "domain": "finance",
+    "domains": [
+        "finance"
+    ]
 }

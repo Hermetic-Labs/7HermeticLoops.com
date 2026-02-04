@@ -93,5 +93,10 @@
             "node-editor",
             "code-graph"
         ]
-    }
+    },
+    "class": "Component",
+    "domain": "dev",
+    "domains": [
+        "dev"
+    ]
 }

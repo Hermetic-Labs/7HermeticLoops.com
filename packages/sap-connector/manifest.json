@@ -69,5 +69,10 @@
         "packages": []
     },
     "bundle": "/bundles/sap-connector.bundle.js",
-    "bundleVersion": "1769792667864"
+    "bundleVersion": "1769792667864",
+    "class": "Connector",
+    "domain": "enterprise",
+    "domains": [
+        "enterprise"
+    ]
 }

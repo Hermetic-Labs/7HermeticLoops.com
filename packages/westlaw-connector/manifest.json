@@ -72,5 +72,10 @@
         "packages": []
     },
     "bundle": "/bundles/westlaw-connector.bundle.js",
-    "bundleVersion": "1769793142050"
+    "bundleVersion": "1769793142050",
+    "class": "Connector",
+    "domain": "legal",
+    "domains": [
+        "legal"
+    ]
 }

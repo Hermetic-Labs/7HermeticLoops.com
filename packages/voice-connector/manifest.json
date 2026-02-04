@@ -72,5 +72,15 @@
         ]
     },
     "bundle": "/bundles/voice-connector.bundle.js",
-    "bundleVersion": "1769792865466"
+    "bundleVersion": "1769792865466",
+    "class": "Connector",
+    "domain": "enterprise",
+    "domains": [
+        "enterprise"
+    ],
+    "relationships": {
+        "requires": [
+            "iot-connector"
+        ]
+    }
 }

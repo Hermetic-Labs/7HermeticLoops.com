@@ -68,5 +68,10 @@
         "packages": []
     },
     "bundle": "/bundles/stripe-connector.bundle.js",
-    "bundleVersion": "1769792764868"
+    "bundleVersion": "1769792764868",
+    "class": "Connector",
+    "domain": "finance",
+    "domains": [
+        "finance"
+    ]
 }

@@ -1,11 +1,19 @@
 /**
  * Search Filters Sidebar
- * 
+ *
  * Advanced filtering options for the product listing
  */
 
 import { useState } from 'react';
 import { Filter, Star, ChevronDown, ChevronUp, X } from 'lucide-react';
+import {
+    PackageClass,
+    Domain,
+    ALL_CLASSES,
+    ALL_DOMAINS,
+    CLASS_COLORS,
+    DOMAIN_LABELS,
+} from '../types';
 
 export type SortOption = 'newest' | 'oldest' | 'price-low' | 'price-high' | 'rating' | 'popular';
 
@@ -15,6 +23,9 @@ export interface FilterState {
     minRating: number;
     freeOnly: boolean;
     sort: SortOption;
+    // New taxonomy filters
+    classes: PackageClass[];
+    domains: Domain[];
 }
 
 interface SearchFiltersProps {
@@ -30,12 +41,16 @@ export const defaultFilters: FilterState = {
     minRating: 0,
     freeOnly: false,
     sort: 'popular',
+    classes: [],
+    domains: [],
 };
 
 export function SearchFilters({ filters, onChange, productCount, onClear }: SearchFiltersProps) {
     const [isOpen, setIsOpen] = useState(false);
-    const [priceExpanded, setPriceExpanded] = useState(true);
-    const [ratingExpanded, setRatingExpanded] = useState(true);
+    const [classExpanded, setClassExpanded] = useState(true);
+    const [domainExpanded, setDomainExpanded] = useState(false);
+    const [priceExpanded, setPriceExpanded] = useState(false);
+    const [ratingExpanded, setRatingExpanded] = useState(false);
     const [sortExpanded, setSortExpanded] = useState(true);
 
     const hasActiveFilters =
@@ -43,7 +58,23 @@ export function SearchFilters({ filters, onChange, productCount, onClear }: Sear
         filters.maxPrice !== null ||
         filters.minRating > 0 ||
         filters.freeOnly ||
-        filters.sort !== 'popular';
+        filters.sort !== 'popular' ||
+        filters.classes.length > 0 ||
+        filters.domains.length > 0;
+
+    const toggleClass = (cls: PackageClass) => {
+        const newClasses = filters.classes.includes(cls)
+            ? filters.classes.filter((c) => c !== cls)
+            : [...filters.classes, cls];
+        onChange({ ...filters, classes: newClasses });
+    };
+
+    const toggleDomain = (domain: Domain) => {
+        const newDomains = filters.domains.includes(domain)
+            ? filters.domains.filter((d) => d !== domain)
+            : [...filters.domains, domain];
+        onChange({ ...filters, domains: newDomains });
+    };
 
     const handlePriceChange = (key: 'minPrice' | 'maxPrice', value: string) => {
         const num = value === '' ? null : parseInt(value, 10);
@@ -97,6 +128,90 @@ export function SearchFilters({ filters, onChange, productCount, onClear }: Sear
                             <X className="w-3 h-3" /> Clear All Filters
                         </button>
                     )}
+
+                    {/* Package Class Filter */}
+                    <div>
+                        <button
+                            onClick={() => setClassExpanded(!classExpanded)}
+                            className="w-full flex items-center justify-between py-2 text-sm font-medium text-white"
+                        >
+                            Package Class
+                            {classExpanded ? (
+                                <ChevronUp className="w-4 h-4 text-gray-400" />
+                            ) : (
+                                <ChevronDown className="w-4 h-4 text-gray-400" />
+                            )}
+                        </button>
+                        {classExpanded && (
+                            <div className="space-y-1">
+                                {ALL_CLASSES.map((cls) => (
+                                    <label
+                                        key={cls}
+                                        className={`flex items-center gap-2 cursor-pointer p-2 rounded transition-colors ${
+                                            filters.classes.includes(cls)
+                                                ? 'bg-white/10'
+                                                : 'hover:bg-white/5'
+                                        }`}
+                                    >
+                                        <input
+                                            type="checkbox"
+                                            checked={filters.classes.includes(cls)}
+                                            onChange={() => toggleClass(cls)}
+                                            className="sr-only"
+                                        />
+                                        <span
+                                            className="w-3 h-3 rounded-full flex-shrink-0"
+                                            style={{ backgroundColor: CLASS_COLORS[cls] }}
+                                        />
+                                        <span className="text-sm text-gray-300">{cls}</span>
+                                        {filters.classes.includes(cls) && (
+                                            <span className="ml-auto text-cyber-green text-xs">✓</span>
+                                        )}
+                                    </label>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Domain Filter */}
+                    <div>
+                        <button
+                            onClick={() => setDomainExpanded(!domainExpanded)}
+                            className="w-full flex items-center justify-between py-2 text-sm font-medium text-white"
+                        >
+                            Domain
+                            {domainExpanded ? (
+                                <ChevronUp className="w-4 h-4 text-gray-400" />
+                            ) : (
+                                <ChevronDown className="w-4 h-4 text-gray-400" />
+                            )}
+                        </button>
+                        {domainExpanded && (
+                            <div className="space-y-1 max-h-48 overflow-y-auto">
+                                {ALL_DOMAINS.map((domain) => (
+                                    <label
+                                        key={domain}
+                                        className={`flex items-center gap-2 cursor-pointer p-2 rounded text-sm transition-colors ${
+                                            filters.domains.includes(domain)
+                                                ? 'bg-cyber-green/10 text-cyber-green'
+                                                : 'text-gray-300 hover:bg-white/5'
+                                        }`}
+                                    >
+                                        <input
+                                            type="checkbox"
+                                            checked={filters.domains.includes(domain)}
+                                            onChange={() => toggleDomain(domain)}
+                                            className="sr-only"
+                                        />
+                                        {DOMAIN_LABELS[domain]}
+                                        {filters.domains.includes(domain) && (
+                                            <span className="ml-auto text-xs">✓</span>
+                                        )}
+                                    </label>
+                                ))}
+                            </div>
+                        )}
+                    </div>
 
                     {/* Price Range */}
                     <div>

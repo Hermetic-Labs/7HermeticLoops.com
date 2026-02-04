@@ -68,5 +68,10 @@
         "packages": []
     },
     "bundle": "/bundles/itar-compliance.bundle.js",
-    "bundleVersion": "1769792070046"
+    "bundleVersion": "1769792070046",
+    "class": "Module",
+    "domain": "compliance",
+    "domains": [
+        "compliance"
+    ]
 }

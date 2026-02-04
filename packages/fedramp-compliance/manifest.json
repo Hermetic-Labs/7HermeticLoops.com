@@ -72,5 +72,10 @@
     "remix": {
         "original": "",
         "creatorPercent": 70
-    }
+    },
+    "class": "Module",
+    "domain": "gov",
+    "domains": [
+        "gov"
+    ]
 }

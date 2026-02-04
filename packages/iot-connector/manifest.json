@@ -81,5 +81,15 @@
         ]
     },
     "bundle": "/bundles/iot-connector.bundle.js",
-    "bundleVersion": "1769792017536"
+    "bundleVersion": "1769792017536",
+    "class": "Connector",
+    "domain": "infra",
+    "domains": [
+        "infra"
+    ],
+    "relationships": {
+        "requires": [
+            "medical-module"
+        ]
+    }
 }

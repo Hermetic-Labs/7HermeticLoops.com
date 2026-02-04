@@ -1,12 +1,14 @@
 import { useState, useRef } from 'react';
 import { MediaItem } from '../types';
-import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX } from 'lucide-react';
+import { resolveAssetUrl } from '../lib/utils';
+import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, Maximize } from 'lucide-react';
 
 const PLACEHOLDER = `${import.meta.env.BASE_URL}images/connector-placeholder.svg`;
 
 function getImageSrc(url: string | undefined): string {
-  if (!url) return PLACEHOLDER;
-  return url;
+  const resolved = resolveAssetUrl(url);
+  if (!resolved) return PLACEHOLDER;
+  return resolved;
 }
 
 interface Props {
@@ -48,6 +50,16 @@ export function MediaCarousel({ media }: Props) {
     }
   };
 
+  const toggleFullscreen = () => {
+    if (videoRef.current) {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        videoRef.current.requestFullscreen();
+      }
+    }
+  };
+
   return (
     <div className="space-y-4">
       {/* Main Display */}
@@ -62,7 +74,7 @@ export function MediaCarousel({ media }: Props) {
           <div className="relative w-full h-full">
             <video
               ref={videoRef}
-              src={current.url}
+              src={resolveAssetUrl(current.url)}
               muted={isMuted}
               loop
               className="w-full h-full object-cover"
@@ -81,16 +93,26 @@ export function MediaCarousel({ media }: Props) {
                 )}
               </button>
             </div>
-            <button
-              onClick={toggleMute}
-              className="absolute bottom-4 right-4 p-2 bg-black/50 rounded backdrop-blur hover:bg-black/70 transition-colors"
-            >
-              {isMuted ? (
-                <VolumeX className="w-5 h-5 text-white" />
-              ) : (
-                <Volume2 className="w-5 h-5 text-white" />
-              )}
-            </button>
+            <div className="absolute bottom-4 right-4 flex gap-2">
+              <button
+                onClick={toggleMute}
+                className="p-2 bg-black/50 rounded backdrop-blur hover:bg-black/70 transition-colors"
+                title={isMuted ? "Unmute" : "Mute"}
+              >
+                {isMuted ? (
+                  <VolumeX className="w-5 h-5 text-white" />
+                ) : (
+                  <Volume2 className="w-5 h-5 text-white" />
+                )}
+              </button>
+              <button
+                onClick={toggleFullscreen}
+                className="p-2 bg-black/50 rounded backdrop-blur hover:bg-black/70 transition-colors"
+                title="Fullscreen"
+              >
+                <Maximize className="w-5 h-5 text-white" />
+              </button>
+            </div>
           </div>
         )}
 
@@ -120,17 +142,37 @@ export function MediaCarousel({ media }: Props) {
             <button
               key={index}
               onClick={() => goTo(index)}
-              className={`relative shrink-0 w-24 h-16 rounded overflow-hidden border-2 transition-all ${
-                index === currentIndex
-                  ? 'border-cyber-green shadow-neon-green'
-                  : 'border-transparent opacity-60 hover:opacity-100'
-              }`}
+              className={`relative shrink-0 w-24 h-16 rounded overflow-hidden border-2 transition-all ${index === currentIndex
+                ? 'border-cyber-green shadow-neon-green'
+                : 'border-transparent opacity-60 hover:opacity-100'
+                }`}
             >
-              <img
-                src={getImageSrc(item.type === 'video' ? item.thumbnail || item.url : item.url)}
-                alt=""
-                className="w-full h-full object-cover"
-              />
+              {item.type === 'video' ? (
+                item.thumbnail ? (
+                  <img
+                    src={getImageSrc(item.thumbnail)}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <video
+                    src={resolveAssetUrl(item.url)}
+                    className="w-full h-full object-cover"
+                    muted
+                    playsInline
+                    onLoadedData={(e) => {
+                      // Optional: seek to 0.1s to ensure a frame is rendered if 0s is black
+                      e.currentTarget.currentTime = 0.1;
+                    }}
+                  />
+                )
+              ) : (
+                <img
+                  src={getImageSrc(item.url)}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
+              )}
               {item.type === 'video' && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/30">
                   <Play className="w-4 h-4 text-white" />

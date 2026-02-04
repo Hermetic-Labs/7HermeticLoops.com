@@ -71,5 +71,10 @@
         "packages": []
     },
     "bundle": "/bundles/plaid-connector.bundle.js",
-    "bundleVersion": "1769792527093"
+    "bundleVersion": "1769792527093",
+    "class": "Connector",
+    "domain": "finance",
+    "domains": [
+        "finance"
+    ]
 }

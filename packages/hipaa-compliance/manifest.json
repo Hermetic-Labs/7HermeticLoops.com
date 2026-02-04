@@ -68,5 +68,10 @@
         "packages": []
     },
     "bundle": "/bundles/hipaa-compliance.bundle.js",
-    "bundleVersion": "1769791844309"
+    "bundleVersion": "1769791844309",
+    "class": "Module",
+    "domain": "health",
+    "domains": [
+        "health"
+    ]
 }

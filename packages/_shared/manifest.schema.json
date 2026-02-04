@@ -18,7 +18,50 @@
         "type": {
             "type": "string",
             "enum": ["module", "connector", "addon", "plugin", "component"],
-            "description": "Package type"
+            "description": "Legacy package type (use 'class' instead)"
+        },
+        "class": {
+            "type": "string",
+            "enum": ["Core", "Module", "Connector", "Component", "Remix"],
+            "description": "Package classification"
+        },
+        "domain": {
+            "type": "string",
+            "enum": ["health", "compliance", "enterprise", "finance", "gov", "infra", "creative", "dev", "social", "edu", "research", "legal"],
+            "description": "Primary domain"
+        },
+        "domains": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": ["health", "compliance", "enterprise", "finance", "gov", "infra", "creative", "dev", "social", "edu", "research", "legal"]
+            },
+            "description": "Additional domains (for multi-domain packages)"
+        },
+        "relationships": {
+            "type": "object",
+            "description": "Package relationships",
+            "properties": {
+                "extends": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Packages this extends functionality of"
+                },
+                "requires": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Required package dependencies"
+                },
+                "enhances": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Packages this optionally enhances"
+                },
+                "remixedFrom": {
+                    "type": "string",
+                    "description": "Original package if this is a remix"
+                }
+            }
         },
         "displayName": {
             "type": "string",
@@ -77,7 +120,7 @@
         },
         "category": {
             "type": "string",
-            "description": "Package category"
+            "description": "Legacy package category (use 'domain' instead)"
         },
         "author": {
             "type": "string",

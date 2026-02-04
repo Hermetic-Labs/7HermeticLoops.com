@@ -5,7 +5,16 @@ import { Product } from '../types';
 import { MediaCarousel } from '../components/MediaCarousel';
 import { StarRating } from '../components/StarRating';
 import { formatPrice } from '../lib/utils';
-import { handlePackageDownload, shouldUseParentCommunication } from '../lib/download-handler';
+import {
+  handlePackageDownload,
+  handlePackageInstall,
+  shouldUseParentCommunication,
+  isPackageInVault,
+  isPackageInstalled,
+  subscribeToVaultStatus,
+  VaultPackage
+} from '../lib/download-handler';
+import { useCart } from '../context/CartContext';
 import {
   ShoppingCart,
   Heart,
@@ -18,6 +27,7 @@ import {
   Download,
   Flag,
   BadgeCheck,
+  Check,
 } from 'lucide-react';
 import { ReviewForm } from '../components/ReviewForm';
 
@@ -32,6 +42,27 @@ export function ProductPage() {
   const [reviewsData, setReviewsData] = useState<ReviewsResponse | null>(null);
   const [reviewsLoading, setReviewsLoading] = useState(false);
   const [helpfulIds, setHelpfulIds] = useState<Set<string>>(new Set());
+  const [justAdded, setJustAdded] = useState(false);
+  const [vaultStatus, setVaultStatus] = useState<VaultPackage[]>([]);
+  const [gettingPackage, setGettingPackage] = useState(false);
+  const [installing, setInstalling] = useState(false);
+  const { addToCart, isInCart } = useCart();
+
+  // Subscribe to vault status updates from parent app
+  useEffect(() => {
+    if (!shouldUseParentCommunication()) return;
+    const unsubscribe = subscribeToVaultStatus((packages) => {
+      setVaultStatus(packages);
+      // Reset loading states when vault status updates
+      setGettingPackage(false);
+      setInstalling(false);
+    });
+    return unsubscribe;
+  }, []);
+
+  // Check vault status for current product
+  const inVault = slug ? vaultStatus.some(p => p.id === slug) : false;
+  const installed = slug ? vaultStatus.find(p => p.id === slug)?.installed ?? false : false;
 
   const loadReviews = useCallback(async () => {
     if (!slug) return;
@@ -69,6 +100,13 @@ export function ProductPage() {
       setPurchaseError(err instanceof Error ? err.message : 'Purchase failed');
       setPurchasing(false);
     }
+  };
+
+  const handleAddToCart = () => {
+    if (!product) return;
+    addToCart(product);
+    setJustAdded(true);
+    setTimeout(() => setJustAdded(false), 2000);
   };
 
   useEffect(() => {
@@ -361,10 +399,10 @@ export function ProductPage() {
             </div>
           </div>
 
-          {/* Sidebar */}
-          <div className="space-y-6">
+          {/* Sidebar - sticky container for both panels */}
+          <div className="sticky top-24 space-y-6">
             {/* Purchase Panel */}
-            <div className="cyber-panel p-6 sticky top-24">
+            <div className="cyber-panel p-6">
               <h1 className="text-xl font-bold text-white mb-2 hidden lg:block">{product.title}</h1>
               <div className="hidden lg:flex items-center gap-4 mb-4">
                 <StarRating rating={product.rating} />
@@ -389,35 +427,102 @@ export function ProductPage() {
               </div>
 
               <div className="flex gap-3 mb-6">
-                {product.price === 0 ? (
-                  <button
-                    onClick={() => handlePackageDownload(
-                      product.slug,
-                      product.title,
-                      product.downloadUrl,
-                      { author: product.author?.name, version: product.techSpecs?.find(s => s.label === 'Version')?.value }
-                    )}
-                    className="cyber-btn flex-1 flex items-center justify-center gap-2"
-                  >
-                    <Download className="w-4 h-4" />
-                    {shouldUseParentCommunication() ? 'Get Package' : 'Download Free'}
-                  </button>
-                ) : product.stripePriceId ? (
-                  <button
-                    onClick={handlePurchase}
-                    disabled={purchasing}
-                    className="cyber-btn flex-1 flex items-center justify-center gap-2 disabled:opacity-50"
-                  >
-                    {purchasing ? (
-                      <>
-                        <Loader2 className="w-4 h-4 animate-spin" /> Processing...
-                      </>
-                    ) : (
-                      <>
-                        <ShoppingCart className="w-4 h-4" /> Buy Now
-                      </>
-                    )}
-                  </button>
+                {product.price === 0 && shouldUseParentCommunication() ? (
+                  /* Dev mode: Show status-aware button */
+                  installed ? (
+                    /* Already installed - show status */
+                    <button
+                      disabled
+                      className="cyber-btn flex-1 flex items-center justify-center gap-2 opacity-75 cursor-default"
+                    >
+                      <Check className="w-4 h-4 text-green-400" />
+                      Installed
+                    </button>
+                  ) : inVault ? (
+                    /* In vault but not installed - show Install */
+                    <button
+                      onClick={() => {
+                        setInstalling(true);
+                        handlePackageInstall(
+                          product.slug,
+                          product.title,
+                          product.downloadUrl,
+                          { author: product.author?.name, version: product.techSpecs?.find(s => s.label === 'Version')?.value }
+                        );
+                        // Reset after 3 seconds (vault status update will happen independently)
+                        setTimeout(() => setInstalling(false), 3000);
+                      }}
+                      disabled={installing}
+                      className="cyber-btn flex-1 flex items-center justify-center gap-2 disabled:opacity-75"
+                    >
+                      {installing ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          Installing...
+                        </>
+                      ) : (
+                        <>
+                          <Download className="w-4 h-4" />
+                          Install
+                        </>
+                      )}
+                    </button>
+                  ) : (
+                    /* Not in vault - show Get Package */
+                    <button
+                      onClick={() => {
+                        setGettingPackage(true);
+                        handlePackageDownload(
+                          product.slug,
+                          product.title,
+                          product.downloadUrl,
+                          { author: product.author?.name, version: product.techSpecs?.find(s => s.label === 'Version')?.value }
+                        );
+                        // Reset after 3 seconds (vault status update will happen independently)
+                        setTimeout(() => setGettingPackage(false), 3000);
+                      }}
+                      disabled={gettingPackage}
+                      className="cyber-btn flex-1 flex items-center justify-center gap-2 disabled:opacity-75"
+                    >
+                      {gettingPackage ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          Getting...
+                        </>
+                      ) : (
+                        <>
+                          <Download className="w-4 h-4" />
+                          Get Package
+                        </>
+                      )}
+                    </button>
+                  )
+                ) : product.price === 0 || product.stripePriceId ? (
+                  /* Production: All items go to cart (free or paid) */
+                  isInCart(product.id) ? (
+                    <Link
+                      to="/checkout"
+                      className="cyber-btn flex-1 flex items-center justify-center gap-2"
+                    >
+                      <Check className="w-4 h-4" /> View Cart
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={handleAddToCart}
+                      disabled={justAdded}
+                      className="cyber-btn flex-1 flex items-center justify-center gap-2 disabled:opacity-50"
+                    >
+                      {justAdded ? (
+                        <>
+                          <Check className="w-4 h-4" /> Added!
+                        </>
+                      ) : (
+                        <>
+                          <ShoppingCart className="w-4 h-4" /> Add to Cart
+                        </>
+                      )}
+                    </button>
+                  )
                 ) : (
                   <button
                     disabled

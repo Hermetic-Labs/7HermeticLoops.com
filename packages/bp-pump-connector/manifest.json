@@ -89,5 +89,15 @@
         ]
     },
     "bundle": "/bundles/bp-pump-connector.bundle.js",
-    "bundleVersion": "1769791424166"
+    "bundleVersion": "1769791424166",
+    "class": "Connector",
+    "domain": "health",
+    "domains": [
+        "health"
+    ],
+    "relationships": {
+        "extends": [
+            "medical-module"
+        ]
+    }
 }

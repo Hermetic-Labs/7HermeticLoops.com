@@ -68,5 +68,10 @@
         "packages": []
     },
     "bundle": "/bundles/fhir-compliance.bundle.js",
-    "bundleVersion": "1769791531627"
+    "bundleVersion": "1769791531627",
+    "class": "Module",
+    "domain": "health",
+    "domains": [
+        "health"
+    ]
 }

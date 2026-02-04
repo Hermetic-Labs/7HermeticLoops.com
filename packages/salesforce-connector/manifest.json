@@ -69,5 +69,10 @@
         "packages": []
     },
     "bundle": "/bundles/salesforce-connector.bundle.js",
-    "bundleVersion": "1769792573927"
+    "bundleVersion": "1769792573927",
+    "class": "Connector",
+    "domain": "enterprise",
+    "domains": [
+        "enterprise"
+    ]
 }

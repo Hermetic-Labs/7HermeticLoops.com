@@ -1,0 +1,3071 @@
+{
+  "systems": {
+    "cardiovascular": {
+      "meshes": {
+        "Anterior_communicating_artery": {
+          "path": "cardiovascular/Anterior_communicating_artery"
+        },
+        "Anterior_papillary_muscle_of_right_ventricle": {
+          "path": "cardiovascular/Anterior_papillary_muscle_of_right_ventricle"
+        },
+        "Anterior_semilunar_leaflet_of_pulmonary_valve": {
+          "path": "cardiovascular/Anterior_semilunar_leaflet_of_pulmonary_valve"
+        },
+        "Basilar_venous_plexus": {
+          "path": "cardiovascular/Basilar_venous_plexus"
+        },
+        "Cavernous_sinus": {
+          "path": "cardiovascular/Cavernous_sinus"
+        },
+        "Inferior_leaflet_of_right_atrioventricular_valve": {
+          "path": "cardiovascular/Inferior_leaflet_of_right_atrioventricular_valve"
+        },
+        "Inferior_papillary_muscle_of_left_ventricle": {
+          "path": "cardiovascular/Inferior_papillary_muscle_of_left_ventricle"
+        },
+        "Inferior_papillary_muscle_of_right_ventricle": {
+          "path": "cardiovascular/Inferior_papillary_muscle_of_right_ventricle"
+        },
+        "Left_atrium": {
+          "path": "cardiovascular/Left_atrium"
+        },
+        "Left_coronary_leaflet": {
+          "path": "cardiovascular/Left_coronary_leaflet"
+        },
+        "Left_semilunar_leaflet_of_pulmonary_valve": {
+          "path": "cardiovascular/Left_semilunar_leaflet_of_pulmonary_valve"
+        },
+        "Left_ventricle": {
+          "path": "cardiovascular/Left_ventricle"
+        }
+      }
+    },
+    "joints": {
+      "meshes": {
+        "Acetabular_labrum": {
+          "path": "joints/Acetabular_labrum"
+        },
+        "Acromioclavicular_ligament": {
+          "path": "joints/Acromioclavicular_ligament"
+        },
+        "Annular_ligament_of_radius": {
+          "path": "joints/Annular_ligament_of_radius"
+        },
+        "Anterior_cruciate_ligament": {
+          "path": "joints/Anterior_cruciate_ligament"
+        },
+        "Anterior_ligament_of_fibular_head": {
+          "path": "joints/Anterior_ligament_of_fibular_head"
+        },
+        "Anterior_longitudinal_ligament": {
+          "path": "joints/Anterior_longitudinal_ligament"
+        },
+        "Anterior_meniscotibial_ligament_(Lateral_meniscus)": {
+          "path": "joints/Anterior_meniscotibial_ligament_(Lateral_meniscus)"
+        },
+        "Anterior_meniscotibial_ligament_(Medial_meniscus)": {
+          "path": "joints/Anterior_meniscotibial_ligament_(Medial_meniscus)"
+        },
+        "Anterior_sacro-iliac_ligament": {
+          "path": "joints/Anterior_sacro-iliac_ligament"
+        },
+        "Anterior_sternoclavicular_ligament": {
+          "path": "joints/Anterior_sternoclavicular_ligament"
+        },
+        "Anterior_talocalcaneal_ligament": {
+          "path": "joints/Anterior_talocalcaneal_ligament"
+        },
+        "Anterior_talofibular_ligament": {
+          "path": "joints/Anterior_talofibular_ligament"
+        },
+        "Anterior_tibiofibular_ligament": {
+          "path": "joints/Anterior_tibiofibular_ligament"
+        },
+        "Arcuate_popliteal_ligament": {
+          "path": "joints/Arcuate_popliteal_ligament"
+        },
+        "Articular_capsule_of_acromioclavicular_joint": {
+          "path": "joints/Articular_capsule_of_acromioclavicular_joint"
+        },
+        "Articular_capsule_of_elbow_joint": {
+          "path": "joints/Articular_capsule_of_elbow_joint"
+        },
+        "Articular_capsule_of_glenohumeral_joint": {
+          "path": "joints/Articular_capsule_of_glenohumeral_joint"
+        },
+        "Articular_capsule_of_hip_joint": {
+          "path": "joints/Articular_capsule_of_hip_joint"
+        },
+        "Articular_capsule_of_interphalangeal_joint_of_great_toe": {
+          "path": "joints/Articular_capsule_of_interphalangeal_joint_of_great_toe"
+        },
+        "Articular_capsule_of_knee_joint": {
+          "path": "joints/Articular_capsule_of_knee_joint"
+        },
+        "Articular_capsule_of_radiocarpal_joint": {
+          "path": "joints/Articular_capsule_of_radiocarpal_joint"
+        },
+        "Articular_capsule_of_sternoclavicular_joint": {
+          "path": "joints/Articular_capsule_of_sternoclavicular_joint"
+        },
+        "Articular_capsule_of_superior_tibiofibular_joint": {
+          "path": "joints/Articular_capsule_of_superior_tibiofibular_joint"
+        },
+        "Articular_capsule_of_temporomandibular_joint": {
+          "path": "joints/Articular_capsule_of_temporomandibular_joint"
+        },
+        "Articular_capsules_of_distal_interphalangeal_joints": {
+          "path": "joints/Articular_capsules_of_distal_interphalangeal_joints"
+        },
+        "Articular_capsules_of_distal_interphalangeal_joints_of_foot": {
+          "path": "joints/Articular_capsules_of_distal_interphalangeal_joints_of_foot"
+        },
+        "Articular_capsules_of_metacarpophalangeal_joints": {
+          "path": "joints/Articular_capsules_of_metacarpophalangeal_joints"
+        },
+        "Articular_capsules_of_metatarsophalangeal_joints": {
+          "path": "joints/Articular_capsules_of_metatarsophalangeal_joints"
+        },
+        "Articular_capsules_of_proximal_interphalangeal_joints": {
+          "path": "joints/Articular_capsules_of_proximal_interphalangeal_joints"
+        },
+        "Articular_capsules_of_proximal_interphalangeal_joints_of_foo": {
+          "path": "joints/Articular_capsules_of_proximal_interphalangeal_joints_of_foo"
+        },
+        "Articular_disc_of_acromioclavicular_joint": {
+          "path": "joints/Articular_disc_of_acromioclavicular_joint"
+        },
+        "Articular_disc_of_distal_radio-ulnar_joint": {
+          "path": "joints/Articular_disc_of_distal_radio-ulnar_joint"
+        },
+        "Articular_disc_of_sternoclavicular_joint": {
+          "path": "joints/Articular_disc_of_sternoclavicular_joint"
+        },
+        "Articular_disc_of_temporomandibular_joint": {
+          "path": "joints/Articular_disc_of_temporomandibular_joint"
+        },
+        "Calcaneocuboid_ligament": {
+          "path": "joints/Calcaneocuboid_ligament"
+        },
+        "Calcaneofibular_ligament": {
+          "path": "joints/Calcaneofibular_ligament"
+        },
+        "Calcaneonavicular_ligament": {
+          "path": "joints/Calcaneonavicular_ligament"
+        },
+        "Capitohamate_interosseous_ligament": {
+          "path": "joints/Capitohamate_interosseous_ligament"
+        },
+        "Collateral_interphalangeal_ligaments_of_foot": {
+          "path": "joints/Collateral_interphalangeal_ligaments_of_foot"
+        },
+        "Collateral_interphalangeal_ligaments_of_hand": {
+          "path": "joints/Collateral_interphalangeal_ligaments_of_hand"
+        },
+        "Collateral_metacarpophalangeal_ligaments": {
+          "path": "joints/Collateral_metacarpophalangeal_ligaments"
+        },
+        "Collateral_metatarsophalangeal_ligaments": {
+          "path": "joints/Collateral_metatarsophalangeal_ligaments"
+        },
+        "Conoid_ligament": {
+          "path": "joints/Conoid_ligament"
+        },
+        "Coraco-acromial_ligament": {
+          "path": "joints/Coraco-acromial_ligament"
+        },
+        "Coracohumeral_ligament": {
+          "path": "joints/Coracohumeral_ligament"
+        },
+        "Costoclavicular_ligament": {
+          "path": "joints/Costoclavicular_ligament"
+        },
+        "Costotransverse_ligament": {
+          "path": "joints/Costotransverse_ligament"
+        },
+        "Cricopharyngeal_ligament": {
+          "path": "joints/Cricopharyngeal_ligament"
+        },
+        "Cuneocuboid_interosseous_ligament": {
+          "path": "joints/Cuneocuboid_interosseous_ligament"
+        },
+        "Cuneometatarsal_interosseous_ligaments": {
+          "path": "joints/Cuneometatarsal_interosseous_ligaments"
+        },
+        "Deep_part_of_tibial_collateral_ligament": {
+          "path": "joints/Deep_part_of_tibial_collateral_ligament"
+        },
+        "Deep_transverse_metacarpal_ligament": {
+          "path": "joints/Deep_transverse_metacarpal_ligament"
+        },
+        "Deep_transverse_metatarsal_ligament": {
+          "path": "joints/Deep_transverse_metatarsal_ligament"
+        },
+        "Descending_part_of_iliofemoral_ligament": {
+          "path": "joints/Descending_part_of_iliofemoral_ligament"
+        },
+        "Dorsal_calcaneocuboid_ligament": {
+          "path": "joints/Dorsal_calcaneocuboid_ligament"
+        },
+        "Dorsal_carpometacarpal_ligaments": {
+          "path": "joints/Dorsal_carpometacarpal_ligaments"
+        },
+        "Dorsal_cuboideonavicular_ligament": {
+          "path": "joints/Dorsal_cuboideonavicular_ligament"
+        },
+        "Dorsal_cuneocuboid_ligament": {
+          "path": "joints/Dorsal_cuneocuboid_ligament"
+        },
+        "Dorsal_cuneonavicular_ligaments": {
+          "path": "joints/Dorsal_cuneonavicular_ligaments"
+        },
+        "Dorsal_intercarpal_ligaments": {
+          "path": "joints/Dorsal_intercarpal_ligaments"
+        },
+        "Dorsal_intercuneiform_ligaments": {
+          "path": "joints/Dorsal_intercuneiform_ligaments"
+        },
+        "Dorsal_metacarpal_ligaments": {
+          "path": "joints/Dorsal_metacarpal_ligaments"
+        },
+        "Dorsal_metatarsal_ligaments": {
+          "path": "joints/Dorsal_metatarsal_ligaments"
+        },
+        "Dorsal_radio-ulnar_ligament": {
+          "path": "joints/Dorsal_radio-ulnar_ligament"
+        },
+        "Dorsal_radiocarpal_ligament": {
+          "path": "joints/Dorsal_radiocarpal_ligament"
+        },
+        "Dorsal_scaphotriquetral_ligament": {
+          "path": "joints/Dorsal_scaphotriquetral_ligament"
+        },
+        "Dorsal_tarsometatarsal_ligaments": {
+          "path": "joints/Dorsal_tarsometatarsal_ligaments"
+        },
+        "Dorsal_ulnocarpal_ligament": {
+          "path": "joints/Dorsal_ulnocarpal_ligament"
+        },
+        "External_intercostal_membrane": {
+          "path": "joints/External_intercostal_membrane"
+        },
+        "Fibular_collateral_ligament": {
+          "path": "joints/Fibular_collateral_ligament"
+        },
+        "Frenula_capsulae": {
+          "path": "joints/Frenula_capsulae"
+        },
+        "Glenoid_labrum": {
+          "path": "joints/Glenoid_labrum"
+        },
+        "Iliolumbar_ligament": {
+          "path": "joints/Iliolumbar_ligament"
+        },
+        "Inferior_glenohumeral_ligament": {
+          "path": "joints/Inferior_glenohumeral_ligament"
+        },
+        "Inferior_pubic_ligament": {
+          "path": "joints/Inferior_pubic_ligament"
+        },
+        "Inferior_transverse_scapular_ligament": {
+          "path": "joints/Inferior_transverse_scapular_ligament"
+        },
+        "Infrapatellar_fat_pad": {
+          "path": "joints/Infrapatellar_fat_pad"
+        },
+        "Interclavicular_ligament": {
+          "path": "joints/Interclavicular_ligament"
+        },
+        "Intercornual_ligament": {
+          "path": "joints/Intercornual_ligament"
+        },
+        "Intercuneiform_interosseous_ligaments": {
+          "path": "joints/Intercuneiform_interosseous_ligaments"
+        },
+        "Internal_intercostal_membrane": {
+          "path": "joints/Internal_intercostal_membrane"
+        },
+        "Interosseous_membrane_of_forearm": {
+          "path": "joints/Interosseous_membrane_of_forearm"
+        },
+        "Interosseous_membrane_of_leg": {
+          "path": "joints/Interosseous_membrane_of_leg"
+        },
+        "Interosseous_metacarpal_ligaments": {
+          "path": "joints/Interosseous_metacarpal_ligaments"
+        },
+        "Interosseous_sacro-iliac_ligament": {
+          "path": "joints/Interosseous_sacro-iliac_ligament"
+        },
+        "Interpubic_disc": {
+          "path": "joints/Interpubic_disc"
+        },
+        "Intersesamoid_ligament": {
+          "path": "joints/Intersesamoid_ligament"
+        },
+        "Interspinous_ligaments": {
+          "path": "joints/Interspinous_ligaments"
+        },
+        "Intertransverse_ligaments": {
+          "path": "joints/Intertransverse_ligaments"
+        },
+        "Intervertebral_disc_C2-C3": {
+          "path": "joints/Intervertebral_disc_C2-C3"
+        },
+        "Intervertebral_disc_C3-C4": {
+          "path": "joints/Intervertebral_disc_C3-C4"
+        },
+        "Intervertebral_disc_C4-C5": {
+          "path": "joints/Intervertebral_disc_C4-C5"
+        },
+        "Intervertebral_disc_C5-C6": {
+          "path": "joints/Intervertebral_disc_C5-C6"
+        },
+        "Intervertebral_disc_C6-C7": {
+          "path": "joints/Intervertebral_disc_C6-C7"
+        },
+        "Intervertebral_disc_C7-T1": {
+          "path": "joints/Intervertebral_disc_C7-T1"
+        },
+        "Intervertebral_disc_L1-L2": {
+          "path": "joints/Intervertebral_disc_L1-L2"
+        },
+        "Intervertebral_disc_L2-L3": {
+          "path": "joints/Intervertebral_disc_L2-L3"
+        },
+        "Intervertebral_disc_L3-L4": {
+          "path": "joints/Intervertebral_disc_L3-L4"
+        },
+        "Intervertebral_disc_L4-L5": {
+          "path": "joints/Intervertebral_disc_L4-L5"
+        },
+        "Intervertebral_disc_L5-S1": {
+          "path": "joints/Intervertebral_disc_L5-S1"
+        },
+        "Intervertebral_disc_T1-T2": {
+          "path": "joints/Intervertebral_disc_T1-T2"
+        },
+        "Intervertebral_disc_T10-T11": {
+          "path": "joints/Intervertebral_disc_T10-T11"
+        },
+        "Intervertebral_disc_T11-T12": {
+          "path": "joints/Intervertebral_disc_T11-T12"
+        },
+        "Intervertebral_disc_T12-L1": {
+          "path": "joints/Intervertebral_disc_T12-L1"
+        },
+        "Intervertebral_disc_T2-T3": {
+          "path": "joints/Intervertebral_disc_T2-T3"
+        },
+        "Intervertebral_disc_T3-T4": {
+          "path": "joints/Intervertebral_disc_T3-T4"
+        },
+        "Intervertebral_disc_T4-T5": {
+          "path": "joints/Intervertebral_disc_T4-T5"
+        },
+        "Intervertebral_disc_T5-T6": {
+          "path": "joints/Intervertebral_disc_T5-T6"
+        },
+        "Intervertebral_disc_T6-T7": {
+          "path": "joints/Intervertebral_disc_T6-T7"
+        },
+        "Intervertebral_disc_T7-T8": {
+          "path": "joints/Intervertebral_disc_T7-T8"
+        },
+        "Intervertebral_disc_T8-T9": {
+          "path": "joints/Intervertebral_disc_T8-T9"
+        },
+        "Intervertebral_disc_T9-T10": {
+          "path": "joints/Intervertebral_disc_T9-T10"
+        },
+        "Intra-articular_ligament_of_head_of_rib": {
+          "path": "joints/Intra-articular_ligament_of_head_of_rib"
+        },
+        "Ischiofemoral_ligament": {
+          "path": "joints/Ischiofemoral_ligament"
+        },
+        "Lateral_meniscus": {
+          "path": "joints/Lateral_meniscus"
+        },
+        "Lateral_talocalcaneal_ligament": {
+          "path": "joints/Lateral_talocalcaneal_ligament"
+        },
+        "Lateral_temporomandibular_ligament": {
+          "path": "joints/Lateral_temporomandibular_ligament"
+        },
+        "Lateral_thyrohyoid_ligament": {
+          "path": "joints/Lateral_thyrohyoid_ligament"
+        },
+        "Ligament_of_head_of_femur": {
+          "path": "joints/Ligament_of_head_of_femur"
+        },
+        "Ligamenta_flava": {
+          "path": "joints/Ligamenta_flava"
+        },
+        "Long_plantar_ligament": {
+          "path": "joints/Long_plantar_ligament"
+        },
+        "Lunotriquetral_interosseous_ligament": {
+          "path": "joints/Lunotriquetral_interosseous_ligament"
+        }
+      }
+    },
+    "lymphoid": {
+      "meshes": {
+        "(Anterior_tibial_node)": {
+          "path": "lymphoid/(Anterior_tibial_node)"
+        },
+        "(Fibular_node)": {
+          "path": "lymphoid/(Fibular_node)"
+        },
+        "(Intermediate_deep_inguinal_node)": {
+          "path": "lymphoid/(Intermediate_deep_inguinal_node)"
+        },
+        "(Intermediate_lacunar_node)": {
+          "path": "lymphoid/(Intermediate_lacunar_node)"
+        },
+        "(Lateral_lacunar_node)": {
+          "path": "lymphoid/(Lateral_lacunar_node)"
+        },
+        "(Medial_lacunar_node)": {
+          "path": "lymphoid/(Medial_lacunar_node)"
+        },
+        "(Posterior_tibial_node)": {
+          "path": "lymphoid/(Posterior_tibial_node)"
+        },
+        "(Proximal_deep_inguinal_node)": {
+          "path": "lymphoid/(Proximal_deep_inguinal_node)"
+        },
+        "(Retropyloric_nodes)": {
+          "path": "lymphoid/(Retropyloric_nodes)"
+        },
+        "(Subpyloric_nodes)": {
+          "path": "lymphoid/(Subpyloric_nodes)"
+        },
+        "(Suprapyloric_node)": {
+          "path": "lymphoid/(Suprapyloric_node)"
+        },
+        "Anterior_axillary_nodes": {
+          "path": "lymphoid/Anterior_axillary_nodes"
+        },
+        "Anterior_inferior_jugular_nodes": {
+          "path": "lymphoid/Anterior_inferior_jugular_nodes"
+        },
+        "Apical_axillary_nodes": {
+          "path": "lymphoid/Apical_axillary_nodes"
+        },
+        "Appendicular_nodes": {
+          "path": "lymphoid/Appendicular_nodes"
+        },
+        "Brachial_nodes": {
+          "path": "lymphoid/Brachial_nodes"
+        },
+        "Brachiocephalic_nodes": {
+          "path": "lymphoid/Brachiocephalic_nodes"
+        },
+        "Bucinator_node": {
+          "path": "lymphoid/Bucinator_node"
+        },
+        "Central_axillary_nodes": {
+          "path": "lymphoid/Central_axillary_nodes"
+        },
+        "Central_superior_mesenteric_nodes": {
+          "path": "lymphoid/Central_superior_mesenteric_nodes"
+        },
+        "Coeliac_nodes": {
+          "path": "lymphoid/Coeliac_nodes"
+        },
+        "Cubital_nodes": {
+          "path": "lymphoid/Cubital_nodes"
+        },
+        "Cystic_node": {
+          "path": "lymphoid/Cystic_node"
+        },
+        "Deep_popliteal_nodes": {
+          "path": "lymphoid/Deep_popliteal_nodes"
+        },
+        "Ileocolic_nodes": {
+          "path": "lymphoid/Ileocolic_nodes"
+        },
+        "Inferior_deep_lateral_cervical_nodes": {
+          "path": "lymphoid/Inferior_deep_lateral_cervical_nodes"
+        },
+        "Inferior_diaphragmatic_nodes": {
+          "path": "lymphoid/Inferior_diaphragmatic_nodes"
+        },
+        "Inferior_epigastric_nodes": {
+          "path": "lymphoid/Inferior_epigastric_nodes"
+        },
+        "Inferior_gluteal_nodes": {
+          "path": "lymphoid/Inferior_gluteal_nodes"
+        },
+        "Inferior_pancreatic_nodes": {
+          "path": "lymphoid/Inferior_pancreatic_nodes"
+        },
+        "Inferior_superficial_inguinal_nodes": {
+          "path": "lymphoid/Inferior_superficial_inguinal_nodes"
+        },
+        "Inferior_tracheobronchial_nodes": {
+          "path": "lymphoid/Inferior_tracheobronchial_nodes"
+        },
+        "Infra-auricular_nodes": {
+          "path": "lymphoid/Infra-auricular_nodes"
+        },
+        "Infraclavicular_nodes": {
+          "path": "lymphoid/Infraclavicular_nodes"
+        },
+        "Intercostal_nodes": {
+          "path": "lymphoid/Intercostal_nodes"
+        },
+        "Intermediate_common_iliac_nodes": {
+          "path": "lymphoid/Intermediate_common_iliac_nodes"
+        },
+        "Intermediate_external_iliac_nodes": {
+          "path": "lymphoid/Intermediate_external_iliac_nodes"
+        },
+        "Intermediate_lumbar_nodes": {
+          "path": "lymphoid/Intermediate_lumbar_nodes"
+        },
+        "Interpectoral_nodes": {
+          "path": "lymphoid/Interpectoral_nodes"
+        },
+        "Intraglandular_parotid_nodes": {
+          "path": "lymphoid/Intraglandular_parotid_nodes"
+        },
+        "Intrapulmonary_nodes": {
+          "path": "lymphoid/Intrapulmonary_nodes"
+        },
+        "Jugulodigastric_node": {
+          "path": "lymphoid/Jugulodigastric_node"
+        },
+        "Juxta-intestinal_mesenteric_nodes": {
+          "path": "lymphoid/Juxta-intestinal_mesenteric_nodes"
+        },
+        "Juxta-oesophageal_nodes": {
+          "path": "lymphoid/Juxta-oesophageal_nodes"
+        },
+        "Lateral_aortic_nodes": {
+          "path": "lymphoid/Lateral_aortic_nodes"
+        },
+        "Lateral_axillary_nodes": {
+          "path": "lymphoid/Lateral_axillary_nodes"
+        },
+        "Lateral_caval_nodes": {
+          "path": "lymphoid/Lateral_caval_nodes"
+        },
+        "Lateral_common_iliac_nodes": {
+          "path": "lymphoid/Lateral_common_iliac_nodes"
+        },
+        "Lateral_pericardial_nodes": {
+          "path": "lymphoid/Lateral_pericardial_nodes"
+        },
+        "Lateral_sacral_nodes": {
+          "path": "lymphoid/Lateral_sacral_nodes"
+        },
+        "Lateral_superior_jugular_node": {
+          "path": "lymphoid/Lateral_superior_jugular_node"
+        },
+        "Lateral_vesical_nodes": {
+          "path": "lymphoid/Lateral_vesical_nodes"
+        },
+        "Left_colic_nodes": {
+          "path": "lymphoid/Left_colic_nodes"
+        },
+        "Left_lobe_of_thymus": {
+          "path": "lymphoid/Left_lobe_of_thymus"
+        }
+      }
+    },
+    "muscular": {
+      "meshes": {
+        "(Abdominal_part_of_pectoralis_major_muscle)": {
+          "path": "muscular/(Abdominal_part_of_pectoralis_major_muscle)"
+        },
+        "(Adductor_minimus)": {
+          "path": "muscular/(Adductor_minimus)"
+        },
+        "(Iliopectineal_bursa)": {
+          "path": "muscular/(Iliopectineal_bursa)"
+        },
+        "(Opponens_digiti_minimi_muscle_of_foot)": {
+          "path": "muscular/(Opponens_digiti_minimi_muscle_of_foot)"
+        },
+        "Abductor_digiti_minimi_of_foot": {
+          "path": "muscular/Abductor_digiti_minimi_of_foot"
+        },
+        "Abductor_digiti_minimi_of_hand": {
+          "path": "muscular/Abductor_digiti_minimi_of_hand"
+        },
+        "Abductor_hallucis": {
+          "path": "muscular/Abductor_hallucis"
+        },
+        "Abductor_pollicis_brevis": {
+          "path": "muscular/Abductor_pollicis_brevis"
+        },
+        "Abductor_pollicis_longus": {
+          "path": "muscular/Abductor_pollicis_longus"
+        },
+        "Acromial_part_of_deltoid_muscle": {
+          "path": "muscular/Acromial_part_of_deltoid_muscle"
+        },
+        "Adductor_brevis": {
+          "path": "muscular/Adductor_brevis"
+        },
+        "Adductor_longus": {
+          "path": "muscular/Adductor_longus"
+        },
+        "Adductor_magnus": {
+          "path": "muscular/Adductor_magnus"
+        },
+        "Anconeus_muscle": {
+          "path": "muscular/Anconeus_muscle"
+        },
+        "Anserine_bursa": {
+          "path": "muscular/Anserine_bursa"
+        },
+        "Antebrachial_fascia": {
+          "path": "muscular/Antebrachial_fascia"
+        },
+        "Anterior_belly_of_digastric_muscle": {
+          "path": "muscular/Anterior_belly_of_digastric_muscle"
+        },
+        "Anterior_intermuscular_septum_of_leg": {
+          "path": "muscular/Anterior_intermuscular_septum_of_leg"
+        },
+        "Anterior_layer_of_thoracolumbar_fascia": {
+          "path": "muscular/Anterior_layer_of_thoracolumbar_fascia"
+        },
+        "Ary-epiglottic_part_of_oblique_arytenoid_muscle": {
+          "path": "muscular/Ary-epiglottic_part_of_oblique_arytenoid_muscle"
+        },
+        "Ascending_part_of_trapezius_muscle": {
+          "path": "muscular/Ascending_part_of_trapezius_muscle"
+        },
+        "Bicipitoradial_bursa": {
+          "path": "muscular/Bicipitoradial_bursa"
+        },
+        "Brachial_fascia": {
+          "path": "muscular/Brachial_fascia"
+        },
+        "Brachialis_muscle": {
+          "path": "muscular/Brachialis_muscle"
+        },
+        "Brachioradialis_muscle": {
+          "path": "muscular/Brachioradialis_muscle"
+        },
+        "Bucinator": {
+          "path": "muscular/Bucinator"
+        },
+        "Bursa_of_piriformis_muscle": {
+          "path": "muscular/Bursa_of_piriformis_muscle"
+        },
+        "Calcaneal_tendon": {
+          "path": "muscular/Calcaneal_tendon"
+        },
+        "Clavicular_head_of_pectoralis_major_muscle": {
+          "path": "muscular/Clavicular_head_of_pectoralis_major_muscle"
+        },
+        "Clavicular_part_of_deltoid_muscle": {
+          "path": "muscular/Clavicular_part_of_deltoid_muscle"
+        },
+        "Clavipectoral_fascia": {
+          "path": "muscular/Clavipectoral_fascia"
+        },
+        "Coccygeus_muscle": {
+          "path": "muscular/Coccygeus_muscle"
+        },
+        "Common_flexor_tendon_sheath": {
+          "path": "muscular/Common_flexor_tendon_sheath"
+        },
+        "Common_tendinous_ring": {
+          "path": "muscular/Common_tendinous_ring"
+        },
+        "Common_tendon_sheath_of_fibularis_muscles": {
+          "path": "muscular/Common_tendon_sheath_of_fibularis_muscles"
+        },
+        "Coracobrachial_bursa": {
+          "path": "muscular/Coracobrachial_bursa"
+        },
+        "Coracobrachialis_muscle": {
+          "path": "muscular/Coracobrachialis_muscle"
+        },
+        "Corrugator_supercilii": {
+          "path": "muscular/Corrugator_supercilii"
+        },
+        "Cruciform_part_of_fibrous_sheath_of_digit_of_hand": {
+          "path": "muscular/Cruciform_part_of_fibrous_sheath_of_digit_of_hand"
+        },
+        "Crural_fascia": {
+          "path": "muscular/Crural_fascia"
+        },
+        "Deep_head_of_flexor_pollicis_brevis": {
+          "path": "muscular/Deep_head_of_flexor_pollicis_brevis"
+        },
+        "Deep_head_of_pronator_teres": {
+          "path": "muscular/Deep_head_of_pronator_teres"
+        },
+        "Deep_infrapatellar_bursa": {
+          "path": "muscular/Deep_infrapatellar_bursa"
+        },
+        "Deep_part_of_masseter": {
+          "path": "muscular/Deep_part_of_masseter"
+        },
+        "Deltoid_fascia": {
+          "path": "muscular/Deltoid_fascia"
+        },
+        "Depressor_anguli_oris": {
+          "path": "muscular/Depressor_anguli_oris"
+        },
+        "Depressor_labii_inferioris": {
+          "path": "muscular/Depressor_labii_inferioris"
+        },
+        "Depressor_septi_nasi": {
+          "path": "muscular/Depressor_septi_nasi"
+        },
+        "Descending_part_of_trapezius_muscle": {
+          "path": "muscular/Descending_part_of_trapezius_muscle"
+        },
+        "Diaphragm": {
+          "path": "muscular/Diaphragm"
+        },
+        "Diaphragmatic_fascia": {
+          "path": "muscular/Diaphragmatic_fascia"
+        },
+        "Dorsal_fascia_of_hand": {
+          "path": "muscular/Dorsal_fascia_of_hand"
+        },
+        "Dorsal_interossei_muscles_of_foot": {
+          "path": "muscular/Dorsal_interossei_muscles_of_foot"
+        },
+        "Dorsal_interossei_muscles_of_hand": {
+          "path": "muscular/Dorsal_interossei_muscles_of_hand"
+        },
+        "Dorsal_parts_of_lateral_intertransversarii_lumborum_muscles": {
+          "path": "muscular/Dorsal_parts_of_lateral_intertransversarii_lumborum_muscles"
+        },
+        "Epicranial_aponeurosis": {
+          "path": "muscular/Epicranial_aponeurosis"
+        },
+        "Extensor_carpi_radialis_brevis": {
+          "path": "muscular/Extensor_carpi_radialis_brevis"
+        },
+        "Extensor_carpi_radialis_longus": {
+          "path": "muscular/Extensor_carpi_radialis_longus"
+        },
+        "Extensor_digiti_minimi": {
+          "path": "muscular/Extensor_digiti_minimi"
+        },
+        "Extensor_digitorum": {
+          "path": "muscular/Extensor_digitorum"
+        },
+        "Extensor_digitorum_brevis": {
+          "path": "muscular/Extensor_digitorum_brevis"
+        },
+        "Extensor_digitorum_longus": {
+          "path": "muscular/Extensor_digitorum_longus"
+        },
+        "Extensor_hallucis_brevis": {
+          "path": "muscular/Extensor_hallucis_brevis"
+        },
+        "Extensor_hallucis_longus": {
+          "path": "muscular/Extensor_hallucis_longus"
+        },
+        "Extensor_indicis": {
+          "path": "muscular/Extensor_indicis"
+        },
+        "Extensor_pollicis_brevis": {
+          "path": "muscular/Extensor_pollicis_brevis"
+        },
+        "Extensor_pollicis_longus": {
+          "path": "muscular/Extensor_pollicis_longus"
+        },
+        "Extensor_retinaculum_of_wrist": {
+          "path": "muscular/Extensor_retinaculum_of_wrist"
+        },
+        "External_abdominal_oblique_muscle": {
+          "path": "muscular/External_abdominal_oblique_muscle"
+        },
+        "External_anal_sphincter": {
+          "path": "muscular/External_anal_sphincter"
+        },
+        "External_intercostal_muscles": {
+          "path": "muscular/External_intercostal_muscles"
+        },
+        "Fascia_lata": {
+          "path": "muscular/Fascia_lata"
+        },
+        "Fibularis_brevis_muscle": {
+          "path": "muscular/Fibularis_brevis_muscle"
+        },
+        "Fibularis_longus_muscle": {
+          "path": "muscular/Fibularis_longus_muscle"
+        },
+        "Fibularis_tertius_muscle": {
+          "path": "muscular/Fibularis_tertius_muscle"
+        },
+        "Flexor_carpi_radialis": {
+          "path": "muscular/Flexor_carpi_radialis"
+        },
+        "Flexor_digiti_minimi_of_foot": {
+          "path": "muscular/Flexor_digiti_minimi_of_foot"
+        },
+        "Flexor_digiti_minimi_of_hand": {
+          "path": "muscular/Flexor_digiti_minimi_of_hand"
+        },
+        "Flexor_digitorum_brevis": {
+          "path": "muscular/Flexor_digitorum_brevis"
+        },
+        "Flexor_digitorum_longus": {
+          "path": "muscular/Flexor_digitorum_longus"
+        },
+        "Flexor_digitorum_profundus": {
+          "path": "muscular/Flexor_digitorum_profundus"
+        },
+        "Flexor_hallucis_longus": {
+          "path": "muscular/Flexor_hallucis_longus"
+        },
+        "Flexor_pollicis_longus": {
+          "path": "muscular/Flexor_pollicis_longus"
+        },
+        "Flexor_retinaculum_of_ankle": {
+          "path": "muscular/Flexor_retinaculum_of_ankle"
+        },
+        "Flexor_retinaculum_of_wrist": {
+          "path": "muscular/Flexor_retinaculum_of_wrist"
+        },
+        "Frontalis_muscle": {
+          "path": "muscular/Frontalis_muscle"
+        },
+        "Genioglossus_muscle": {
+          "path": "muscular/Genioglossus_muscle"
+        },
+        "Geniohyoid_muscle": {
+          "path": "muscular/Geniohyoid_muscle"
+        },
+        "Gluteus_maximus_muscle": {
+          "path": "muscular/Gluteus_maximus_muscle"
+        },
+        "Gluteus_medius_muscle": {
+          "path": "muscular/Gluteus_medius_muscle"
+        },
+        "Gluteus_minimus_muscle": {
+          "path": "muscular/Gluteus_minimus_muscle"
+        },
+        "Gracilis_muscle": {
+          "path": "muscular/Gracilis_muscle"
+        },
+        "Humeral_head_of_extensor_carpi_ulnaris": {
+          "path": "muscular/Humeral_head_of_extensor_carpi_ulnaris"
+        },
+        "Humeral_head_of_flexor_carpi_ulnaris": {
+          "path": "muscular/Humeral_head_of_flexor_carpi_ulnaris"
+        },
+        "Humero-ulnar_head_of_flexor_digitorum_superficialis": {
+          "path": "muscular/Humero-ulnar_head_of_flexor_digitorum_superficialis"
+        },
+        "Hyoglossus_muscle": {
+          "path": "muscular/Hyoglossus_muscle"
+        },
+        "Iliacus_muscle": {
+          "path": "muscular/Iliacus_muscle"
+        },
+        "Iliococcygeus_muscle": {
+          "path": "muscular/Iliococcygeus_muscle"
+        },
+        "Iliocostalis_colli_muscle": {
+          "path": "muscular/Iliocostalis_colli_muscle"
+        },
+        "Iliocostalis_lumborum_muscle": {
+          "path": "muscular/Iliocostalis_lumborum_muscle"
+        },
+        "Iliocostalis_thoracis_muscle": {
+          "path": "muscular/Iliocostalis_thoracis_muscle"
+        },
+        "Iliopectineal_arch": {
+          "path": "muscular/Iliopectineal_arch"
+        },
+        "Iliopsoas_fascia": {
+          "path": "muscular/Iliopsoas_fascia"
+        },
+        "Iliotibial_tract": {
+          "path": "muscular/Iliotibial_tract"
+        },
+        "Inferior_extensor_retinaculum_of_ankle": {
+          "path": "muscular/Inferior_extensor_retinaculum_of_ankle"
+        },
+        "Inferior_fibular_retinaculum": {
+          "path": "muscular/Inferior_fibular_retinaculum"
+        },
+        "Inferior_gemellus_muscle": {
+          "path": "muscular/Inferior_gemellus_muscle"
+        },
+        "Inferior_head_of_lateral_pterygoid_muscle": {
+          "path": "muscular/Inferior_head_of_lateral_pterygoid_muscle"
+        },
+        "Inferior_oblique_muscle": {
+          "path": "muscular/Inferior_oblique_muscle"
+        },
+        "Inferior_pharyngeal_constrictor": {
+          "path": "muscular/Inferior_pharyngeal_constrictor"
+        },
+        "Inferior_rectus_muscle": {
+          "path": "muscular/Inferior_rectus_muscle"
+        },
+        "Inferior_subtendinous_bursa_of_biceps_femoris_muscle": {
+          "path": "muscular/Inferior_subtendinous_bursa_of_biceps_femoris_muscle"
+        },
+        "Inferior_tarsus": {
+          "path": "muscular/Inferior_tarsus"
+        },
+        "Infraspinatus_muscle": {
+          "path": "muscular/Infraspinatus_muscle"
+        },
+        "Inguinal_ligament": {
+          "path": "muscular/Inguinal_ligament"
+        },
+        "Innermost_intercostal_muscles": {
+          "path": "muscular/Innermost_intercostal_muscles"
+        },
+        "Intermediate_tendon_of_digastric_muscle": {
+          "path": "muscular/Intermediate_tendon_of_digastric_muscle"
+        },
+        "Intermuscular_gluteal_bursae": {
+          "path": "muscular/Intermuscular_gluteal_bursae"
+        },
+        "Internal_abdominal_oblique_muscle": {
+          "path": "muscular/Internal_abdominal_oblique_muscle"
+        },
+        "Internal_intercostal_muscles": {
+          "path": "muscular/Internal_intercostal_muscles"
+        },
+        "Interspinales_colli_muscles": {
+          "path": "muscular/Interspinales_colli_muscles"
+        },
+        "Interspinales_lumborum_muscles": {
+          "path": "muscular/Interspinales_lumborum_muscles"
+        },
+        "Interspinales_thoracis_muscles": {
+          "path": "muscular/Interspinales_thoracis_muscles"
+        },
+        "Intertubercular_tendon_sheath": {
+          "path": "muscular/Intertubercular_tendon_sheath"
+        },
+        "Investing_abdominal_fascia": {
+          "path": "muscular/Investing_abdominal_fascia"
+        },
+        "Lateral_crico-arytenoid_muscle": {
+          "path": "muscular/Lateral_crico-arytenoid_muscle"
+        },
+        "Lateral_femoral_intermuscular_septum": {
+          "path": "muscular/Lateral_femoral_intermuscular_septum"
+        },
+        "Lateral_head_of_flexor_hallucis_brevis": {
+          "path": "muscular/Lateral_head_of_flexor_hallucis_brevis"
+        },
+        "Lateral_head_of_gastrocnemius": {
+          "path": "muscular/Lateral_head_of_gastrocnemius"
+        },
+        "Lateral_head_of_triceps_brachii": {
+          "path": "muscular/Lateral_head_of_triceps_brachii"
+        },
+        "Lateral_intermuscular_septum_of_arm": {
+          "path": "muscular/Lateral_intermuscular_septum_of_arm"
+        },
+        "Lateral_patellar_retinaculum": {
+          "path": "muscular/Lateral_patellar_retinaculum"
+        },
+        "Lateral_rectus_muscle": {
+          "path": "muscular/Lateral_rectus_muscle"
+        },
+        "Lateral_subtendinous_bursa_of_gastrocnemius_muscle": {
+          "path": "muscular/Lateral_subtendinous_bursa_of_gastrocnemius_muscle"
+        },
+        "Latissimus_dorsi_muscle": {
+          "path": "muscular/Latissimus_dorsi_muscle"
+        },
+        "Levator_anguli_oris": {
+          "path": "muscular/Levator_anguli_oris"
+        },
+        "Levator_labii_superioris": {
+          "path": "muscular/Levator_labii_superioris"
+        },
+        "Levator_nasolabialis": {
+          "path": "muscular/Levator_nasolabialis"
+        },
+        "Levator_palpebrae_superioris": {
+          "path": "muscular/Levator_palpebrae_superioris"
+        },
+        "Levator_scapulae": {
+          "path": "muscular/Levator_scapulae"
+        },
+        "Levatores_breves_costarum": {
+          "path": "muscular/Levatores_breves_costarum"
+        },
+        "Levatores_longi_costarum": {
+          "path": "muscular/Levatores_longi_costarum"
+        },
+        "Linea_alba": {
+          "path": "muscular/Linea_alba"
+        },
+        "Long_head_of_biceps_brachii": {
+          "path": "muscular/Long_head_of_biceps_brachii"
+        },
+        "Long_head_of_biceps_femoris": {
+          "path": "muscular/Long_head_of_biceps_femoris"
+        },
+        "Long_head_of_triceps_brachii": {
+          "path": "muscular/Long_head_of_triceps_brachii"
+        },
+        "Longissimus_capitis_muscle": {
+          "path": "muscular/Longissimus_capitis_muscle"
+        },
+        "Longissimus_colli_muscle": {
+          "path": "muscular/Longissimus_colli_muscle"
+        },
+        "Longissimus_thoracis_muscle": {
+          "path": "muscular/Longissimus_thoracis_muscle"
+        },
+        "Longus_capitis_muscle": {
+          "path": "muscular/Longus_capitis_muscle"
+        },
+        "Longus_colli_muscle": {
+          "path": "muscular/Longus_colli_muscle"
+        },
+        "Lumbrical_muscles_of_foot": {
+          "path": "muscular/Lumbrical_muscles_of_foot"
+        },
+        "Lumbrical_muscles_of_hand": {
+          "path": "muscular/Lumbrical_muscles_of_hand"
+        }
+      }
+    },
+    "muscular_insertions": {
+      "meshes": {
+        "(Abdominal_part_of_pectoralis_major_muscle).o": {
+          "path": "muscular_insertions/(Abdominal_part_of_pectoralis_major_muscle).o"
+        },
+        "(Opponens_digiti_minimi_muscle_of_foot).o": {
+          "path": "muscular_insertions/(Opponens_digiti_minimi_muscle_of_foot).o"
+        },
+        "Abductor_digiti_minimi_of_foot.e": {
+          "path": "muscular_insertions/Abductor_digiti_minimi_of_foot.e"
+        },
+        "Abductor_digiti_minimi_of_hand.e": {
+          "path": "muscular_insertions/Abductor_digiti_minimi_of_hand.e"
+        },
+        "Abductor_digiti_minimi_of_hand.o": {
+          "path": "muscular_insertions/Abductor_digiti_minimi_of_hand.o"
+        },
+        "Abductor_hallucis.e": {
+          "path": "muscular_insertions/Abductor_hallucis.e"
+        },
+        "Abductor_hallucis.o": {
+          "path": "muscular_insertions/Abductor_hallucis.o"
+        },
+        "Abductor_pollicis_longus.e": {
+          "path": "muscular_insertions/Abductor_pollicis_longus.e"
+        },
+        "Abductor_pollicis_longus.o": {
+          "path": "muscular_insertions/Abductor_pollicis_longus.o"
+        },
+        "Acromial_part_of_deltoid_muscle.o": {
+          "path": "muscular_insertions/Acromial_part_of_deltoid_muscle.o"
+        },
+        "Adductor_longus.e": {
+          "path": "muscular_insertions/Adductor_longus.e"
+        },
+        "Adductor_longus.o": {
+          "path": "muscular_insertions/Adductor_longus.o"
+        },
+        "Adductor_magnus.e": {
+          "path": "muscular_insertions/Adductor_magnus.e"
+        },
+        "Adductor_magnus.o": {
+          "path": "muscular_insertions/Adductor_magnus.o"
+        },
+        "Adductor_pollicis.e": {
+          "path": "muscular_insertions/Adductor_pollicis.e"
+        },
+        "Adductor_pollicis.e1": {
+          "path": "muscular_insertions/Adductor_pollicis.e1"
+        },
+        "Anconeus_muscle.e": {
+          "path": "muscular_insertions/Anconeus_muscle.e"
+        },
+        "Anconeus_muscle.o": {
+          "path": "muscular_insertions/Anconeus_muscle.o"
+        },
+        "Anterior_belly_of_digastric_muscle.e": {
+          "path": "muscular_insertions/Anterior_belly_of_digastric_muscle.e"
+        },
+        "Articularis_genus_muscle.o": {
+          "path": "muscular_insertions/Articularis_genus_muscle.o"
+        },
+        "Ascending_part_of_trapezius_muscle.e": {
+          "path": "muscular_insertions/Ascending_part_of_trapezius_muscle.e"
+        },
+        "Ascending_part_of_trapezius_muscle.o": {
+          "path": "muscular_insertions/Ascending_part_of_trapezius_muscle.o"
+        },
+        "Ascending_part_of_trapezius_muscle.o1": {
+          "path": "muscular_insertions/Ascending_part_of_trapezius_muscle.o1"
+        },
+        "Biceps_brachii_muscle.e": {
+          "path": "muscular_insertions/Biceps_brachii_muscle.e"
+        },
+        "Biceps_femoris_muscle.e": {
+          "path": "muscular_insertions/Biceps_femoris_muscle.e"
+        },
+        "Brachialis_muscle.e": {
+          "path": "muscular_insertions/Brachialis_muscle.e"
+        },
+        "Brachialis_muscle.o": {
+          "path": "muscular_insertions/Brachialis_muscle.o"
+        },
+        "Brachioradialis_muscle.e": {
+          "path": "muscular_insertions/Brachioradialis_muscle.e"
+        },
+        "Brachioradialis_muscle.o": {
+          "path": "muscular_insertions/Brachioradialis_muscle.o"
+        },
+        "Bucinator.o": {
+          "path": "muscular_insertions/Bucinator.o"
+        },
+        "Bucinator.o1": {
+          "path": "muscular_insertions/Bucinator.o1"
+        },
+        "Clavicular_part_of_deltoid_muscle.o": {
+          "path": "muscular_insertions/Clavicular_part_of_deltoid_muscle.o"
+        },
+        "Common_extensor_tendon.o": {
+          "path": "muscular_insertions/Common_extensor_tendon.o"
+        },
+        "Common_flexor_tendon.o": {
+          "path": "muscular_insertions/Common_flexor_tendon.o"
+        },
+        "Coracobrachialis_muscle.o": {
+          "path": "muscular_insertions/Coracobrachialis_muscle.o"
+        },
+        "Deep_head_of_flexor_pollicis_brevis.o": {
+          "path": "muscular_insertions/Deep_head_of_flexor_pollicis_brevis.o"
+        },
+        "Deep_head_of_flexor_pollicis_brevis.o1": {
+          "path": "muscular_insertions/Deep_head_of_flexor_pollicis_brevis.o1"
+        },
+        "Deltoid_muscle.e": {
+          "path": "muscular_insertions/Deltoid_muscle.e"
+        },
+        "Depressor_anguli_oris.o": {
+          "path": "muscular_insertions/Depressor_anguli_oris.o"
+        },
+        "Depressor_labii_inferioris.o": {
+          "path": "muscular_insertions/Depressor_labii_inferioris.o"
+        },
+        "Depressor_septi_nasi.o": {
+          "path": "muscular_insertions/Depressor_septi_nasi.o"
+        },
+        "Diaphragm.o": {
+          "path": "muscular_insertions/Diaphragm.o"
+        },
+        "Diaphragm.o1": {
+          "path": "muscular_insertions/Diaphragm.o1"
+        },
+        "Diaphragm.o2": {
+          "path": "muscular_insertions/Diaphragm.o2"
+        },
+        "Diaphragm.o3": {
+          "path": "muscular_insertions/Diaphragm.o3"
+        },
+        "Diaphragm.o4": {
+          "path": "muscular_insertions/Diaphragm.o4"
+        },
+        "Diaphragm.o5": {
+          "path": "muscular_insertions/Diaphragm.o5"
+        },
+        "Dorsal_interossei_muscles_of_hand.o": {
+          "path": "muscular_insertions/Dorsal_interossei_muscles_of_hand.o"
+        },
+        "Dorsal_interossei_muscles_of_hand.o1": {
+          "path": "muscular_insertions/Dorsal_interossei_muscles_of_hand.o1"
+        },
+        "Dorsal_interossei_muscles_of_hand.o2": {
+          "path": "muscular_insertions/Dorsal_interossei_muscles_of_hand.o2"
+        },
+        "Dorsal_interossei_muscles_of_hand.o3": {
+          "path": "muscular_insertions/Dorsal_interossei_muscles_of_hand.o3"
+        },
+        "Dorsal_interossei_muscles_of_hand.o4": {
+          "path": "muscular_insertions/Dorsal_interossei_muscles_of_hand.o4"
+        },
+        "Erector_spinae.o": {
+          "path": "muscular_insertions/Erector_spinae.o"
+        },
+        "Extensor_carpi_radialis_brevis.e": {
+          "path": "muscular_insertions/Extensor_carpi_radialis_brevis.e"
+        },
+        "Extensor_carpi_radialis_longus.e": {
+          "path": "muscular_insertions/Extensor_carpi_radialis_longus.e"
+        },
+        "Extensor_carpi_radialis_longus.o": {
+          "path": "muscular_insertions/Extensor_carpi_radialis_longus.o"
+        },
+        "Extensor_carpi_ulnaris.e": {
+          "path": "muscular_insertions/Extensor_carpi_ulnaris.e"
+        },
+        "Extensor_carpi_ulnaris.o": {
+          "path": "muscular_insertions/Extensor_carpi_ulnaris.o"
+        },
+        "Extensor_digitorum.e": {
+          "path": "muscular_insertions/Extensor_digitorum.e"
+        },
+        "Extensor_digitorum.e1": {
+          "path": "muscular_insertions/Extensor_digitorum.e1"
+        },
+        "Extensor_digitorum.e2": {
+          "path": "muscular_insertions/Extensor_digitorum.e2"
+        },
+        "Extensor_digitorum.e3": {
+          "path": "muscular_insertions/Extensor_digitorum.e3"
+        },
+        "Extensor_digitorum.e4": {
+          "path": "muscular_insertions/Extensor_digitorum.e4"
+        },
+        "Extensor_digitorum.e5": {
+          "path": "muscular_insertions/Extensor_digitorum.e5"
+        },
+        "Extensor_digitorum.e6": {
+          "path": "muscular_insertions/Extensor_digitorum.e6"
+        },
+        "Extensor_digitorum.e7": {
+          "path": "muscular_insertions/Extensor_digitorum.e7"
+        },
+        "Extensor_digitorum_brevis.e": {
+          "path": "muscular_insertions/Extensor_digitorum_brevis.e"
+        },
+        "Extensor_digitorum_brevis.e1": {
+          "path": "muscular_insertions/Extensor_digitorum_brevis.e1"
+        },
+        "Extensor_digitorum_brevis.e2": {
+          "path": "muscular_insertions/Extensor_digitorum_brevis.e2"
+        },
+        "Extensor_digitorum_longus.e": {
+          "path": "muscular_insertions/Extensor_digitorum_longus.e"
+        },
+        "Extensor_digitorum_longus.e1": {
+          "path": "muscular_insertions/Extensor_digitorum_longus.e1"
+        },
+        "Extensor_digitorum_longus.e2": {
+          "path": "muscular_insertions/Extensor_digitorum_longus.e2"
+        },
+        "Extensor_digitorum_longus.e3": {
+          "path": "muscular_insertions/Extensor_digitorum_longus.e3"
+        },
+        "Extensor_digitorum_longus.e4": {
+          "path": "muscular_insertions/Extensor_digitorum_longus.e4"
+        },
+        "Extensor_digitorum_longus.o": {
+          "path": "muscular_insertions/Extensor_digitorum_longus.o"
+        },
+        "Extensor_digitorum_longus.o1": {
+          "path": "muscular_insertions/Extensor_digitorum_longus.o1"
+        },
+        "Extensor_hallucis_brevis.o": {
+          "path": "muscular_insertions/Extensor_hallucis_brevis.o"
+        },
+        "Extensor_hallucis_longus.e": {
+          "path": "muscular_insertions/Extensor_hallucis_longus.e"
+        },
+        "Extensor_hallucis_longus.o": {
+          "path": "muscular_insertions/Extensor_hallucis_longus.o"
+        },
+        "Extensor_indicis.e": {
+          "path": "muscular_insertions/Extensor_indicis.e"
+        },
+        "Extensor_indicis.o": {
+          "path": "muscular_insertions/Extensor_indicis.o"
+        },
+        "Extensor_pollicis_brevis.e": {
+          "path": "muscular_insertions/Extensor_pollicis_brevis.e"
+        },
+        "Extensor_pollicis_brevis.o": {
+          "path": "muscular_insertions/Extensor_pollicis_brevis.o"
+        },
+        "Extensor_pollicis_longus.e": {
+          "path": "muscular_insertions/Extensor_pollicis_longus.e"
+        },
+        "Extensor_pollicis_longus.o": {
+          "path": "muscular_insertions/Extensor_pollicis_longus.o"
+        },
+        "External_abdominal_oblique_muscle.o": {
+          "path": "muscular_insertions/External_abdominal_oblique_muscle.o"
+        },
+        "External_abdominal_oblique_muscle.o1": {
+          "path": "muscular_insertions/External_abdominal_oblique_muscle.o1"
+        },
+        "External_abdominal_oblique_muscle.o2": {
+          "path": "muscular_insertions/External_abdominal_oblique_muscle.o2"
+        },
+        "External_abdominal_oblique_muscle.o3": {
+          "path": "muscular_insertions/External_abdominal_oblique_muscle.o3"
+        },
+        "External_abdominal_oblique_muscle.o4": {
+          "path": "muscular_insertions/External_abdominal_oblique_muscle.o4"
+        },
+        "External_abdominal_oblique_muscle.o5": {
+          "path": "muscular_insertions/External_abdominal_oblique_muscle.o5"
+        },
+        "Fibularis_brevis_muscle.e": {
+          "path": "muscular_insertions/Fibularis_brevis_muscle.e"
+        },
+        "Fibularis_brevis_muscle.o": {
+          "path": "muscular_insertions/Fibularis_brevis_muscle.o"
+        },
+        "Fibularis_longus_muscle.o": {
+          "path": "muscular_insertions/Fibularis_longus_muscle.o"
+        },
+        "Fibularis_tertius_muscle.e": {
+          "path": "muscular_insertions/Fibularis_tertius_muscle.e"
+        },
+        "Fibularis_tertius_muscle.o": {
+          "path": "muscular_insertions/Fibularis_tertius_muscle.o"
+        },
+        "Flexor_carpi_ulnaris.e": {
+          "path": "muscular_insertions/Flexor_carpi_ulnaris.e"
+        },
+        "Flexor_digiti_minimi_of_foot.e": {
+          "path": "muscular_insertions/Flexor_digiti_minimi_of_foot.e"
+        },
+        "Flexor_digiti_minimi_of_hand.e": {
+          "path": "muscular_insertions/Flexor_digiti_minimi_of_hand.e"
+        },
+        "Flexor_digiti_minimi_of_hand.o": {
+          "path": "muscular_insertions/Flexor_digiti_minimi_of_hand.o"
+        },
+        "Flexor_digitorum_brevis.e": {
+          "path": "muscular_insertions/Flexor_digitorum_brevis.e"
+        },
+        "Flexor_digitorum_brevis.e1": {
+          "path": "muscular_insertions/Flexor_digitorum_brevis.e1"
+        },
+        "Flexor_digitorum_brevis.e2": {
+          "path": "muscular_insertions/Flexor_digitorum_brevis.e2"
+        },
+        "Flexor_digitorum_brevis.o": {
+          "path": "muscular_insertions/Flexor_digitorum_brevis.o"
+        },
+        "Flexor_digitorum_longus.e": {
+          "path": "muscular_insertions/Flexor_digitorum_longus.e"
+        },
+        "Flexor_digitorum_longus.e1": {
+          "path": "muscular_insertions/Flexor_digitorum_longus.e1"
+        },
+        "Flexor_digitorum_longus.e2": {
+          "path": "muscular_insertions/Flexor_digitorum_longus.e2"
+        },
+        "Flexor_digitorum_longus.e3": {
+          "path": "muscular_insertions/Flexor_digitorum_longus.e3"
+        },
+        "Flexor_digitorum_longus.o": {
+          "path": "muscular_insertions/Flexor_digitorum_longus.o"
+        },
+        "Flexor_digitorum_profundus.e": {
+          "path": "muscular_insertions/Flexor_digitorum_profundus.e"
+        },
+        "Flexor_digitorum_profundus.e1": {
+          "path": "muscular_insertions/Flexor_digitorum_profundus.e1"
+        },
+        "Flexor_digitorum_profundus.e2": {
+          "path": "muscular_insertions/Flexor_digitorum_profundus.e2"
+        },
+        "Flexor_digitorum_profundus.e3": {
+          "path": "muscular_insertions/Flexor_digitorum_profundus.e3"
+        },
+        "Flexor_digitorum_superficialis.e": {
+          "path": "muscular_insertions/Flexor_digitorum_superficialis.e"
+        },
+        "Flexor_digitorum_superficialis.e1": {
+          "path": "muscular_insertions/Flexor_digitorum_superficialis.e1"
+        },
+        "Flexor_digitorum_superficialis.e2": {
+          "path": "muscular_insertions/Flexor_digitorum_superficialis.e2"
+        },
+        "Flexor_digitorum_superficialis.e3": {
+          "path": "muscular_insertions/Flexor_digitorum_superficialis.e3"
+        },
+        "Flexor_digitorum_superficialis.o": {
+          "path": "muscular_insertions/Flexor_digitorum_superficialis.o"
+        },
+        "Flexor_hallucis_longus.e": {
+          "path": "muscular_insertions/Flexor_hallucis_longus.e"
+        },
+        "Flexor_hallucis_longus.o": {
+          "path": "muscular_insertions/Flexor_hallucis_longus.o"
+        },
+        "Flexor_pollicis_longus.e": {
+          "path": "muscular_insertions/Flexor_pollicis_longus.e"
+        },
+        "Flexor_pollicis_longus.o": {
+          "path": "muscular_insertions/Flexor_pollicis_longus.o"
+        },
+        "Flexor_pollicis_longus.o1": {
+          "path": "muscular_insertions/Flexor_pollicis_longus.o1"
+        },
+        "Frontalis_muscle.o": {
+          "path": "muscular_insertions/Frontalis_muscle.o"
+        },
+        "Geniohyoid_muscle.e": {
+          "path": "muscular_insertions/Geniohyoid_muscle.e"
+        },
+        "Geniohyoid_muscle.o": {
+          "path": "muscular_insertions/Geniohyoid_muscle.o"
+        },
+        "Gluteus_maximus_muscle.e": {
+          "path": "muscular_insertions/Gluteus_maximus_muscle.e"
+        },
+        "Gluteus_maximus_muscle.o": {
+          "path": "muscular_insertions/Gluteus_maximus_muscle.o"
+        },
+        "Gluteus_medius_muscle.e": {
+          "path": "muscular_insertions/Gluteus_medius_muscle.e"
+        },
+        "Gluteus_medius_muscle.o": {
+          "path": "muscular_insertions/Gluteus_medius_muscle.o"
+        },
+        "Gluteus_minimus_muscle.o": {
+          "path": "muscular_insertions/Gluteus_minimus_muscle.o"
+        },
+        "Gracilis_muscle.e": {
+          "path": "muscular_insertions/Gracilis_muscle.e"
+        },
+        "Gracilis_muscle.o": {
+          "path": "muscular_insertions/Gracilis_muscle.o"
+        },
+        "Iliacus_muscle.o": {
+          "path": "muscular_insertions/Iliacus_muscle.o"
+        },
+        "Iliocostalis_colli_muscle.e": {
+          "path": "muscular_insertions/Iliocostalis_colli_muscle.e"
+        },
+        "Iliopsoas_muscle.e": {
+          "path": "muscular_insertions/Iliopsoas_muscle.e"
+        },
+        "Inferior_gemellus_muscle.o": {
+          "path": "muscular_insertions/Inferior_gemellus_muscle.o"
+        },
+        "Infraspinatus_muscle.e": {
+          "path": "muscular_insertions/Infraspinatus_muscle.e"
+        },
+        "Infraspinatus_muscle.o": {
+          "path": "muscular_insertions/Infraspinatus_muscle.o"
+        },
+        "Internal_abdominal_oblique_muscle.o": {
+          "path": "muscular_insertions/Internal_abdominal_oblique_muscle.o"
+        },
+        "Internal_abdominal_oblique_muscle.o1": {
+          "path": "muscular_insertions/Internal_abdominal_oblique_muscle.o1"
+        },
+        "Internal_abdominal_oblique_muscle.o2": {
+          "path": "muscular_insertions/Internal_abdominal_oblique_muscle.o2"
+        },
+        "Internal_abdominal_oblique_muscle.o3": {
+          "path": "muscular_insertions/Internal_abdominal_oblique_muscle.o3"
+        },
+        "Internal_abdominal_oblique_muscle.o4": {
+          "path": "muscular_insertions/Internal_abdominal_oblique_muscle.o4"
+        },
+        "Lateral_head_of_flexor_hallucis_brevis.e": {
+          "path": "muscular_insertions/Lateral_head_of_flexor_hallucis_brevis.e"
+        },
+        "Lateral_head_of_flexor_hallucis_brevis.o": {
+          "path": "muscular_insertions/Lateral_head_of_flexor_hallucis_brevis.o"
+        },
+        "Lateral_head_of_flexor_hallucis_brevis.o1": {
+          "path": "muscular_insertions/Lateral_head_of_flexor_hallucis_brevis.o1"
+        },
+        "Lateral_head_of_gastrocnemius.o": {
+          "path": "muscular_insertions/Lateral_head_of_gastrocnemius.o"
+        },
+        "Lateral_head_of_triceps_brachii.o": {
+          "path": "muscular_insertions/Lateral_head_of_triceps_brachii.o"
+        },
+        "Lateral_pterygoid_muscle.o": {
+          "path": "muscular_insertions/Lateral_pterygoid_muscle.o"
+        },
+        "Lateral_pterygoid_muscle.o1": {
+          "path": "muscular_insertions/Lateral_pterygoid_muscle.o1"
+        },
+        "Latissimus_dorsi_muscle.e": {
+          "path": "muscular_insertions/Latissimus_dorsi_muscle.e"
+        },
+        "Latissimus_dorsi_muscle.o": {
+          "path": "muscular_insertions/Latissimus_dorsi_muscle.o"
+        },
+        "Levator_anguli_oris.o": {
+          "path": "muscular_insertions/Levator_anguli_oris.o"
+        },
+        "Levator_ani.o": {
+          "path": "muscular_insertions/Levator_ani.o"
+        },
+        "Levator_labii_superioris.o": {
+          "path": "muscular_insertions/Levator_labii_superioris.o"
+        },
+        "Levator_nasolabialis.o": {
+          "path": "muscular_insertions/Levator_nasolabialis.o"
+        },
+        "Levator_scapulae.e": {
+          "path": "muscular_insertions/Levator_scapulae.e"
+        },
+        "Levator_scapulae.o": {
+          "path": "muscular_insertions/Levator_scapulae.o"
+        },
+        "Levator_scapulae.o1": {
+          "path": "muscular_insertions/Levator_scapulae.o1"
+        },
+        "Levator_scapulae.o2": {
+          "path": "muscular_insertions/Levator_scapulae.o2"
+        },
+        "Levator_scapulae.o3": {
+          "path": "muscular_insertions/Levator_scapulae.o3"
+        },
+        "Levatores_longi_costarum.e": {
+          "path": "muscular_insertions/Levatores_longi_costarum.e"
+        },
+        "Levatores_longi_costarum.e1": {
+          "path": "muscular_insertions/Levatores_longi_costarum.e1"
+        },
+        "Levatores_longi_costarum.e10": {
+          "path": "muscular_insertions/Levatores_longi_costarum.e10"
+        },
+        "Levatores_longi_costarum.e2": {
+          "path": "muscular_insertions/Levatores_longi_costarum.e2"
+        },
+        "Levatores_longi_costarum.e3": {
+          "path": "muscular_insertions/Levatores_longi_costarum.e3"
+        },
+        "Levatores_longi_costarum.e4": {
+          "path": "muscular_insertions/Levatores_longi_costarum.e4"
+        },
+        "Levatores_longi_costarum.e5": {
+          "path": "muscular_insertions/Levatores_longi_costarum.e5"
+        },
+        "Levatores_longi_costarum.e6": {
+          "path": "muscular_insertions/Levatores_longi_costarum.e6"
+        },
+        "Levatores_longi_costarum.e7": {
+          "path": "muscular_insertions/Levatores_longi_costarum.e7"
+        },
+        "Levatores_longi_costarum.e8": {
+          "path": "muscular_insertions/Levatores_longi_costarum.e8"
+        },
+        "Levatores_longi_costarum.e9": {
+          "path": "muscular_insertions/Levatores_longi_costarum.e9"
+        },
+        "Long_head_of_biceps_brachii.o": {
+          "path": "muscular_insertions/Long_head_of_biceps_brachii.o"
+        },
+        "Long_head_of_biceps_femoris.o": {
+          "path": "muscular_insertions/Long_head_of_biceps_femoris.o"
+        },
+        "Long_head_of_triceps_brachii.o": {
+          "path": "muscular_insertions/Long_head_of_triceps_brachii.o"
+        },
+        "Long_plantar_ligament.o": {
+          "path": "muscular_insertions/Long_plantar_ligament.o"
+        },
+        "Long_plantar_ligament.o1": {
+          "path": "muscular_insertions/Long_plantar_ligament.o1"
+        },
+        "Long_plantar_ligament.o2": {
+          "path": "muscular_insertions/Long_plantar_ligament.o2"
+        },
+        "Long_plantar_ligament.o3": {
+          "path": "muscular_insertions/Long_plantar_ligament.o3"
+        },
+        "Long_plantar_ligament.o4": {
+          "path": "muscular_insertions/Long_plantar_ligament.o4"
+        },
+        "Longissimus_thoracis_muscle.e": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e"
+        },
+        "Longissimus_thoracis_muscle.e1": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e1"
+        },
+        "Longissimus_thoracis_muscle.e10": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e10"
+        },
+        "Longissimus_thoracis_muscle.e11": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e11"
+        },
+        "Longissimus_thoracis_muscle.e12": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e12"
+        },
+        "Longissimus_thoracis_muscle.e13": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e13"
+        },
+        "Longissimus_thoracis_muscle.e14": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e14"
+        },
+        "Longissimus_thoracis_muscle.e15": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e15"
+        },
+        "Longissimus_thoracis_muscle.e16": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e16"
+        },
+        "Longissimus_thoracis_muscle.e17": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e17"
+        },
+        "Longissimus_thoracis_muscle.e18": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e18"
+        },
+        "Longissimus_thoracis_muscle.e19": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e19"
+        },
+        "Longissimus_thoracis_muscle.e2": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e2"
+        },
+        "Longissimus_thoracis_muscle.e20": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e20"
+        },
+        "Longissimus_thoracis_muscle.e21": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e21"
+        },
+        "Longissimus_thoracis_muscle.e22": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e22"
+        },
+        "Longissimus_thoracis_muscle.e23": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e23"
+        },
+        "Longissimus_thoracis_muscle.e24": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e24"
+        },
+        "Longissimus_thoracis_muscle.e25": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e25"
+        },
+        "Longissimus_thoracis_muscle.e26": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e26"
+        },
+        "Longissimus_thoracis_muscle.e3": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e3"
+        },
+        "Longissimus_thoracis_muscle.e4": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e4"
+        },
+        "Longissimus_thoracis_muscle.e5": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e5"
+        },
+        "Longissimus_thoracis_muscle.e6": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e6"
+        },
+        "Longissimus_thoracis_muscle.e7": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e7"
+        },
+        "Longissimus_thoracis_muscle.e8": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e8"
+        },
+        "Longissimus_thoracis_muscle.e9": {
+          "path": "muscular_insertions/Longissimus_thoracis_muscle.e9"
+        },
+        "Longus_capitis_muscle.o": {
+          "path": "muscular_insertions/Longus_capitis_muscle.o"
+        }
+      }
+    },
+    "nervous": {
+      "meshes": {
+        "Accessory_nucleus_of_oculomotor_nerve": {
+          "path": "nervous/Accessory_nucleus_of_oculomotor_nerve"
+        },
+        "Ampulla_of_lacrimal_canaliculus": {
+          "path": "nervous/Ampulla_of_lacrimal_canaliculus"
+        },
+        "Amygdaloid_body": {
+          "path": "nervous/Amygdaloid_body"
+        },
+        "Angular_gyrus": {
+          "path": "nervous/Angular_gyrus"
+        },
+        "Anterior_chamber_of_eyeball": {
+          "path": "nervous/Anterior_chamber_of_eyeball"
+        },
+        "Anterior_cochlear_nucleus": {
+          "path": "nervous/Anterior_cochlear_nucleus"
+        },
+        "Anterior_commissure": {
+          "path": "nervous/Anterior_commissure"
+        },
+        "Anterior_corticospinal_tract": {
+          "path": "nervous/Anterior_corticospinal_tract"
+        },
+        "Anterior_fasciculus_proprius": {
+          "path": "nervous/Anterior_fasciculus_proprius"
+        },
+        "Anterior_horn_of_spinal_cord": {
+          "path": "nervous/Anterior_horn_of_spinal_cord"
+        },
+        "Anterior_occipital_sulcus": {
+          "path": "nervous/Anterior_occipital_sulcus"
+        },
+        "Anterior_quadrangular_lobule": {
+          "path": "nervous/Anterior_quadrangular_lobule"
+        },
+        "Anterior_segment_of_eyeball": {
+          "path": "nervous/Anterior_segment_of_eyeball"
+        },
+        "Anterior_spinocerebellar_tract": {
+          "path": "nervous/Anterior_spinocerebellar_tract"
+        },
+        "Anterior_spinothalamic_tract": {
+          "path": "nervous/Anterior_spinothalamic_tract"
+        },
+        "Aqueduct_of_midbrain": {
+          "path": "nervous/Aqueduct_of_midbrain"
+        },
+        "Auditory_tube": {
+          "path": "nervous/Auditory_tube"
+        },
+        "Biventral_lobule": {
+          "path": "nervous/Biventral_lobule"
+        },
+        "Calcarine_sulcus": {
+          "path": "nervous/Calcarine_sulcus"
+        },
+        "Caudate_nucleus": {
+          "path": "nervous/Caudate_nucleus"
+        },
+        "Central_canal": {
+          "path": "nervous/Central_canal"
+        },
+        "Central_lobule": {
+          "path": "nervous/Central_lobule"
+        },
+        "Central_sulcus": {
+          "path": "nervous/Central_sulcus"
+        },
+        "Choroid_plexus": {
+          "path": "nervous/Choroid_plexus"
+        },
+        "Cingulate_gyrus_(Posteroventral_part_)": {
+          "path": "nervous/Cingulate_gyrus_(Posteroventral_part_)"
+        },
+        "Cingulate_gyrus_and_sulcus_(Middle_anterior_part)": {
+          "path": "nervous/Cingulate_gyrus_and_sulcus_(Middle_anterior_part)"
+        },
+        "Cingulate_gyrus_and_sulcus_(Middle_posterior_part)": {
+          "path": "nervous/Cingulate_gyrus_and_sulcus_(Middle_posterior_part)"
+        },
+        "Cingulate_gyrus_and_sulcus_(Posterior_dorsal_part)": {
+          "path": "nervous/Cingulate_gyrus_and_sulcus_(Posterior_dorsal_part)"
+        },
+        "Cingulate_sulcus_(Marginal_part_)": {
+          "path": "nervous/Cingulate_sulcus_(Marginal_part_)"
+        },
+        "Circular_sulcus_of_insula": {
+          "path": "nervous/Circular_sulcus_of_insula"
+        },
+        "Cochlea": {
+          "path": "nervous/Cochlea"
+        },
+        "Cochlear_nerve": {
+          "path": "nervous/Cochlear_nerve"
+        },
+        "Collateral_sulcus": {
+          "path": "nervous/Collateral_sulcus"
+        },
+        "Cornea": {
+          "path": "nervous/Cornea"
+        },
+        "Corpus_callosum": {
+          "path": "nervous/Corpus_callosum"
+        },
+        "Culmen": {
+          "path": "nervous/Culmen"
+        },
+        "Cuneate_fasciculus": {
+          "path": "nervous/Cuneate_fasciculus"
+        },
+        "Cuneus": {
+          "path": "nervous/Cuneus"
+        },
+        "Declive": {
+          "path": "nervous/Declive"
+        },
+        "Equator_of_eyeball": {
+          "path": "nervous/Equator_of_eyeball"
+        },
+        "External_axis_of_eyeball": {
+          "path": "nervous/External_axis_of_eyeball"
+        },
+        "Falx_cerebri": {
+          "path": "nervous/Falx_cerebri"
+        },
+        "Flocculus": {
+          "path": "nervous/Flocculus"
+        },
+        "Folium_of_vermis": {
+          "path": "nervous/Folium_of_vermis"
+        },
+        "Fornix": {
+          "path": "nervous/Fornix"
+        },
+        "Fourth_ventricle": {
+          "path": "nervous/Fourth_ventricle"
+        },
+        "Ganglia_of_sympathetic_trunk": {
+          "path": "nervous/Ganglia_of_sympathetic_trunk"
+        },
+        "Globus_pallidus": {
+          "path": "nervous/Globus_pallidus"
+        },
+        "Gracile_fasciculus": {
+          "path": "nervous/Gracile_fasciculus"
+        },
+        "Gracile_lobule": {
+          "path": "nervous/Gracile_lobule"
+        },
+        "Habenula": {
+          "path": "nervous/Habenula"
+        },
+        "Hippocampal_commissure": {
+          "path": "nervous/Hippocampal_commissure"
+        },
+        "Hippocampus": {
+          "path": "nervous/Hippocampus"
+        },
+        "Hypothalamus": {
+          "path": "nervous/Hypothalamus"
+        },
+        "Inferior_colliculus": {
+          "path": "nervous/Inferior_colliculus"
+        },
+        "Inferior_occipital_gyrus_and_sulcus": {
+          "path": "nervous/Inferior_occipital_gyrus_and_sulcus"
+        },
+        "Inferior_salivatory_nucleus": {
+          "path": "nervous/Inferior_salivatory_nucleus"
+        },
+        "Inferior_semilunar_lobule": {
+          "path": "nervous/Inferior_semilunar_lobule"
+        },
+        "Inferior_temporal_gyrus": {
+          "path": "nervous/Inferior_temporal_gyrus"
+        },
+        "Insula_(Subcentral_gyrus_and_ant._and_post._sulci_)": {
+          "path": "nervous/Insula_(Subcentral_gyrus_and_ant._and_post._sulci_)"
+        },
+        "Intermediolateral_nucleus": {
+          "path": "nervous/Intermediolateral_nucleus"
+        },
+        "Intermediomedial_nucleus": {
+          "path": "nervous/Intermediomedial_nucleus"
+        },
+        "Internal_axis_of_eyeball": {
+          "path": "nervous/Internal_axis_of_eyeball"
+        },
+        "Interpeduncular_fossa": {
+          "path": "nervous/Interpeduncular_fossa"
+        },
+        "Iris": {
+          "path": "nervous/Iris"
+        },
+        "Lacrimal_canaliculus": {
+          "path": "nervous/Lacrimal_canaliculus"
+        },
+        "Lacrimal_gland": {
+          "path": "nervous/Lacrimal_gland"
+        },
+        "Lacrimal_sac": {
+          "path": "nervous/Lacrimal_sac"
+        },
+        "Lat_Fis-ant-Horizont": {
+          "path": "nervous/Lat_Fis-ant-Horizont"
+        },
+        "Lat_Fis-ant-Vertical": {
+          "path": "nervous/Lat_Fis-ant-Vertical"
+        },
+        "Lat_Fis-post": {
+          "path": "nervous/Lat_Fis-post"
+        },
+        "Lateral_corticospinal_tract": {
+          "path": "nervous/Lateral_corticospinal_tract"
+        },
+        "Lateral_fasciculus_proprius": {
+          "path": "nervous/Lateral_fasciculus_proprius"
+        },
+        "Lateral_geniculate_body": {
+          "path": "nervous/Lateral_geniculate_body"
+        },
+        "Lateral_intermediate_substance": {
+          "path": "nervous/Lateral_intermediate_substance"
+        },
+        "Lateral_occipital_gyrus_(Middle_occipital_gyrus_)": {
+          "path": "nervous/Lateral_occipital_gyrus_(Middle_occipital_gyrus_)"
+        },
+        "Lateral_occipitotemporal_gyrus": {
+          "path": "nervous/Lateral_occipitotemporal_gyrus"
+        },
+        "Lateral_reticulospinal_tract": {
+          "path": "nervous/Lateral_reticulospinal_tract"
+        },
+        "Lateral_spinothalamic_tract": {
+          "path": "nervous/Lateral_spinothalamic_tract"
+        },
+        "Lateral_ventricle": {
+          "path": "nervous/Lateral_ventricle"
+        },
+        "Lateral_vestibulospinal_tract": {
+          "path": "nervous/Lateral_vestibulospinal_tract"
+        },
+        "Lens": {
+          "path": "nervous/Lens"
+        },
+        "Lentiform_nucleus": {
+          "path": "nervous/Lentiform_nucleus"
+        },
+        "Lingual_gyrus": {
+          "path": "nervous/Lingual_gyrus"
+        },
+        "Lingula_of_cerebellum": {
+          "path": "nervous/Lingula_of_cerebellum"
+        },
+        "Lunate_sulcus": {
+          "path": "nervous/Lunate_sulcus"
+        },
+        "Posterior_transverse_collateral_sulcus": {
+          "path": "nervous/Posterior_transverse_collateral_sulcus"
+        }
+      }
+    },
+    "other": {
+      "meshes": {
+        "Abduction": {
+          "path": "other/Abduction"
+        },
+        "Adduction": {
+          "path": "other/Adduction"
+        },
+        "Anterior_axillary_line": {
+          "path": "other/Anterior_axillary_line"
+        },
+        "Anterior_median_line": {
+          "path": "other/Anterior_median_line"
+        },
+        "Caudal": {
+          "path": "other/Caudal"
+        },
+        "Circumduction": {
+          "path": "other/Circumduction"
+        },
+        "Coronal_planes": {
+          "path": "other/Coronal_planes"
+        },
+        "Cranial": {
+          "path": "other/Cranial"
+        },
+        "Cross_Section_X": {
+          "path": "other/Cross_Section_X"
+        },
+        "Cross_Section_Y": {
+          "path": "other/Cross_Section_Y"
+        },
+        "Cross_Section_Z": {
+          "path": "other/Cross_Section_Z"
+        },
+        "Distal": {
+          "path": "other/Distal"
+        },
+        "Dorsal": {
+          "path": "other/Dorsal"
+        },
+        "Dorsiflexion": {
+          "path": "other/Dorsiflexion"
+        },
+        "Eversion": {
+          "path": "other/Eversion"
+        },
+        "Fibular": {
+          "path": "other/Fibular"
+        },
+        "Frontal": {
+          "path": "other/Frontal"
+        },
+        "Inversion": {
+          "path": "other/Inversion"
+        },
+        "Lateral_rotation": {
+          "path": "other/Lateral_rotation"
+        },
+        "Lymph_node": {
+          "path": "other/Lymph_node"
+        }
+      }
+    },
+    "regions": {
+      "meshes": {
+        "Anal_region": {
+          "path": "regions/Anal_region"
+        },
+        "Angle_of_mouth": {
+          "path": "regions/Angle_of_mouth"
+        },
+        "Anterior_notch_of_auricle": {
+          "path": "regions/Anterior_notch_of_auricle"
+        },
+        "Anterior_region_of_ankle": {
+          "path": "regions/Anterior_region_of_ankle"
+        },
+        "Anterior_region_of_arm": {
+          "path": "regions/Anterior_region_of_arm"
+        },
+        "Anterior_region_of_elbow": {
+          "path": "regions/Anterior_region_of_elbow"
+        },
+        "Anterior_region_of_forearm": {
+          "path": "regions/Anterior_region_of_forearm"
+        },
+        "Anterior_region_of_knee": {
+          "path": "regions/Anterior_region_of_knee"
+        },
+        "Anterior_region_of_leg": {
+          "path": "regions/Anterior_region_of_leg"
+        },
+        "Anterior_region_of_thigh": {
+          "path": "regions/Anterior_region_of_thigh"
+        },
+        "Anterior_region_of_wrist": {
+          "path": "regions/Anterior_region_of_wrist"
+        },
+        "Antihelix": {
+          "path": "regions/Antihelix"
+        },
+        "Antitragus": {
+          "path": "regions/Antitragus"
+        },
+        "Apex_of_auricle": {
+          "path": "regions/Apex_of_auricle"
+        },
+        "Auricular_region": {
+          "path": "regions/Auricular_region"
+        },
+        "Auricular_tubercle": {
+          "path": "regions/Auricular_tubercle"
+        },
+        "Buccal_region": {
+          "path": "regions/Buccal_region"
+        },
+        "Carotid_triangle": {
+          "path": "regions/Carotid_triangle"
+        },
+        "Cavity_of_concha": {
+          "path": "regions/Cavity_of_concha"
+        },
+        "Concha_of_auricle": {
+          "path": "regions/Concha_of_auricle"
+        },
+        "Crura_of_antihelix": {
+          "path": "regions/Crura_of_antihelix"
+        },
+        "Cubital_fossa": {
+          "path": "regions/Cubital_fossa"
+        },
+        "Cymba_conchae": {
+          "path": "regions/Cymba_conchae"
+        },
+        "Deltoid_region": {
+          "path": "regions/Deltoid_region"
+        },
+        "Deltopectoral_triangle": {
+          "path": "regions/Deltopectoral_triangle"
+        },
+        "Distal_transverse_arch_of_foot": {
+          "path": "regions/Distal_transverse_arch_of_foot"
+        },
+        "Dorsal_surfaces_of_digits_of_foot": {
+          "path": "regions/Dorsal_surfaces_of_digits_of_foot"
+        },
+        "Dorsal_surfaces_of_digits_of_hand": {
+          "path": "regions/Dorsal_surfaces_of_digits_of_hand"
+        },
+        "Dorsum_of_foot": {
+          "path": "regions/Dorsum_of_foot"
+        },
+        "Dorsum_of_hand": {
+          "path": "regions/Dorsum_of_hand"
+        },
+        "Eminentia_conchae": {
+          "path": "regions/Eminentia_conchae"
+        },
+        "Eminentia_fossae_triangularis": {
+          "path": "regions/Eminentia_fossae_triangularis"
+        },
+        "Eminentia_scaphae": {
+          "path": "regions/Eminentia_scaphae"
+        },
+        "Epigastric_region": {
+          "path": "regions/Epigastric_region"
+        },
+        "Eyebrow": {
+          "path": "regions/Eyebrow"
+        },
+        "Eyelashes": {
+          "path": "regions/Eyelashes"
+        },
+        "Femoral_triangle": {
+          "path": "regions/Femoral_triangle"
+        },
+        "Fossa_antihelica": {
+          "path": "regions/Fossa_antihelica"
+        },
+        "Frontal_region": {
+          "path": "regions/Frontal_region"
+        },
+        "Gluteal_fold": {
+          "path": "regions/Gluteal_fold"
+        },
+        "Gluteal_region": {
+          "path": "regions/Gluteal_region"
+        },
+        "Greater_supravicular_fossa": {
+          "path": "regions/Greater_supravicular_fossa"
+        },
+        "Hairs_of_eyebrow": {
+          "path": "regions/Hairs_of_eyebrow"
+        },
+        "Hairs_of_head": {
+          "path": "regions/Hairs_of_head"
+        },
+        "Hallucial_eminence": {
+          "path": "regions/Hallucial_eminence"
+        },
+        "Heel_region": {
+          "path": "regions/Heel_region"
+        },
+        "Helix": {
+          "path": "regions/Helix"
+        },
+        "Hypochondriac_region": {
+          "path": "regions/Hypochondriac_region"
+        },
+        "Hypogastric_region": {
+          "path": "regions/Hypogastric_region"
+        },
+        "Infra-orbital_region": {
+          "path": "regions/Infra-orbital_region"
+        },
+        "Infraclavicular_fossa": {
+          "path": "regions/Infraclavicular_fossa"
+        },
+        "Inframammary_region": {
+          "path": "regions/Inframammary_region"
+        },
+        "Infrascapular_region": {
+          "path": "regions/Infrascapular_region"
+        },
+        "Inguinal_region": {
+          "path": "regions/Inguinal_region"
+        },
+        "Interscapular_region": {
+          "path": "regions/Interscapular_region"
+        },
+        "Intertragic_incisure": {
+          "path": "regions/Intertragic_incisure"
+        },
+        "Labial_commissure": {
+          "path": "regions/Labial_commissure"
+        },
+        "Lateral_bicipital_groove": {
+          "path": "regions/Lateral_bicipital_groove"
+        },
+        "Lateral_border_of_foot": {
+          "path": "regions/Lateral_border_of_foot"
+        },
+        "Lateral_border_of_forearm": {
+          "path": "regions/Lateral_border_of_forearm"
+        },
+        "Lateral_region_of_abdomen": {
+          "path": "regions/Lateral_region_of_abdomen"
+        },
+        "Lateral_region_of_neck": {
+          "path": "regions/Lateral_region_of_neck"
+        },
+        "Lateral_region_of_thorax": {
+          "path": "regions/Lateral_region_of_thorax"
+        },
+        "Lateral_retromalleolar_region": {
+          "path": "regions/Lateral_retromalleolar_region"
+        },
+        "Lesser_supraclavicular_fossa": {
+          "path": "regions/Lesser_supraclavicular_fossa"
+        },
+        "Lobule_of_auricle": {
+          "path": "regions/Lobule_of_auricle"
+        },
+        "Lumbar_region": {
+          "path": "regions/Lumbar_region"
+        }
+      }
+    },
+    "skeletal": {
+      "meshes": {
+        "(Posterior_obturator_tubercle)": {
+          "path": "skeletal/(Posterior_obturator_tubercle)"
+        },
+        "(Third_trochanter)": {
+          "path": "skeletal/(Third_trochanter)"
+        },
+        "Acetabular_fossa": {
+          "path": "skeletal/Acetabular_fossa"
+        },
+        "Acetabular_margin": {
+          "path": "skeletal/Acetabular_margin"
+        },
+        "Acetabular_notch": {
+          "path": "skeletal/Acetabular_notch"
+        },
+        "Acetabulum": {
+          "path": "skeletal/Acetabulum"
+        },
+        "Acromial_angle": {
+          "path": "skeletal/Acromial_angle"
+        },
+        "Acromial_end": {
+          "path": "skeletal/Acromial_end"
+        },
+        "Acromial_facet": {
+          "path": "skeletal/Acromial_facet"
+        },
+        "Acromion": {
+          "path": "skeletal/Acromion"
+        },
+        "Adductor_tubercle": {
+          "path": "skeletal/Adductor_tubercle"
+        },
+        "Ala_of_ilium": {
+          "path": "skeletal/Ala_of_ilium"
+        },
+        "Anatomical_neck_of_humerus": {
+          "path": "skeletal/Anatomical_neck_of_humerus"
+        },
+        "Angle_of_rib": {
+          "path": "skeletal/Angle_of_rib"
+        },
+        "Anterior_border_of_fibula": {
+          "path": "skeletal/Anterior_border_of_fibula"
+        },
+        "Anterior_border_of_humerus": {
+          "path": "skeletal/Anterior_border_of_humerus"
+        },
+        "Anterior_border_of_radius": {
+          "path": "skeletal/Anterior_border_of_radius"
+        },
+        "Anterior_border_of_tibia": {
+          "path": "skeletal/Anterior_border_of_tibia"
+        },
+        "Anterior_border_of_ulna": {
+          "path": "skeletal/Anterior_border_of_ulna"
+        },
+        "Anterior_cells_of_ethmoid_bone": {
+          "path": "skeletal/Anterior_cells_of_ethmoid_bone"
+        },
+        "Anterior_gluteal_line": {
+          "path": "skeletal/Anterior_gluteal_line"
+        },
+        "Anterior_inferior_iliac_spine": {
+          "path": "skeletal/Anterior_inferior_iliac_spine"
+        },
+        "Anterior_intercondylar_area": {
+          "path": "skeletal/Anterior_intercondylar_area"
+        },
+        "Anterior_limb_of_stapes": {
+          "path": "skeletal/Anterior_limb_of_stapes"
+        },
+        "Anterior_obturator_tubercle": {
+          "path": "skeletal/Anterior_obturator_tubercle"
+        },
+        "Anterior_process_of_calcaneus": {
+          "path": "skeletal/Anterior_process_of_calcaneus"
+        },
+        "Anterior_process_of_malleus": {
+          "path": "skeletal/Anterior_process_of_malleus"
+        },
+        "Anterior_superior_iliac_spine": {
+          "path": "skeletal/Anterior_superior_iliac_spine"
+        },
+        "Anterior_surface_of_petrous_part": {
+          "path": "skeletal/Anterior_surface_of_petrous_part"
+        },
+        "Anterior_surface_of_radius": {
+          "path": "skeletal/Anterior_surface_of_radius"
+        },
+        "Anterolateral_surface_of_arytenoid_cartilage": {
+          "path": "skeletal/Anterolateral_surface_of_arytenoid_cartilage"
+        },
+        "Anterolateral_surface_of_humerus": {
+          "path": "skeletal/Anterolateral_surface_of_humerus"
+        },
+        "Anteromedial_surface_of_fibula": {
+          "path": "skeletal/Anteromedial_surface_of_fibula"
+        },
+        "Anteromedial_surface_of_humerus": {
+          "path": "skeletal/Anteromedial_surface_of_humerus"
+        },
+        "Apex_of_arytenoid_cartilage": {
+          "path": "skeletal/Apex_of_arytenoid_cartilage"
+        },
+        "Apex_of_head_of_fibula": {
+          "path": "skeletal/Apex_of_head_of_fibula"
+        },
+        "Apex_of_petrous_part": {
+          "path": "skeletal/Apex_of_petrous_part"
+        },
+        "Arcuate_crest": {
+          "path": "skeletal/Arcuate_crest"
+        },
+        "Arcuate_eminence": {
+          "path": "skeletal/Arcuate_eminence"
+        },
+        "Arcuate_line_of_ilium": {
+          "path": "skeletal/Arcuate_line_of_ilium"
+        },
+        "Articular_circumference_of_head_of_radius": {
+          "path": "skeletal/Articular_circumference_of_head_of_radius"
+        },
+        "Articular_circumference_of_head_of_ulna": {
+          "path": "skeletal/Articular_circumference_of_head_of_ulna"
+        },
+        "Articular_facet_for_malleus": {
+          "path": "skeletal/Articular_facet_for_malleus"
+        },
+        "Articular_facet_for_stapes": {
+          "path": "skeletal/Articular_facet_for_stapes"
+        },
+        "Articular_facet_of_head_of_fibula": {
+          "path": "skeletal/Articular_facet_of_head_of_fibula"
+        },
+        "Articular_facet_of_head_of_malleus": {
+          "path": "skeletal/Articular_facet_of_head_of_malleus"
+        },
+        "Articular_facet_of_head_of_radius": {
+          "path": "skeletal/Articular_facet_of_head_of_radius"
+        },
+        "Articular_facet_of_head_of_stapes": {
+          "path": "skeletal/Articular_facet_of_head_of_stapes"
+        },
+        "Articular_facet_of_lateral_malleolus": {
+          "path": "skeletal/Articular_facet_of_lateral_malleolus"
+        },
+        "Articular_facet_of_medial_malleolus": {
+          "path": "skeletal/Articular_facet_of_medial_malleolus"
+        },
+        "Articular_facet_of_tubercle_of_rib": {
+          "path": "skeletal/Articular_facet_of_tubercle_of_rib"
+        },
+        "Articular_facets_of_head_of_rib": {
+          "path": "skeletal/Articular_facets_of_head_of_rib"
+        },
+        "Articular_surface_for_cuboid": {
+          "path": "skeletal/Articular_surface_for_cuboid"
+        },
+        "Articular_surface_of_arytenoid_cartilage": {
+          "path": "skeletal/Articular_surface_of_arytenoid_cartilage"
+        },
+        "Articular_surface_of_medial_condyle": {
+          "path": "skeletal/Articular_surface_of_medial_condyle"
+        },
+        "Arytenoid_cartilage": {
+          "path": "skeletal/Arytenoid_cartilage"
+        },
+        "Atlas_(C1)": {
+          "path": "skeletal/Atlas_(C1)"
+        },
+        "Auricular_surface_of_ilium": {
+          "path": "skeletal/Auricular_surface_of_ilium"
+        },
+        "Axis_(C2)": {
+          "path": "skeletal/Axis_(C2)"
+        },
+        "Base_of_arytenoid_cartilage": {
+          "path": "skeletal/Base_of_arytenoid_cartilage"
+        },
+        "Base_of_metatarsal_bone": {
+          "path": "skeletal/Base_of_metatarsal_bone"
+        },
+        "Base_of_phalanx_of_foot": {
+          "path": "skeletal/Base_of_phalanx_of_foot"
+        },
+        "Base_of_phalanx_of_hand": {
+          "path": "skeletal/Base_of_phalanx_of_hand"
+        },
+        "Base_of_stapes": {
+          "path": "skeletal/Base_of_stapes"
+        },
+        "Body_of_clavicle": {
+          "path": "skeletal/Body_of_clavicle"
+        },
+        "Body_of_femur": {
+          "path": "skeletal/Body_of_femur"
+        },
+        "Body_of_fibula": {
+          "path": "skeletal/Body_of_fibula"
+        },
+        "Body_of_humerus": {
+          "path": "skeletal/Body_of_humerus"
+        },
+        "Body_of_ilium": {
+          "path": "skeletal/Body_of_ilium"
+        },
+        "Body_of_incus": {
+          "path": "skeletal/Body_of_incus"
+        },
+        "Body_of_ischium": {
+          "path": "skeletal/Body_of_ischium"
+        },
+        "Body_of_metacarpal_bone": {
+          "path": "skeletal/Body_of_metacarpal_bone"
+        },
+        "Body_of_metatarsal_bone": {
+          "path": "skeletal/Body_of_metatarsal_bone"
+        },
+        "Body_of_phalanx_of_foot": {
+          "path": "skeletal/Body_of_phalanx_of_foot"
+        },
+        "Body_of_phalanx_of_hand": {
+          "path": "skeletal/Body_of_phalanx_of_hand"
+        },
+        "Body_of_pubis": {
+          "path": "skeletal/Body_of_pubis"
+        },
+        "Body_of_radius": {
+          "path": "skeletal/Body_of_radius"
+        },
+        "Body_of_rib": {
+          "path": "skeletal/Body_of_rib"
+        },
+        "Body_of_sternum": {
+          "path": "skeletal/Body_of_sternum"
+        },
+        "Body_of_talus": {
+          "path": "skeletal/Body_of_talus"
+        },
+        "Body_of_tibia": {
+          "path": "skeletal/Body_of_tibia"
+        },
+        "Body_of_ulna": {
+          "path": "skeletal/Body_of_ulna"
+        },
+        "Calcaneal_sulcus": {
+          "path": "skeletal/Calcaneal_sulcus"
+        },
+        "Calcaneal_tubercle": {
+          "path": "skeletal/Calcaneal_tubercle"
+        },
+        "Calcaneal_tuberosity": {
+          "path": "skeletal/Calcaneal_tuberosity"
+        },
+        "Calcaneus": {
+          "path": "skeletal/Calcaneus"
+        },
+        "Capitate_bone": {
+          "path": "skeletal/Capitate_bone"
+        },
+        "Capitulum_of_humerus": {
+          "path": "skeletal/Capitulum_of_humerus"
+        },
+        "Carpal_articular_surface": {
+          "path": "skeletal/Carpal_articular_surface"
+        },
+        "Clavicle": {
+          "path": "skeletal/Clavicle"
+        },
+        "Clavicular_facet": {
+          "path": "skeletal/Clavicular_facet"
+        },
+        "Coccyx": {
+          "path": "skeletal/Coccyx"
+        },
+        "Colliculus_of_arytenoid_cartilage": {
+          "path": "skeletal/Colliculus_of_arytenoid_cartilage"
+        },
+        "Condyle_of_humerus": {
+          "path": "skeletal/Condyle_of_humerus"
+        },
+        "Conoid_tubercle": {
+          "path": "skeletal/Conoid_tubercle"
+        },
+        "Coracoid_process": {
+          "path": "skeletal/Coracoid_process"
+        },
+        "Corniculate_cartilage": {
+          "path": "skeletal/Corniculate_cartilage"
+        },
+        "Coronoid_fossa": {
+          "path": "skeletal/Coronoid_fossa"
+        },
+        "Coronoid_process_of_ulna": {
+          "path": "skeletal/Coronoid_process_of_ulna"
+        },
+        "Costal_cartilage_of_eighth_rib": {
+          "path": "skeletal/Costal_cartilage_of_eighth_rib"
+        },
+        "Costal_cartilage_of_fifth_rib": {
+          "path": "skeletal/Costal_cartilage_of_fifth_rib"
+        },
+        "Costal_cartilage_of_first_rib": {
+          "path": "skeletal/Costal_cartilage_of_first_rib"
+        },
+        "Costal_cartilage_of_fourth_rib": {
+          "path": "skeletal/Costal_cartilage_of_fourth_rib"
+        },
+        "Costal_cartilage_of_ninth_rib": {
+          "path": "skeletal/Costal_cartilage_of_ninth_rib"
+        },
+        "Costal_cartilage_of_second_rib": {
+          "path": "skeletal/Costal_cartilage_of_second_rib"
+        },
+        "Costal_cartilage_of_seventh_rib": {
+          "path": "skeletal/Costal_cartilage_of_seventh_rib"
+        },
+        "Costal_cartilage_of_sixth_rib": {
+          "path": "skeletal/Costal_cartilage_of_sixth_rib"
+        },
+        "Costal_cartilage_of_tenth_rib": {
+          "path": "skeletal/Costal_cartilage_of_tenth_rib"
+        },
+        "Costal_cartilage_of_third_rib": {
+          "path": "skeletal/Costal_cartilage_of_third_rib"
+        },
+        "Costal_groove": {
+          "path": "skeletal/Costal_groove"
+        },
+        "Costal_surface_of_scapula": {
+          "path": "skeletal/Costal_surface_of_scapula"
+        },
+        "Crest_of_greater_tubercle": {
+          "path": "skeletal/Crest_of_greater_tubercle"
+        },
+        "Crest_of_head_of_rib": {
+          "path": "skeletal/Crest_of_head_of_rib"
+        },
+        "Crest_of_lesser_tubercle": {
+          "path": "skeletal/Crest_of_lesser_tubercle"
+        },
+        "Crest_of_neck_of_rib": {
+          "path": "skeletal/Crest_of_neck_of_rib"
+        },
+        "Cricoid_cartilage": {
+          "path": "skeletal/Cricoid_cartilage"
+        },
+        "Crown_of_tooth": {
+          "path": "skeletal/Crown_of_tooth"
+        },
+        "Cuboid_bone": {
+          "path": "skeletal/Cuboid_bone"
+        },
+        "Cusp_of_tooth": {
+          "path": "skeletal/Cusp_of_tooth"
+        },
+        "Deltoid_tubercle": {
+          "path": "skeletal/Deltoid_tubercle"
+        },
+        "Deltoid_tuberosity": {
+          "path": "skeletal/Deltoid_tuberosity"
+        },
+        "Distal_phalanx_of_fifth_finger_of_foot": {
+          "path": "skeletal/Distal_phalanx_of_fifth_finger_of_foot"
+        },
+        "Distal_phalanx_of_fifth_finger_of_hand": {
+          "path": "skeletal/Distal_phalanx_of_fifth_finger_of_hand"
+        },
+        "Distal_phalanx_of_first_finger_of_foot": {
+          "path": "skeletal/Distal_phalanx_of_first_finger_of_foot"
+        },
+        "Distal_phalanx_of_first_finger_of_hand": {
+          "path": "skeletal/Distal_phalanx_of_first_finger_of_hand"
+        },
+        "Distal_phalanx_of_fourth_finger_of_foot": {
+          "path": "skeletal/Distal_phalanx_of_fourth_finger_of_foot"
+        },
+        "Distal_phalanx_of_fourth_finger_of_hand": {
+          "path": "skeletal/Distal_phalanx_of_fourth_finger_of_hand"
+        },
+        "Distal_phalanx_of_second_finger_of_foot": {
+          "path": "skeletal/Distal_phalanx_of_second_finger_of_foot"
+        },
+        "Distal_phalanx_of_second_finger_of_hand": {
+          "path": "skeletal/Distal_phalanx_of_second_finger_of_hand"
+        },
+        "Distal_phalanx_of_third_finger_of_foot": {
+          "path": "skeletal/Distal_phalanx_of_third_finger_of_foot"
+        },
+        "Distal_phalanx_of_third_finger_of_hand": {
+          "path": "skeletal/Distal_phalanx_of_third_finger_of_hand"
+        },
+        "Distal_surface_of_tooth": {
+          "path": "skeletal/Distal_surface_of_tooth"
+        },
+        "Dorsal_radial_tubercle": {
+          "path": "skeletal/Dorsal_radial_tubercle"
+        },
+        "Eighth_rib": {
+          "path": "skeletal/Eighth_rib"
+        },
+        "Eleventh_rib": {
+          "path": "skeletal/Eleventh_rib"
+        },
+        "Ethmoid_bone": {
+          "path": "skeletal/Ethmoid_bone"
+        },
+        "Facet_for_calcaneonavicular_part_of_bifurcate_ligament": {
+          "path": "skeletal/Facet_for_calcaneonavicular_part_of_bifurcate_ligament"
+        },
+        "Facet_for_plantar_calcaneonavicular_ligament": {
+          "path": "skeletal/Facet_for_plantar_calcaneonavicular_ligament"
+        },
+        "Femur": {
+          "path": "skeletal/Femur"
+        },
+        "Fibula": {
+          "path": "skeletal/Fibula"
+        },
+        "Fibular_articular_facet": {
+          "path": "skeletal/Fibular_articular_facet"
+        },
+        "Fibular_notch": {
+          "path": "skeletal/Fibular_notch"
+        },
+        "Fifth_metacarpal_bone": {
+          "path": "skeletal/Fifth_metacarpal_bone"
+        },
+        "Fifth_metatarsal_bone": {
+          "path": "skeletal/Fifth_metatarsal_bone"
+        },
+        "Fifth_rib": {
+          "path": "skeletal/Fifth_rib"
+        },
+        "First_metacarpal_bone": {
+          "path": "skeletal/First_metacarpal_bone"
+        },
+        "First_metatarsal_bone": {
+          "path": "skeletal/First_metatarsal_bone"
+        },
+        "First_rib": {
+          "path": "skeletal/First_rib"
+        },
+        "Fourth_metacarpal_bone": {
+          "path": "skeletal/Fourth_metacarpal_bone"
+        },
+        "Fourth_metatarsal_bone": {
+          "path": "skeletal/Fourth_metatarsal_bone"
+        },
+        "Fourth_rib": {
+          "path": "skeletal/Fourth_rib"
+        },
+        "Fovea_for_ligament_of_head_of_femur": {
+          "path": "skeletal/Fovea_for_ligament_of_head_of_femur"
+        },
+        "Frontal_bone": {
+          "path": "skeletal/Frontal_bone"
+        },
+        "Glenoid_fossa": {
+          "path": "skeletal/Glenoid_fossa"
+        },
+        "Glenoid_process_of_scapula": {
+          "path": "skeletal/Glenoid_process_of_scapula"
+        },
+        "Gluteal_surface_of_ilium": {
+          "path": "skeletal/Gluteal_surface_of_ilium"
+        },
+        "Gluteal_tuberosity": {
+          "path": "skeletal/Gluteal_tuberosity"
+        },
+        "Greater_sciatic_foramen": {
+          "path": "skeletal/Greater_sciatic_foramen"
+        },
+        "Greater_sciatic_notch": {
+          "path": "skeletal/Greater_sciatic_notch"
+        },
+        "Greater_trochanter": {
+          "path": "skeletal/Greater_trochanter"
+        },
+        "Greater_tubercle": {
+          "path": "skeletal/Greater_tubercle"
+        },
+        "Groove_for_popliteus_muscle": {
+          "path": "skeletal/Groove_for_popliteus_muscle"
+        },
+        "Groove_for_subclavius_muscle": {
+          "path": "skeletal/Groove_for_subclavius_muscle"
+        },
+        "Groove_for_tendon_of_fibularis_longus_muscle_of_cuboid_bone-": {
+          "path": "skeletal/Groove_for_tendon_of_fibularis_longus_muscle_of_cuboid_bone-"
+        },
+        "Groove_for_tendon_of_flexor_hallucis_longus_of_calcaneus": {
+          "path": "skeletal/Groove_for_tendon_of_flexor_hallucis_longus_of_calcaneus"
+        },
+        "Groove_for_tendon_of_flexor_hallucis_longus_of_talus": {
+          "path": "skeletal/Groove_for_tendon_of_flexor_hallucis_longus_of_talus"
+        },
+        "Groove_for_ulnar_nerve": {
+          "path": "skeletal/Groove_for_ulnar_nerve"
+        },
+        "Grooves_for_extensor_tendons": {
+          "path": "skeletal/Grooves_for_extensor_tendons"
+        },
+        "Hamate_bone": {
+          "path": "skeletal/Hamate_bone"
+        },
+        "Handle_of_malleus": {
+          "path": "skeletal/Handle_of_malleus"
+        },
+        "Head_of_femur": {
+          "path": "skeletal/Head_of_femur"
+        },
+        "Head_of_fibula": {
+          "path": "skeletal/Head_of_fibula"
+        },
+        "Head_of_humerus": {
+          "path": "skeletal/Head_of_humerus"
+        },
+        "Head_of_malleus": {
+          "path": "skeletal/Head_of_malleus"
+        },
+        "Head_of_metacarpal_bone": {
+          "path": "skeletal/Head_of_metacarpal_bone"
+        },
+        "Head_of_metatarsal_bone": {
+          "path": "skeletal/Head_of_metatarsal_bone"
+        },
+        "Head_of_phalanx_of_foot": {
+          "path": "skeletal/Head_of_phalanx_of_foot"
+        },
+        "Head_of_phalanx_of_hand": {
+          "path": "skeletal/Head_of_phalanx_of_hand"
+        },
+        "Head_of_radius": {
+          "path": "skeletal/Head_of_radius"
+        },
+        "Head_of_rib": {
+          "path": "skeletal/Head_of_rib"
+        },
+        "Head_of_talus": {
+          "path": "skeletal/Head_of_talus"
+        },
+        "Head_of_ulna": {
+          "path": "skeletal/Head_of_ulna"
+        },
+        "Hip_bone": {
+          "path": "skeletal/Hip_bone"
+        },
+        "Hook_of_hamate_bone": {
+          "path": "skeletal/Hook_of_hamate_bone"
+        },
+        "Humerus": {
+          "path": "skeletal/Humerus"
+        },
+        "Hyoid_bone": {
+          "path": "skeletal/Hyoid_bone"
+        },
+        "Iliac_crest": {
+          "path": "skeletal/Iliac_crest"
+        },
+        "Iliac_fossa": {
+          "path": "skeletal/Iliac_fossa"
+        },
+        "Iliac_tubercle": {
+          "path": "skeletal/Iliac_tubercle"
+        },
+        "Iliac_tuberosity": {
+          "path": "skeletal/Iliac_tuberosity"
+        },
+        "Iliopubic_eminence": {
+          "path": "skeletal/Iliopubic_eminence"
+        },
+        "Ilium": {
+          "path": "skeletal/Ilium"
+        },
+        "Impression_for_costoclavicular_ligament": {
+          "path": "skeletal/Impression_for_costoclavicular_ligament"
+        },
+        "Incus": {
+          "path": "skeletal/Incus"
+        },
+        "Inferior_angle_of_scapula": {
+          "path": "skeletal/Inferior_angle_of_scapula"
+        },
+        "Inferior_articular_surface_of_tibia": {
+          "path": "skeletal/Inferior_articular_surface_of_tibia"
+        },
+        "Inferior_gluteal_line": {
+          "path": "skeletal/Inferior_gluteal_line"
+        },
+        "Inferior_nasal_concha_bone": {
+          "path": "skeletal/Inferior_nasal_concha_bone"
+        },
+        "Inferior_pubic_ramus": {
+          "path": "skeletal/Inferior_pubic_ramus"
+        },
+        "Infraglenoid_tubercle": {
+          "path": "skeletal/Infraglenoid_tubercle"
+        },
+        "Infraspinous_fossa": {
+          "path": "skeletal/Infraspinous_fossa"
+        },
+        "Inner_lip_of_iliac_crest": {
+          "path": "skeletal/Inner_lip_of_iliac_crest"
+        },
+        "Intercondylar_area": {
+          "path": "skeletal/Intercondylar_area"
+        },
+        "Intercondylar_eminence": {
+          "path": "skeletal/Intercondylar_eminence"
+        },
+        "Intercondylar_fossa": {
+          "path": "skeletal/Intercondylar_fossa"
+        },
+        "Intercondylar_line": {
+          "path": "skeletal/Intercondylar_line"
+        },
+        "Intermediate_cuneiform_bone": {
+          "path": "skeletal/Intermediate_cuneiform_bone"
+        },
+        "Intermediate_zone": {
+          "path": "skeletal/Intermediate_zone"
+        },
+        "Interosseous_border_of_radius": {
+          "path": "skeletal/Interosseous_border_of_radius"
+        },
+        "Interosseous_border_of_tibia": {
+          "path": "skeletal/Interosseous_border_of_tibia"
+        },
+        "Interosseous_border_of_ulna": {
+          "path": "skeletal/Interosseous_border_of_ulna"
+        },
+        "Interosseous_crest_of_fibula": {
+          "path": "skeletal/Interosseous_crest_of_fibula"
+        },
+        "Intertrochanteric_crest": {
+          "path": "skeletal/Intertrochanteric_crest"
+        },
+        "Intertrochanteric_line": {
+          "path": "skeletal/Intertrochanteric_line"
+        },
+        "Intertubercular_sulcus": {
+          "path": "skeletal/Intertubercular_sulcus"
+        },
+        "Ischial_spine": {
+          "path": "skeletal/Ischial_spine"
+        },
+        "Ischial_tuberosity": {
+          "path": "skeletal/Ischial_tuberosity"
+        },
+        "Ischiopubic_ramus": {
+          "path": "skeletal/Ischiopubic_ramus"
+        },
+        "Ischium": {
+          "path": "skeletal/Ischium"
+        },
+        "Lacrimal_bone": {
+          "path": "skeletal/Lacrimal_bone"
+        },
+        "Lateral_angle_of_scapula": {
+          "path": "skeletal/Lateral_angle_of_scapula"
+        },
+        "Lateral_border_of_humerus": {
+          "path": "skeletal/Lateral_border_of_humerus"
+        },
+        "Lateral_border_of_scapula": {
+          "path": "skeletal/Lateral_border_of_scapula"
+        },
+        "Lateral_condyle_of_femur": {
+          "path": "skeletal/Lateral_condyle_of_femur"
+        },
+        "Lateral_condyle_of_tibia": {
+          "path": "skeletal/Lateral_condyle_of_tibia"
+        },
+        "Lateral_cuneiform_bone": {
+          "path": "skeletal/Lateral_cuneiform_bone"
+        },
+        "Lateral_epicondyle_of_femur": {
+          "path": "skeletal/Lateral_epicondyle_of_femur"
+        },
+        "Lateral_epicondyle_of_humerus": {
+          "path": "skeletal/Lateral_epicondyle_of_humerus"
+        },
+        "Lateral_intercondylar_tubercle": {
+          "path": "skeletal/Lateral_intercondylar_tubercle"
+        },
+        "Lateral_lip_of_linea_apera": {
+          "path": "skeletal/Lateral_lip_of_linea_apera"
+        },
+        "Lateral_malleolar_facet": {
+          "path": "skeletal/Lateral_malleolar_facet"
+        },
+        "Lateral_malleolus": {
+          "path": "skeletal/Lateral_malleolus"
+        },
+        "Lateral_process_of_calcaneal_tuberosity": {
+          "path": "skeletal/Lateral_process_of_calcaneal_tuberosity"
+        },
+        "Lateral_process_of_malleus": {
+          "path": "skeletal/Lateral_process_of_malleus"
+        },
+        "Lateral_process_of_nasal_septal_cartilage": {
+          "path": "skeletal/Lateral_process_of_nasal_septal_cartilage"
+        },
+        "Lateral_process_of_talus": {
+          "path": "skeletal/Lateral_process_of_talus"
+        },
+        "Lateral_supracondylar_line": {
+          "path": "skeletal/Lateral_supracondylar_line"
+        },
+        "Lateral_supracondylar_ridge": {
+          "path": "skeletal/Lateral_supracondylar_ridge"
+        },
+        "Lateral_surface_of_fibula": {
+          "path": "skeletal/Lateral_surface_of_fibula"
+        },
+        "Lateral_surface_of_radius": {
+          "path": "skeletal/Lateral_surface_of_radius"
+        },
+        "Lateral_surface_of_tibia": {
+          "path": "skeletal/Lateral_surface_of_tibia"
+        },
+        "Lateral_tubercle": {
+          "path": "skeletal/Lateral_tubercle"
+        },
+        "Lenticular_process_of_incus": {
+          "path": "skeletal/Lenticular_process_of_incus"
+        },
+        "Lesser_sciatic_foramen": {
+          "path": "skeletal/Lesser_sciatic_foramen"
+        },
+        "Lesser_sciatic_notch": {
+          "path": "skeletal/Lesser_sciatic_notch"
+        },
+        "Lesser_trochanter": {
+          "path": "skeletal/Lesser_trochanter"
+        },
+        "Lesser_tubercle": {
+          "path": "skeletal/Lesser_tubercle"
+        },
+        "Linea_aspera": {
+          "path": "skeletal/Linea_aspera"
+        },
+        "Lingual_surface_of_tooth": {
+          "path": "skeletal/Lingual_surface_of_tooth"
+        },
+        "Long_limb_of_incus": {
+          "path": "skeletal/Long_limb_of_incus"
+        },
+        "Lower_canine": {
+          "path": "skeletal/Lower_canine"
+        },
+        "Lower_first_molar_tooth": {
+          "path": "skeletal/Lower_first_molar_tooth"
+        },
+        "Lower_first_premolar": {
+          "path": "skeletal/Lower_first_premolar"
+        },
+        "Lower_lateral_incisor": {
+          "path": "skeletal/Lower_lateral_incisor"
+        },
+        "Lower_medial_incisor": {
+          "path": "skeletal/Lower_medial_incisor"
+        },
+        "Lower_second_molar_tooth": {
+          "path": "skeletal/Lower_second_molar_tooth"
+        },
+        "Lower_second_premolar": {
+          "path": "skeletal/Lower_second_premolar"
+        },
+        "Lunate_bone": {
+          "path": "skeletal/Lunate_bone"
+        },
+        "Lunate_surface": {
+          "path": "skeletal/Lunate_surface"
+        }
+      }
+    },
+    "visceral": {
+      "meshes": {
+        "(Accessory_parotid_gland)": {
+          "path": "visceral/(Accessory_parotid_gland)"
+        },
+        "Adenohypophysis": {
+          "path": "visceral/Adenohypophysis"
+        },
+        "Anterior_lateral_segment_of_liver_(VI)": {
+          "path": "visceral/Anterior_lateral_segment_of_liver_(VI)"
+        },
+        "Anterior_medial_segment_of_liver_(V)": {
+          "path": "visceral/Anterior_medial_segment_of_liver_(V)"
+        },
+        "Ascending_colon": {
+          "path": "visceral/Ascending_colon"
+        },
+        "Corpus_cavernosum_of_penis": {
+          "path": "visceral/Corpus_cavernosum_of_penis"
+        },
+        "Corpus_spongiosum_of_penis": {
+          "path": "visceral/Corpus_spongiosum_of_penis"
+        },
+        "Descending_colon": {
+          "path": "visceral/Descending_colon"
+        },
+        "Duodenum": {
+          "path": "visceral/Duodenum"
+        },
+        "Epididymis": {
+          "path": "visceral/Epididymis"
+        },
+        "Epiglottis": {
+          "path": "visceral/Epiglottis"
+        },
+        "Free_taenia": {
+          "path": "visceral/Free_taenia"
+        },
+        "Gallbladder": {
+          "path": "visceral/Gallbladder"
+        },
+        "Gingiva": {
+          "path": "visceral/Gingiva"
+        },
+        "Glans_penis": {
+          "path": "visceral/Glans_penis"
+        },
+        "Greater_omentum": {
+          "path": "visceral/Greater_omentum"
+        },
+        "Inferior_lobe_of_left_lung": {
+          "path": "visceral/Inferior_lobe_of_left_lung"
+        },
+        "Inferior_lobe_of_right_lung": {
+          "path": "visceral/Inferior_lobe_of_right_lung"
+        },
+        "Inferior_parathyroid_gland": {
+          "path": "visceral/Inferior_parathyroid_gland"
+        },
+        "Kidney": {
+          "path": "visceral/Kidney"
+        },
+        "Laryngopharynx": {
+          "path": "visceral/Laryngopharynx"
+        },
+        "Left_anterior_lateral_segment_of_liver_(III)": {
+          "path": "visceral/Left_anterior_lateral_segment_of_liver_(III)"
+        },
+        "Left_medial_segment_of_liver_(IV)": {
+          "path": "visceral/Left_medial_segment_of_liver_(IV)"
+        },
+        "Left_posterior_lateral_segment_of_liver_(II)": {
+          "path": "visceral/Left_posterior_lateral_segment_of_liver_(II)"
+        },
+        "Lesser_omentum": {
+          "path": "visceral/Lesser_omentum"
+        },
+        "Liver": {
+          "path": "visceral/Liver"
+        }
+      }
+    }
+  }
+}

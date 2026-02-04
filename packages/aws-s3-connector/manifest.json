@@ -68,5 +68,10 @@
         "packages": []
     },
     "bundle": "/bundles/aws-s3-connector.bundle.js",
-    "bundleVersion": "1769791293961"
+    "bundleVersion": "1769791293961",
+    "class": "Connector",
+    "domain": "infra",
+    "domains": [
+        "infra"
+    ]
 }

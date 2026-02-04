@@ -28,7 +28,9 @@ const __dirname = dirname(__filename);
 
 // Directories
 const ROOT_DIR = resolve(__dirname, '..');
-const PACKAGES_DIR = resolve(ROOT_DIR, 'packages');
+// Source of truth: market_source (managed by Shipyard in Hermetic Labs API)
+const MARKET_SOURCE_DIR = resolve(ROOT_DIR, '..', 'market_source', 'packages');
+const PACKAGES_DIR = MARKET_SOURCE_DIR;
 const DIST_DIR = resolve(ROOT_DIR, 'dist');
 const BUNDLES_DIR = resolve(DIST_DIR, 'bundles');
 const ZIPS_DIR = resolve(DIST_DIR, 'zips');
@@ -52,7 +54,7 @@ const TEMPLATE_DIR = resolve(PACKAGES_DIR, '_template');
 const REQUIRED_FILES = [
   'manifest.json',
   'frontend/index.ts',
-  'assets/images/hero.png',
+  'assets/hero/hero.png',
 ];
 
 // Required manifest fields
@@ -77,11 +79,11 @@ async function enforceStructure(packageName) {
   for (const file of REQUIRED_FILES) {
     const filePath = join(packageDir, file);
     if (!existsSync(filePath)) {
-      if (file === 'assets/images/hero.png') {
+      if (file === 'assets/hero/hero.png') {
         // Auto-fix: copy placeholder from template
-        const templateHero = join(TEMPLATE_DIR, 'assets/images/hero.png');
+        const templateHero = join(TEMPLATE_DIR, 'assets/hero/hero.png');
         if (existsSync(templateHero)) {
-          await mkdir(join(packageDir, 'assets/images'), { recursive: true });
+          await mkdir(join(packageDir, 'assets/hero'), { recursive: true });
           await copyFile(templateHero, filePath);
           fixes.push(`Created ${file} from template`);
         } else {
@@ -202,6 +204,179 @@ const EXTERNAL_PATTERNS = [
   /^three\/examples\/.*/,  // Three.js examples/addons
   /^three\/addons\/.*/,    // Three.js addons
 ];
+
+// ============================================================================
+// TAXONOMY MAPPING (Legacy to New)
+// ============================================================================
+
+// Map legacy type to new class
+const TYPE_TO_CLASS = {
+  'module': 'Module',
+  'connector': 'Connector',
+  'component': 'Component',
+  'plugin': 'Component',
+  'addon': 'Component',
+  'compliance': 'Module',
+  'visualization': 'Component',
+  'gaming': 'Component',
+  'service': 'Connector',
+};
+
+// Map legacy category to new domain
+const CATEGORY_TO_DOMAIN = {
+  // Healthcare
+  'Healthcare': 'health',
+  'Medical': 'health',
+  // Compliance
+  'HIPAA': 'compliance',
+  'FHIR': 'compliance',
+  'FedRAMP': 'compliance',
+  'ITAR': 'compliance',
+  'SOX': 'compliance',
+  'PCI': 'compliance',
+  'GDPR': 'compliance',
+  'Compliance': 'compliance',
+  // Enterprise
+  'CRM': 'enterprise',
+  'ERP': 'enterprise',
+  'HR': 'enterprise',
+  'Business': 'enterprise',
+  'Productivity': 'enterprise',
+  // Finance
+  'Finance': 'finance',
+  'Financial': 'finance',
+  'Payments': 'finance',
+  // Government
+  'Government': 'gov',
+  // Infrastructure
+  'Storage': 'infra',
+  'Connectivity': 'infra',
+  'Cloud': 'infra',
+  // Creative
+  'Entertainment': 'creative',
+  'VR/XR': 'creative',
+  'Media': 'creative',
+  'Gaming': 'creative',
+  'Visualization': 'creative',
+  'AI': 'creative',
+  // Developer
+  'Developer Tools': 'dev',
+  'Tools': 'dev',
+  // Legal
+  'Legal': 'legal',
+  // Accessibility maps to enterprise for now
+  'Accessibility': 'enterprise',
+  // Analytics maps to dev
+  'Analytics': 'dev',
+  // Defense maps to compliance
+  'Defense': 'compliance',
+};
+
+// Domain display labels (for catalog)
+const DOMAIN_LABELS = {
+  health: 'Healthcare',
+  compliance: 'Compliance',
+  enterprise: 'Enterprise',
+  finance: 'Finance',
+  gov: 'Government',
+  infra: 'Infrastructure',
+  creative: 'Creative',
+  dev: 'Developer Tools',
+  social: 'Social',
+  edu: 'Education',
+  research: 'Research',
+  legal: 'Legal',
+};
+
+/**
+ * Infer class and domain from manifest (with fallbacks for legacy fields)
+ */
+function inferClassAndDomain(manifest) {
+  // Use explicit values if present
+  let packageClass = manifest.class;
+  let domain = manifest.domain;
+  let domains = manifest.domains || [];
+  let relationships = manifest.relationships || null;
+
+  // Infer class from legacy type
+  if (!packageClass && manifest.type) {
+    packageClass = TYPE_TO_CLASS[manifest.type.toLowerCase()] || 'Module';
+  }
+
+  // Check if this is a remix
+  if (manifest.remix?.original || relationships?.remixedFrom) {
+    packageClass = 'Remix';
+    if (!relationships) relationships = {};
+    if (manifest.remix?.original && !relationships.remixedFrom) {
+      relationships.remixedFrom = manifest.remix.original;
+    }
+  }
+
+  // Infer domain from legacy category
+  if (!domain && manifest.category) {
+    domain = CATEGORY_TO_DOMAIN[manifest.category] || 'dev';
+  }
+
+  // Infer from tags if still no domain
+  if (!domain && manifest.tags && manifest.tags.length > 0) {
+    const tagDomainMap = {
+      'medical': 'health',
+      'healthcare': 'health',
+      'hipaa': 'compliance',
+      'compliance': 'compliance',
+      'fhir': 'compliance',
+      'finance': 'finance',
+      'financial': 'finance',
+      'payments': 'finance',
+      'legal': 'legal',
+      'government': 'gov',
+      'federal': 'gov',
+      'storage': 'infra',
+      'cloud': 'infra',
+      'vr': 'creative',
+      'xr': 'creative',
+      'game': 'creative',
+      'music': 'creative',
+      'video': 'creative',
+      'developer': 'dev',
+      'ide': 'dev',
+    };
+    for (const tag of manifest.tags) {
+      const tagLower = tag.toLowerCase();
+      if (tagDomainMap[tagLower]) {
+        domain = tagDomainMap[tagLower];
+        break;
+      }
+    }
+  }
+
+  // Ensure domains array includes primary domain
+  if (domain && domains.length === 0) {
+    domains = [domain];
+  } else if (domain && !domains.includes(domain)) {
+    domains = [domain, ...domains];
+  }
+
+  // Check integrations for extends relationships
+  if (!relationships && manifest.integrations && manifest.integrations.length > 0) {
+    relationships = { extends: manifest.integrations };
+  }
+
+  // Check dependencies.packages for requires relationships
+  if (manifest.dependencies?.packages?.length > 0) {
+    if (!relationships) relationships = {};
+    if (!relationships.requires) {
+      relationships.requires = manifest.dependencies.packages;
+    }
+  }
+
+  return {
+    class: packageClass || 'Module',
+    domain: domain || 'dev',
+    domains: domains.length > 0 ? domains : [domain || 'dev'],
+    relationships,
+  };
+}
 
 // Authors database
 const AUTHORS = {
@@ -414,11 +589,17 @@ async function generateCatalog() {
     const authorKey = manifest.author && AUTHORS[manifest.author] ? manifest.author : "EVE Core Team";
     const author = AUTHORS[authorKey];
 
-    // Parse price
+    // Parse price (manifest stores cents, catalog uses dollars)
     let price = 0;
-    if (manifest.price && manifest.price !== "free") {
-      const match = String(manifest.price).match(/(\d+\.?\d*)/);
-      if (match) price = parseFloat(match[1]);
+    if (manifest.price && manifest.price !== "free" && manifest.price !== 0) {
+      if (typeof manifest.price === 'number') {
+        // Numeric price is in cents, convert to dollars
+        price = manifest.price / 100;
+      } else {
+        // String price - extract number and assume cents
+        const match = String(manifest.price).match(/(\d+\.?\d*)/);
+        if (match) price = parseFloat(match[1]) / 100;
+      }
     }
 
     // Category tracking
@@ -450,6 +631,9 @@ async function generateCatalog() {
       if (manifest.documentation.readme) documentation.readme = manifest.documentation.readme;
     }
 
+    // Infer taxonomy from manifest
+    const taxonomy = inferClassAndDomain(manifest);
+
     const product = {
       id: `p${idx}`,
       title: manifest.displayName || pkgName,
@@ -458,10 +642,16 @@ async function generateCatalog() {
       discountPrice: null,
       stripePriceId: prices[pkgName] || null,
       author,
-      category,
+      category,  // Legacy - keep for backward compatibility
+      // New taxonomy fields
+      class: taxonomy.class,
+      domain: taxonomy.domain,
+      domains: taxonomy.domains,
+      relationships: taxonomy.relationships,
       // Use local path for images (served from public/packages by Vite)
       // In production, these will be served from GitHub Pages at /hermetic-labs-exchange/packages/
-      media: [{ type: "image", url: `packages/${pkgName}/assets/images/hero.png` }],
+      // Structure: assets/hero/hero.png for images
+      media: [{ type: "image", url: `packages/${pkgName}/assets/hero/hero.png` }],
       description: manifest.description || "",
       techSpecs,
       links: [{ label: "Documentation", url: "#" }],
@@ -482,7 +672,7 @@ async function generateCatalog() {
     idx++;
   }
 
-  // Build categories array
+  // Build categories array (legacy)
   const categoryList = Object.entries(categories).map(([name, count], i) => ({
     id: `c${i + 1}`,
     name,
@@ -490,15 +680,41 @@ async function generateCatalog() {
     productCount: count
   }));
 
+  // Build domains array (new taxonomy)
+  const domainCounts = {};
+  for (const product of products) {
+    const domain = product.domain || 'dev';
+    domainCounts[domain] = (domainCounts[domain] || 0) + 1;
+  }
+  const domainList = Object.entries(domainCounts).map(([id, count], i) => ({
+    id,
+    name: DOMAIN_LABELS[id] || id,
+    productCount: count
+  }));
+
+  // Build class counts
+  const classCounts = {};
+  for (const product of products) {
+    const cls = product.class || 'Module';
+    classCounts[cls] = (classCounts[cls] || 0) + 1;
+  }
+  const classList = Object.entries(classCounts).map(([id, count]) => ({
+    id,
+    name: id,
+    productCount: count
+  }));
+
   // Build authors array
   const authorList = Object.values(AUTHORS);
 
   const catalog = {
-    version: "2.0.0",
+    version: "3.0.0",  // Bumped for taxonomy update
     generated: new Date().toISOString(),
     baseUrl: AZURE_BASE_URL,
     products,
-    categories: categoryList,
+    categories: categoryList,  // Legacy
+    domains: domainList,       // New taxonomy
+    classes: classList,        // New taxonomy
     authors: authorList
   };
 

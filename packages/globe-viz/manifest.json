@@ -83,5 +83,10 @@
         "packages": []
     },
     "bundle": "/bundles/globe-viz.bundle.js",
-    "bundleVersion": "1769791669763"
+    "bundleVersion": "1769791669763",
+    "class": "Component",
+    "domain": "dev",
+    "domains": [
+        "dev"
+    ]
 }

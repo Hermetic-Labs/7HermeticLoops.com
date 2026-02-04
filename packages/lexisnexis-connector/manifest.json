@@ -71,5 +71,10 @@
         "packages": []
     },
     "bundle": "/bundles/lexisnexis-connector.bundle.js",
-    "bundleVersion": "1769792120395"
+    "bundleVersion": "1769792120395",
+    "class": "Connector",
+    "domain": "legal",
+    "domains": [
+        "legal"
+    ]
 }

@@ -68,5 +68,10 @@
         "packages": []
     },
     "bundle": "/bundles/sox-compliance.bundle.js",
-    "bundleVersion": "1769792716970"
+    "bundleVersion": "1769792716970",
+    "class": "Module",
+    "domain": "finance",
+    "domains": [
+        "finance"
+    ]
 }

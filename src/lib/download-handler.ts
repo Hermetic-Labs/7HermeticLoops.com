@@ -4,6 +4,10 @@
  * Handles package downloads with iframe-aware logic:
  * - DEV mode (in iframe): Sends postMessage to parent app to add to vault
  * - PRODUCTION mode: Direct download of zip file
+ *
+ * Two-way communication:
+ * - Exchange -> Parent: ADD_TO_VAULT, INSTALL_PACKAGE, REQUEST_VAULT_STATUS
+ * - Parent -> Exchange: VAULT_STATUS (list of packages in vault)
  */
 
 export interface PackageDownloadPayload {
@@ -14,6 +18,16 @@ export interface PackageDownloadPayload {
   version?: string;
   price?: number;
 }
+
+// Vault status from parent app
+export interface VaultPackage {
+  id: string;
+  installed: boolean;
+}
+
+// Global vault state (updated by parent messages)
+let vaultPackages: VaultPackage[] = [];
+let vaultStatusListeners: Array<(packages: VaultPackage[]) => void> = [];
 
 /**
  * Check if running inside an iframe
@@ -59,9 +73,9 @@ export function notifyParentApp(action: string, payload: any): void {
     timestamp: Date.now(),
   };
 
-  // In dev mode, parent is localhost:5173 (Final Production)
-  // Use '*' for simplicity, or specify origin for security
-  const targetOrigin = isDevMode() ? 'http://localhost:5173' : '*';
+  // In dev mode, parent could be on various localhost ports
+  // Use '*' for dev since ports can vary (5173, 5174, etc.)
+  const targetOrigin = isDevMode() ? '*' : window.location.origin;
 
   window.parent.postMessage(message, targetOrigin);
   console.log('[Exchange] Sent message to parent:', action, payload);
@@ -126,4 +140,75 @@ export function handlePackageInstall(
     // Production: Just download, user will install manually
     handlePackageDownload(packageSlug, title, downloadUrl, metadata);
   }
+}
+
+/**
+ * Check if a package is in the parent's vault
+ */
+export function isPackageInVault(packageSlug: string): boolean {
+  return vaultPackages.some(p => p.id === packageSlug);
+}
+
+/**
+ * Check if a package is installed (in vault AND installed)
+ */
+export function isPackageInstalled(packageSlug: string): boolean {
+  const pkg = vaultPackages.find(p => p.id === packageSlug);
+  return pkg?.installed ?? false;
+}
+
+/**
+ * Get current vault packages
+ */
+export function getVaultPackages(): VaultPackage[] {
+  return [...vaultPackages];
+}
+
+/**
+ * Subscribe to vault status changes
+ */
+export function subscribeToVaultStatus(listener: (packages: VaultPackage[]) => void): () => void {
+  vaultStatusListeners.push(listener);
+  // Immediately call with current state
+  listener(vaultPackages);
+  // Return unsubscribe function
+  return () => {
+    vaultStatusListeners = vaultStatusListeners.filter(l => l !== listener);
+  };
+}
+
+/**
+ * Request vault status from parent app
+ */
+export function requestVaultStatus(): void {
+  if (shouldUseParentCommunication()) {
+    notifyParentApp('REQUEST_VAULT_STATUS', {});
+  }
+}
+
+/**
+ * Initialize listener for parent messages
+ * Call this once on app startup
+ */
+export function initParentMessageListener(): void {
+  if (!shouldUseParentCommunication()) return;
+
+  window.addEventListener('message', (event: MessageEvent) => {
+    // Accept any localhost origin in dev mode
+    if (!event.origin.includes('localhost')) return;
+
+    const { source, action, payload } = event.data || {};
+    if (source !== 'hermetic-app') return;
+
+    console.log('[Exchange] Received message from parent:', action, payload);
+
+    if (action === 'VAULT_STATUS' && Array.isArray(payload?.packages)) {
+      vaultPackages = payload.packages;
+      // Notify all listeners
+      vaultStatusListeners.forEach(listener => listener(vaultPackages));
+    }
+  });
+
+  // Request initial vault status
+  requestVaultStatus();
 }

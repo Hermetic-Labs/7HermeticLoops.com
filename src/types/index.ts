@@ -1,3 +1,94 @@
+// ============================================
+// Package Taxonomy Types
+// ============================================
+
+export type PackageClass = 'Core' | 'Module' | 'Connector' | 'Component' | 'Remix';
+
+export type Domain =
+  | 'health'
+  | 'compliance'
+  | 'enterprise'
+  | 'finance'
+  | 'gov'
+  | 'infra'
+  | 'creative'
+  | 'dev'
+  | 'social'
+  | 'edu'
+  | 'research'
+  | 'legal';
+
+export interface PackageRelationships {
+  extends?: string[];      // Packages this extends
+  requires?: string[];     // Required dependencies
+  enhances?: string[];     // Optional integrations
+  remixedFrom?: string;    // Original package if remix
+}
+
+// Class badge colors (cyber theme)
+export const CLASS_COLORS: Record<PackageClass, string> = {
+  Core: '#00ff99',      // cyber-green
+  Module: '#00b4ff',    // cyber-cyan
+  Connector: '#ff64c8', // cyber-pink
+  Component: '#a855f7', // purple
+  Remix: '#f59e0b',     // amber/orange
+};
+
+// Class badge background colors - solid dark backgrounds with color tint
+// Higher opacity for better visibility on varied image backgrounds
+export const CLASS_BG_COLORS: Record<PackageClass, string> = {
+  Core: 'rgba(0, 40, 25, 0.9)',      // Dark green-black
+  Module: 'rgba(0, 30, 50, 0.9)',    // Dark blue-black
+  Connector: 'rgba(50, 15, 35, 0.9)', // Dark pink-black
+  Component: 'rgba(30, 15, 50, 0.9)', // Dark purple-black
+  Remix: 'rgba(50, 30, 5, 0.9)',     // Dark amber-black
+};
+
+// Domain display labels
+export const DOMAIN_LABELS: Record<Domain, string> = {
+  health: 'Healthcare',
+  compliance: 'Compliance',
+  enterprise: 'Enterprise',
+  finance: 'Finance',
+  gov: 'Government',
+  infra: 'Infrastructure',
+  creative: 'Creative',
+  dev: 'Developer Tools',
+  social: 'Social',
+  edu: 'Education',
+  research: 'Research',
+  legal: 'Legal',
+};
+
+// All domains in display order
+export const ALL_DOMAINS: Domain[] = [
+  'health',
+  'compliance',
+  'enterprise',
+  'finance',
+  'gov',
+  'infra',
+  'creative',
+  'dev',
+  'social',
+  'edu',
+  'research',
+  'legal',
+];
+
+// All classes in display order
+export const ALL_CLASSES: PackageClass[] = [
+  'Core',
+  'Module',
+  'Connector',
+  'Component',
+  'Remix',
+];
+
+// ============================================
+// Author & Product Types
+// ============================================
+
 export interface Author {
   id: string;
   name: string;
@@ -81,7 +172,7 @@ export interface Product {
   discountPrice?: number;
   stripePriceId?: string;
   author: Author;
-  category: string;
+  category: string;                    // Legacy - use domain instead
   media: MediaItem[];
   description: string;
   techSpecs: TechSpec[];
@@ -95,6 +186,12 @@ export interface Product {
   isNew?: boolean;
   downloadUrl?: string;
   documentation?: ProductDocumentation;
+
+  // New Taxonomy Fields
+  class?: PackageClass;                // Package classification
+  domain?: Domain;                     // Primary domain
+  domains?: Domain[];                  // All domains (including primary)
+  relationships?: PackageRelationships; // Package relationships
 }
 
 export interface Category {

@@ -7,5 +7,19 @@
       "title": "EVE OS",
       "tagline": "Compliant by Design. Sealed by Architecture. We are Hermetic Labs."
     }
-  ]
+  ],
+  "domainFeatured": {
+    "health": null,
+    "compliance": null,
+    "enterprise": null,
+    "finance": null,
+    "gov": null,
+    "infra": null,
+    "creative": null,
+    "dev": null,
+    "social": null,
+    "edu": null,
+    "research": null,
+    "legal": null
+  }
 }

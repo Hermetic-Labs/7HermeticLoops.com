@@ -69,5 +69,10 @@
         "packages": []
     },
     "bundle": "/bundles/platformer-game.bundle.js",
-    "bundleVersion": "1769792811067"
+    "bundleVersion": "1769792811067",
+    "class": "Component",
+    "domain": "creative",
+    "domains": [
+        "creative"
+    ]
 }

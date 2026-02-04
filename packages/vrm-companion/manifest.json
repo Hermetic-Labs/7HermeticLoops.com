@@ -83,5 +83,15 @@
         "packages": []
     },
     "bundle": "/bundles/vrm-companion.bundle.js",
-    "bundleVersion": "1769793059260"
+    "bundleVersion": "1769793059260",
+    "class": "Component",
+    "domain": "creative",
+    "domains": [
+        "creative"
+    ],
+    "relationships": {
+        "extends": [
+            "vr-spatial-engine"
+        ]
+    }
 }

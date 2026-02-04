@@ -1,16 +1,25 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import { verifyPurchase } from '../api/exchange';
-import { CheckCircle, Download, Loader2, AlertCircle } from 'lucide-react';
+import { verifyPurchase, verifyBulkPurchase } from '../api/exchange';
+import { useCart } from '../context/CartContext';
+import { CheckCircle, Download, Loader2, AlertCircle, Package } from 'lucide-react';
+
+interface DownloadItem {
+  packageSlug: string;
+  downloadUrl: string;
+}
 
 export function SuccessPage() {
   const [searchParams] = useSearchParams();
   const sessionId = searchParams.get('session_id');
-  const slug = searchParams.get('slug');
+  const slug = searchParams.get('slug'); // Single item
+  const slugs = searchParams.get('slugs'); // Multiple items (comma-separated)
+
+  const { clearCart } = useCart();
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+  const [downloadItems, setDownloadItems] = useState<DownloadItem[]>([]);
   const [expiresIn, setExpiresIn] = useState<number>(0);
 
   useEffect(() => {
@@ -22,9 +31,23 @@ export function SuccessPage() {
       }
 
       try {
-        const result = await verifyPurchase(sessionId);
-        setDownloadUrl(result.downloadUrl);
-        setExpiresIn(result.expiresIn);
+        // Check if this is a bulk purchase (has slugs param)
+        if (slugs) {
+          const result = await verifyBulkPurchase(sessionId);
+          setDownloadItems(result.items);
+          setExpiresIn(result.expiresIn);
+        } else {
+          // Single item purchase - use existing verify endpoint
+          const result = await verifyPurchase(sessionId);
+          setDownloadItems([{
+            packageSlug: result.packageSlug,
+            downloadUrl: result.downloadUrl,
+          }]);
+          setExpiresIn(result.expiresIn);
+        }
+
+        // Clear the cart after successful verification
+        clearCart();
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to verify purchase');
       } finally {
@@ -33,7 +56,7 @@ export function SuccessPage() {
     }
 
     verify();
-  }, [sessionId]);
+  }, [sessionId, slugs, clearCart]);
 
   if (loading) {
     return (
@@ -65,36 +88,57 @@ export function SuccessPage() {
     );
   }
 
+  const isBulkPurchase = downloadItems.length > 1;
+
   return (
-    <div className="min-h-screen pt-20 flex items-center justify-center">
-      <div className="cyber-panel p-8 max-w-md text-center">
+    <div className="min-h-screen pt-20 flex items-center justify-center px-4">
+      <div className="cyber-panel p-8 max-w-lg w-full text-center">
         <CheckCircle className="w-16 h-16 text-cyber-green mx-auto mb-4" />
         <h1 className="text-2xl font-bold text-white mb-2">Purchase Complete!</h1>
         <p className="text-gray-400 mb-6">
-          Thank you for your purchase. Your download is ready.
+          Thank you for your purchase. {isBulkPurchase ? 'Your downloads are ready.' : 'Your download is ready.'}
         </p>
 
-        {downloadUrl && (
-          <a
-            href={downloadUrl}
-            className="cyber-btn flex items-center justify-center gap-2 mb-4"
-            download
-          >
-            <Download className="w-5 h-5" /> Download Now
-          </a>
+        {/* Download Buttons */}
+        {downloadItems.length > 0 && (
+          <div className={`${isBulkPurchase ? 'space-y-3 mb-6' : 'mb-4'}`}>
+            {downloadItems.map((item, index) => (
+              <div key={item.packageSlug} className={isBulkPurchase ? 'cyber-card p-4' : ''}>
+                {isBulkPurchase && (
+                  <div className="flex items-center gap-2 mb-3 text-left">
+                    <Package className="w-4 h-4 text-cyber-cyan" />
+                    <span className="text-sm text-gray-300 font-medium">
+                      {item.packageSlug}
+                    </span>
+                  </div>
+                )}
+                <a
+                  href={item.downloadUrl}
+                  className={`cyber-btn flex items-center justify-center gap-2 ${isBulkPurchase ? 'w-full' : ''}`}
+                  download
+                >
+                  <Download className="w-5 h-5" />
+                  {isBulkPurchase ? 'Download' : 'Download Now'}
+                </a>
+              </div>
+            ))}
+          </div>
         )}
 
         <p className="text-xs text-gray-500 mb-6">
-          Download link expires in {Math.round(expiresIn / 60)} minutes.
+          Download {isBulkPurchase ? 'links expire' : 'link expires'} in {Math.round(expiresIn / 60)} minutes.
           <br />
           You can also access your purchases from your library.
         </p>
 
-        <div className="flex gap-3 justify-center">
+        <div className="flex gap-3 justify-center flex-wrap">
           <Link to="/" className="cyber-btn-outline">
             Continue Shopping
           </Link>
-          {slug && (
+          <Link to="/library" className="cyber-btn-outline">
+            My Library
+          </Link>
+          {!isBulkPurchase && slug && (
             <Link to={`/product/${slug}`} className="cyber-btn-outline">
               View Product
             </Link>

@@ -69,5 +69,10 @@
         "packages": []
     },
     "bundle": "/bundles/gcs-connector.bundle.js",
-    "bundleVersion": "1769791806304"
+    "bundleVersion": "1769791806304",
+    "class": "Connector",
+    "domain": "infra",
+    "domains": [
+        "infra"
+    ]
 }
