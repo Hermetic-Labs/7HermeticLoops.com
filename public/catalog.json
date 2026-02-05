@@ -7,8 +7,8 @@
       "description": "Securely connect to Amazon S3 to store and manage files at scale. Support for buckets, objects, secure upload and download links, and large file transfers makes it easy to handle documents, media, and data without managing infrastructure.",
       "category": "Storage",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/aws-s3-connector.zip",
-      "bundleUrl": "http://localhost:5174/bundles/aws-s3-connector.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/aws-s3-connector.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/aws-s3-connector.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -21,7 +21,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/aws-s3-connector/hero/AWS 1.jpg"
+          "url": "/hermetic-labs-exchange/assets/aws-s3-connector/hero/AWS 1.jpg"
         }
       ],
       "techSpecs": [
@@ -90,8 +90,8 @@
       "description": "Easily connect to Azure Blob Storage to store and manage files in the cloud. Supports containers, blobs, and secure access links, making it simple to upload, retrieve, and share data at scale without added complexity.",
       "category": "Storage",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/azure-blob-connector.zip",
-      "bundleUrl": "http://localhost:5174/bundles/azure-blob-connector.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/azure-blob-connector.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/azure-blob-connector.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -104,7 +104,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/azure-blob-connector/hero/AZURE.jpg"
+          "url": "/hermetic-labs-exchange/assets/azure-blob-connector/hero/AZURE.jpg"
         }
       ],
       "techSpecs": [
@@ -173,8 +173,8 @@
       "description": "Create music in an immersive 3D environment by placing beats on a spinning sphere inside a VR-ready experience. Design rhythmic patterns, layer sounds, and explore music creation in a visually engaging space—perfect for creativity, focus, and relaxation.",
       "category": "Entertainment",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/beat-bubble-vr.zip",
-      "bundleUrl": "http://localhost:5174/bundles/beat-bubble-vr.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/beat-bubble-vr.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/beat-bubble-vr.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -187,15 +187,15 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/beat-bubble-vr/hero/VR BEAT BUBBLE.jpg"
+          "url": "/hermetic-labs-exchange/assets/beat-bubble-vr/hero/VR BEAT BUBBLE.jpg"
         },
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/beat-bubble-vr/gallery_1/Image_fx (6).png"
+          "url": "/hermetic-labs-exchange/assets/beat-bubble-vr/gallery_1/Image_fx (6).png"
         },
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/beat-bubble-vr/gallery_2/Image_fx (2).png"
+          "url": "/hermetic-labs-exchange/assets/beat-bubble-vr/gallery_2/Image_fx (2).png"
         }
       ],
       "techSpecs": [
@@ -280,8 +280,8 @@
       "description": "Connect to Omron and other blood pressure monitors through their cloud platforms to securely access blood pressure readings. Easily bring remote measurements into your workflows to support monitoring, insights, and care coordination.",
       "category": "Healthcare",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/bp-pump-connector.zip",
-      "bundleUrl": "http://localhost:5174/bundles/bp-pump-connector.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/bp-pump-connector.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/bp-pump-connector.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -294,7 +294,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/bp-pump-connector/hero/BPM.jpg"
+          "url": "/hermetic-labs-exchange/assets/bp-pump-connector/hero/BPM.jpg"
         }
       ],
       "techSpecs": [
@@ -367,8 +367,8 @@
       "description": "Complete IDE and development toolkit for EVE-OS. Includes Code Graph visualization, Node Editor, API Harness, LLM Console, and the Remix IDE for creating new packages from existing components.",
       "category": "Developer Tools",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/dev-portal.zip",
-      "bundleUrl": "http://localhost:5174/bundles/dev-portal.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/dev-portal.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/dev-portal.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -381,7 +381,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/dev-portal/hero/Image_fx (19).png"
+          "url": "/hermetic-labs-exchange/assets/dev-portal/hero/Image_fx (19).png"
         }
       ],
       "techSpecs": [
@@ -458,8 +458,8 @@
       "description": "Meet federal security requirements with built-in FedRAMP-aligned controls, ongoing security monitoring, and structured compliance documentation. Designed to support government and regulated workloads without slowing down deployment.",
       "category": "Government",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/fedramp-compliance.zip",
-      "bundleUrl": "http://localhost:5174/bundles/fedramp-compliance.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/fedramp-compliance.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/fedramp-compliance.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -472,27 +472,27 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/fedramp-compliance/hero/FedRamp.jpg"
+          "url": "/hermetic-labs-exchange/assets/fedramp-compliance/hero/FedRamp.jpg"
         },
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/fedramp-compliance/gallery_2/Image_fx (14).png"
+          "url": "/hermetic-labs-exchange/assets/fedramp-compliance/gallery_2/Image_fx (14).png"
         },
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/fedramp-compliance/gallery_3/Image_fx (14).png"
+          "url": "/hermetic-labs-exchange/assets/fedramp-compliance/gallery_3/Image_fx (14).png"
         },
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/fedramp-compliance/gallery_4/Image_fx (14).png"
+          "url": "/hermetic-labs-exchange/assets/fedramp-compliance/gallery_4/Image_fx (14).png"
         },
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/fedramp-compliance/gallery_5/Image_fx (14).png"
+          "url": "/hermetic-labs-exchange/assets/fedramp-compliance/gallery_5/Image_fx (14).png"
         },
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/fedramp-compliance/gallery_8/Image_fx (14).png"
+          "url": "/hermetic-labs-exchange/assets/fedramp-compliance/gallery_8/Image_fx (14).png"
         }
       ],
       "techSpecs": [
@@ -561,8 +561,8 @@
       "description": "Enable seamless healthcare data exchange with built-in HL7 FHIR R4 support. Validate and manage clinical resources with confidence while connecting systems, applications, and workflows across the healthcare ecosystem—powered by Eve OS.",
       "category": "Healthcare ai",
       "price": 7000,
-      "downloadUrl": "http://localhost:5174/fhir-compliance.zip",
-      "bundleUrl": "http://localhost:5174/bundles/fhir-compliance.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/fhir-compliance.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/fhir-compliance.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -575,7 +575,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/fhir-compliance/hero/FHIR.jpg"
+          "url": "/hermetic-labs-exchange/assets/fhir-compliance/hero/FHIR.jpg"
         }
       ],
       "techSpecs": [
@@ -644,8 +644,8 @@
       "description": "Build and share forms in minutes with an intuitive drag-and-drop editor and live preview. Create custom forms, share them instantly via secure links, and collect submissions seamlessly. Supports a wide range of field types, including text, selections, signatures, and file uploads—no coding required.",
       "category": "Productivity",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/form-builder.zip",
-      "bundleUrl": "http://localhost:5174/bundles/form-builder.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/form-builder.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/form-builder.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -658,7 +658,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/form-builder/hero/Form Builder.jpg"
+          "url": "/hermetic-labs-exchange/assets/form-builder/hero/Form Builder.jpg"
         }
       ],
       "techSpecs": [
@@ -742,8 +742,8 @@
       "description": "Connect to Google Cloud Storage to securely store and access files at scale. Manage buckets and objects with ease, and use secure access links to upload and retrieve data without added infrastructure overhead.",
       "category": "Storage",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/gcs-connector.zip",
-      "bundleUrl": "http://localhost:5174/bundles/gcs-connector.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/gcs-connector.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/gcs-connector.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -756,23 +756,23 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/gcs-connector/hero/Google.jpg"
+          "url": "/hermetic-labs-exchange/assets/gcs-connector/hero/Google.jpg"
         },
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/gcs-connector/gallery_2/Image_fx (14).png"
+          "url": "/hermetic-labs-exchange/assets/gcs-connector/gallery_2/Image_fx (14).png"
         },
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/gcs-connector/gallery_3/Image_fx (14).png"
+          "url": "/hermetic-labs-exchange/assets/gcs-connector/gallery_3/Image_fx (14).png"
         },
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/gcs-connector/gallery_4/Image_fx (14).png"
+          "url": "/hermetic-labs-exchange/assets/gcs-connector/gallery_4/Image_fx (14).png"
         },
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/gcs-connector/gallery_9/Image_fx (14).png"
+          "url": "/hermetic-labs-exchange/assets/gcs-connector/gallery_9/Image_fx (14).png"
         }
       ],
       "techSpecs": [
@@ -841,8 +841,8 @@
       "description": "Explore data on a fully interactive 3D globe with flexible data adapters. Display points, arcs, heatmaps, and animated paths to visualize geographic activity, network flows, logistics, and analytics in a clear, engaging way.",
       "category": "Analytics",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/globe-viz.zip",
-      "bundleUrl": "http://localhost:5174/bundles/globe-viz.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/globe-viz.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/globe-viz.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -855,7 +855,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/globe-viz/hero/Globe Visualization.jpg"
+          "url": "/hermetic-labs-exchange/assets/globe-viz/hero/Globe Visualization.jpg"
         }
       ],
       "techSpecs": [
@@ -943,8 +943,8 @@
       "description": "Protect patient data with built-in HIPAA Privacy Rule safeguards. Enforce secure handling of PHI, role-based access controls, and detailed audit logs to support compliance and accountability across healthcare workflows.",
       "category": "Healthcare",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/hipaa-compliance.zip",
-      "bundleUrl": "http://localhost:5174/bundles/hipaa-compliance.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/hipaa-compliance.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/hipaa-compliance.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -957,7 +957,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/hipaa-compliance/hero/HIPAA.jpg"
+          "url": "/hermetic-labs-exchange/assets/hipaa-compliance/hero/HIPAA.jpg"
         }
       ],
       "techSpecs": [
@@ -1026,8 +1026,8 @@
       "description": "Run your entire HR and payroll operation from one unified platform. Manage employees, departments, job postings, payroll, banking, and pay stubs with built-in integrations. A full-featured, white-label solution designed to scale with your organization.",
       "category": "Business",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/hr-payroll-portal.zip",
-      "bundleUrl": "http://localhost:5174/bundles/hr-payroll-portal.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/hr-payroll-portal.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/hr-payroll-portal.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -1040,7 +1040,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/hr-payroll-portal/hero/HR and Payroll.jpg"
+          "url": "/hermetic-labs-exchange/assets/hr-payroll-portal/hero/HR and Payroll.jpg"
         }
       ],
       "techSpecs": [
@@ -1129,8 +1129,8 @@
       "description": "Connect to iChoice and other pulse oximeter devices through their cloud platforms to securely access oxygen saturation data. Easily bring vital readings into your workflows to support monitoring, insights, and care coordination.",
       "category": "Healthcare",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/ichoice-connector.zip",
-      "bundleUrl": "http://localhost:5174/bundles/ichoice-connector.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/ichoice-connector.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/ichoice-connector.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -1143,7 +1143,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/ichoice-connector/hero/iChoice.jpg"
+          "url": "/hermetic-labs-exchange/assets/ichoice-connector/hero/iChoice.jpg"
         }
       ],
       "techSpecs": [
@@ -1212,8 +1212,8 @@
       "description": "Discover and connect IoT devices across environments with built-in protocol support and automation workflows. Orchestrate smart home, medical, and industrial devices using flexible rules and safety controls to ensure reliable, coordinated operation at scale.",
       "category": "Connectivity",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/iot-connector.zip",
-      "bundleUrl": "http://localhost:5174/bundles/iot-connector.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/iot-connector.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/iot-connector.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -1226,7 +1226,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/iot-connector/hero/IoT.jpg"
+          "url": "/hermetic-labs-exchange/assets/iot-connector/hero/IoT.jpg"
         }
       ],
       "techSpecs": [
@@ -1303,8 +1303,8 @@
       "description": "Support ITAR export control requirements for defense-related data and technology. Enforce access restrictions, data handling controls, and compliance safeguards to help manage sensitive technical information with confidence.",
       "category": "Defense",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/itar-compliance.zip",
-      "bundleUrl": "http://localhost:5174/bundles/itar-compliance.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/itar-compliance.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/itar-compliance.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -1317,7 +1317,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/itar-compliance/hero/ITAR.jpg"
+          "url": "/hermetic-labs-exchange/assets/itar-compliance/hero/ITAR.jpg"
         }
       ],
       "techSpecs": [
@@ -1386,8 +1386,8 @@
       "description": "Access powerful legal research directly within your workflows. Search documents, case law, and statutes to quickly find authoritative legal information and support informed decision-making.",
       "category": "Legal",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/lexisnexis-connector.zip",
-      "bundleUrl": "http://localhost:5174/bundles/lexisnexis-connector.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/lexisnexis-connector.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/lexisnexis-connector.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -1400,7 +1400,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/lexisnexis-connector/hero/LexisNexis.jpg"
+          "url": "/hermetic-labs-exchange/assets/lexisnexis-connector/hero/LexisNexis.jpg"
         }
       ],
       "techSpecs": [
@@ -1468,8 +1468,8 @@
       "description": "Complete medical module with bedside assistant, nurse station dashboard, FHIR integration, vitals monitoring, and fall detection. Optimized for Raspberry Pi deployment.",
       "category": "Medical",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/medical-module.zip",
-      "bundleUrl": "http://localhost:5174/bundles/medical-module.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/medical-module.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/medical-module.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -1482,11 +1482,11 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/medical-module/hero/download.jpg"
+          "url": "/hermetic-labs-exchange/assets/medical-module/hero/download.jpg"
         },
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/medical-module/gallery_1/Medical.png"
+          "url": "/hermetic-labs-exchange/assets/medical-module/gallery_1/Medical.png"
         }
       ],
       "techSpecs": [
@@ -1583,8 +1583,8 @@
       "description": "Protect payment card data with built-in PCI DSS security controls. Safeguard cardholder information, secure payment workflows, and maintain strong network protections to support compliant, trusted transactions.",
       "category": "Payments",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/pci-compliance.zip",
-      "bundleUrl": "http://localhost:5174/bundles/pci-compliance.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/pci-compliance.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/pci-compliance.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -1597,7 +1597,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/pci-compliance/hero/PCI DSS.jpg"
+          "url": "/hermetic-labs-exchange/assets/pci-compliance/hero/PCI DSS.jpg"
         }
       ],
       "techSpecs": [
@@ -1666,8 +1666,8 @@
       "description": "Connect securely to financial institutions using Plaid’s trusted platform. Access account data, transactions, balances, identity, and more to power payments, insights, and financial workflows—all with built-in support for real-time updates.",
       "category": "Financial",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/plaid-connector.zip",
-      "bundleUrl": "http://localhost:5174/bundles/plaid-connector.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/plaid-connector.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/plaid-connector.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -1680,7 +1680,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/plaid-connector/hero/Plaid.jpg"
+          "url": "/hermetic-labs-exchange/assets/plaid-connector/hero/Plaid.jpg"
         }
       ],
       "techSpecs": [
@@ -1757,8 +1757,8 @@
       "description": "Jump into a nostalgic side-scrolling adventure inspired by classic platformers. Navigate pixel-art worlds, collect coins, defeat enemies, and reach the goal flag. Designed for smooth play on desktop and mobile with responsive touch controls.",
       "category": "Entertainment",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/platformer-game.zip",
-      "bundleUrl": "http://localhost:5174/bundles/platformer-game.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/platformer-game.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/platformer-game.bundle.js",
       "author": {
         "id": "vrf",
         "name": "VRF",
@@ -1771,7 +1771,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/platformer-game/hero/Platformer.jpg"
+          "url": "/hermetic-labs-exchange/assets/platformer-game/hero/Platformer.jpg"
         }
       ],
       "techSpecs": [
@@ -1859,8 +1859,8 @@
       "description": "Connect seamlessly to Salesforce to access and manage CRM data at scale. Work with standard and custom objects, run powerful queries, handle bulk operations, and receive real-time updates to keep your workflows in sync.",
       "category": "CRM",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/salesforce-connector.zip",
-      "bundleUrl": "http://localhost:5174/bundles/salesforce-connector.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/salesforce-connector.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/salesforce-connector.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -1873,7 +1873,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/salesforce-connector/hero/Salesforce.jpg"
+          "url": "/hermetic-labs-exchange/assets/salesforce-connector/hero/Salesforce.jpg"
         }
       ],
       "techSpecs": [
@@ -1942,8 +1942,8 @@
       "description": "Streamline federal contractor workflows with direct integration to SAM.gov. Register entities, search contractor records, and access up-to-date registration data to support compliance and government contracting activities.",
       "category": "Government",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/sam-gov-connector.zip",
-      "bundleUrl": "http://localhost:5174/bundles/sam-gov-connector.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/sam-gov-connector.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/sam-gov-connector.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -1956,7 +1956,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/sam-gov-connector/hero/sam.gov.jpg"
+          "url": "/hermetic-labs-exchange/assets/sam-gov-connector/hero/sam.gov.jpg"
         }
       ],
       "techSpecs": [
@@ -2024,8 +2024,8 @@
       "description": "Connect seamlessly to SAP to streamline enterprise workflows. Access core SAP data and processes through secure integration, enabling automation, reporting, and system synchronization across your organization.",
       "category": "ERP",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/sap-connector.zip",
-      "bundleUrl": "http://localhost:5174/bundles/sap-connector.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/sap-connector.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/sap-connector.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -2038,7 +2038,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/sap-connector/hero/Image_fx (23).jpg"
+          "url": "/hermetic-labs-exchange/assets/sap-connector/hero/Image_fx (23).jpg"
         }
       ],
       "techSpecs": [
@@ -2107,8 +2107,8 @@
       "description": "Support SOX requirements with built-in financial controls, detailed audit trails, and internal control monitoring. Help ensure transparency, accountability, and confidence in financial reporting.",
       "category": "Financial",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/sox-compliance.zip",
-      "bundleUrl": "http://localhost:5174/bundles/sox-compliance.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/sox-compliance.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/sox-compliance.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -2121,7 +2121,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/sox-compliance/hero/SOX.jpg"
+          "url": "/hermetic-labs-exchange/assets/sox-compliance/hero/SOX.jpg"
         }
       ],
       "techSpecs": [
@@ -2190,8 +2190,8 @@
       "description": "Explore markets with an interactive candlestick chart and real-time strategy coding. Write simple rules in an easy DSL and instantly visualize buy/sell signals on the chart. Includes 2D/3D views, SMA/EMA indicators, and timeline scrubbing for fast back testing and exploration.",
       "category": "Finance",
       "price": 7,
-      "downloadUrl": "http://localhost:5174/stock-visualizer.zip",
-      "bundleUrl": "http://localhost:5174/bundles/stock-visualizer.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/stock-visualizer.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/stock-visualizer.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -2204,7 +2204,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/stock-visualizer/hero/add_a_professional_label_matching_the_styling.jpeg"
+          "url": "/hermetic-labs-exchange/assets/stock-visualizer/hero/add_a_professional_label_matching_the_styling.jpeg"
         }
       ],
       "techSpecs": [
@@ -2284,8 +2284,8 @@
       "description": "Accept payments and manage billing with native Stripe support. Create customers, process one-time charges, run subscriptions, and use webhooks to keep orders, access, and receipts automatically in sync.",
       "category": "Payments",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/stripe-connector.zip",
-      "bundleUrl": "http://localhost:5174/bundles/stripe-connector.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/stripe-connector.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/stripe-connector.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -2298,7 +2298,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/stripe-connector/hero/Stripe.jpg"
+          "url": "/hermetic-labs-exchange/assets/stripe-connector/hero/Stripe.jpg"
         }
       ],
       "techSpecs": [
@@ -2367,8 +2367,8 @@
       "description": "Access federal spending data directly from USASpending.gov. Explore awards, agencies, and recipient information to support transparency, reporting, and government market analysis.",
       "category": "Government",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/usaspending-connector.zip",
-      "bundleUrl": "http://localhost:5174/bundles/usaspending-connector.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/usaspending-connector.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/usaspending-connector.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -2381,7 +2381,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/usaspending-connector/hero/USA Spending.jpg"
+          "url": "/hermetic-labs-exchange/assets/usaspending-connector/hero/USA Spending.jpg"
         }
       ],
       "techSpecs": [
@@ -2449,8 +2449,8 @@
       "description": "Timeline-based video editor with TTS narration. Drop a script, chunk it, assign voices and speeds per chunk, overlay on video, and export. Supports configurable TTS endpoints (Kokoro compatible).",
       "category": "Media",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/video-narration-editor.zip",
-      "bundleUrl": "http://localhost:5174/bundles/video-narration-editor.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/video-narration-editor.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/video-narration-editor.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -2463,11 +2463,11 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/video-narration-editor/hero/Image_fx (24).png"
+          "url": "/hermetic-labs-exchange/assets/video-narration-editor/hero/Image_fx (24).png"
         },
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/video-narration-editor/gallery_1/Image_fx (2).png"
+          "url": "/hermetic-labs-exchange/assets/video-narration-editor/gallery_1/Image_fx (2).png"
         }
       ],
       "techSpecs": [
@@ -2552,8 +2552,8 @@
       "description": "Enable voice-driven, hands-free operation with built-in speech recognition and command processing. Turn spoken requests into actionable workflows (Reflex Cards) so users can move faster, stay focused, and operate without touching a keyboard or screen.",
       "category": "Accessibility",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/voice-connector.zip",
-      "bundleUrl": "http://localhost:5174/bundles/voice-connector.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/voice-connector.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/voice-connector.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -2566,7 +2566,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/voice-connector/hero/Voice Connector.jpg"
+          "url": "/hermetic-labs-exchange/assets/voice-connector/hero/Voice Connector.jpg"
         }
       ],
       "techSpecs": [
@@ -2635,8 +2635,8 @@
       "description": "Unlock immersive VR and XR experiences across EVE-OS with a single install. Enable VR mode system-wide to interact with applications, data, and workflows in fully immersive environments.",
       "category": "VR/XR",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/vr-spatial-engine.zip",
-      "bundleUrl": "http://localhost:5174/bundles/vr-spatial-engine.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/vr-spatial-engine.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/vr-spatial-engine.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -2649,7 +2649,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/vr-spatial-engine/hero/VR Spatial.jpg"
+          "url": "/hermetic-labs-exchange/assets/vr-spatial-engine/hero/VR Spatial.jpg"
         }
       ],
       "techSpecs": [
@@ -2726,8 +2726,8 @@
       "description": "Bring EVE to life with a fully animated VRM avatar companion. Features natural lip-syncing and expressive animations that respond in real time, letting you replace EVE’s sphere with a personable 3D character for more engaging, human-like interactions.",
       "category": "AI",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/vrm-companion.zip",
-      "bundleUrl": "http://localhost:5174/bundles/vrm-companion.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/vrm-companion.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/vrm-companion.bundle.js",
       "author": {
         "id": "vrf",
         "name": "VRF",
@@ -2740,7 +2740,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/vrm-companion/hero/AI Companion.jpg"
+          "url": "/hermetic-labs-exchange/assets/vrm-companion/hero/AI Companion.jpg"
         }
       ],
       "techSpecs": [
@@ -2817,8 +2817,8 @@
       "description": "Access trusted legal research directly within your workflows. Search documents, statutes, and case law with KeyCite support to stay current, validate authority, and make confident legal decisions faster.",
       "category": "Legal",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/westlaw-connector.zip",
-      "bundleUrl": "http://localhost:5174/bundles/westlaw-connector.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/westlaw-connector.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/westlaw-connector.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -2831,7 +2831,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/westlaw-connector/hero/Westlaw.jpg"
+          "url": "/hermetic-labs-exchange/assets/westlaw-connector/hero/Westlaw.jpg"
         }
       ],
       "techSpecs": [
@@ -2900,8 +2900,8 @@
       "description": "Workday HCM integration with workers, positions, organizations, and payroll",
       "category": "HR",
       "price": 0,
-      "downloadUrl": "http://localhost:5174/workday-connector.zip",
-      "bundleUrl": "http://localhost:5174/bundles/workday-connector.bundle.js",
+      "downloadUrl": "/hermetic-labs-exchange/workday-connector.zip",
+      "bundleUrl": "/hermetic-labs-exchange/bundles/workday-connector.bundle.js",
       "author": {
         "id": "hermetic-labs",
         "name": "Hermetic Labs",
@@ -2914,7 +2914,7 @@
       "media": [
         {
           "type": "image",
-          "url": "http://localhost:5174/assets/workday-connector/hero/Workday.jpg"
+          "url": "/hermetic-labs-exchange/assets/workday-connector/hero/Workday.jpg"
         }
       ],
       "techSpecs": [
@@ -3091,5 +3091,5 @@
       "totalSales": 0
     }
   ],
-  "generatedAt": "2026-02-05T18:56:29.875Z"
+  "generatedAt": "2026-02-05T19:05:48.579Z"
 }
