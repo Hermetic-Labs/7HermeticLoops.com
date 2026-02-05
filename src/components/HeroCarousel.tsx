@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { ChevronLeft, ChevronRight, Volume2, VolumeX, Maximize, Minimize } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Product, Domain, ALL_DOMAINS, DOMAIN_LABELS, CLASS_COLORS } from '../types';
+import { Product, Domain, ALL_DOMAINS, DOMAIN_LABELS, CLASS_COLORS, DOMAIN_COLORS, DOMAIN_BG_COLORS, CATEGORY_COLORS } from '../types';
 
 // Announcement slide type (videos/images from /Videos folder)
 interface AnnouncementSlide {
@@ -42,15 +42,35 @@ interface Props {
 }
 
 export function HeroCarousel({ products, announcements = [], fallbackVideoUrl }: Props) {
-  // Default fallback video - use the main company video for #1 products
-  const defaultFallbackVideo = `${import.meta.env.BASE_URL}Videos/Overview%20(5).mp4`;
-  const videoForTopProducts = fallbackVideoUrl || defaultFallbackVideo;
+  // Dynamic fallback video - fetched from manifest at runtime
+  const [manifestVideo, setManifestVideo] = useState<string | null>(null);
   const [current, setCurrent] = useState(0);
   const [isMuted, setIsMuted] = useState(true);
   const [videoError, setVideoError] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Fetch the fallback video from manifest.json
+  useEffect(() => {
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    fetch(`${baseUrl}Videos/manifest.json`)
+      .then(res => res.json())
+      .then((data) => {
+        // Use the first announcement video as the fallback
+        const firstVideo = data.announcements?.find((a: { mediaType: string }) => a.mediaType === 'video');
+        if (firstVideo?.src) {
+          // Normalize the path
+          const videoSrc = firstVideo.src.startsWith('/')
+            ? `${baseUrl.replace(/\/$/, '')}${firstVideo.src}`
+            : firstVideo.src;
+          setManifestVideo(videoSrc);
+        }
+      })
+      .catch(err => console.log('Could not load video manifest:', err));
+  }, []);
+
+  const videoForTopProducts = fallbackVideoUrl || manifestVideo;
 
   // Handle fullscreen toggle
   const toggleFullscreen = useCallback(() => {
@@ -93,42 +113,33 @@ export function HeroCarousel({ products, announcements = [], fallbackVideoUrl }:
       });
     });
 
-    // Group products by domain and sort by reviewCount within each
-    const productsByDomain: Record<string, Product[]> = {};
+    // Group products by category and sort by reviewCount within each
+    const productsByCategory: Record<string, Product[]> = {};
     for (const product of products) {
-      const domain = product.domain || 'dev';
-      if (!productsByDomain[domain]) {
-        productsByDomain[domain] = [];
+      const category = product.category || 'Other';
+      if (!productsByCategory[category]) {
+        productsByCategory[category] = [];
       }
-      productsByDomain[domain].push(product);
+      productsByCategory[category].push(product);
     }
 
-    // Sort products within each domain by popularity
-    for (const domain of Object.keys(productsByDomain)) {
-      productsByDomain[domain].sort((a, b) => b.reviewCount - a.reviewCount);
+    // Sort products within each category by popularity
+    for (const category of Object.keys(productsByCategory)) {
+      productsByCategory[category].sort((a, b) => b.reviewCount - a.reviewCount);
     }
 
-    // Add slides in domain order: for each populated domain, add top 3
-    for (const domain of ALL_DOMAINS) {
-      const domainProducts = productsByDomain[domain];
-      if (!domainProducts || domainProducts.length === 0) continue;
+    // Add slides: one product per category (top by review count)
+    for (const category of Object.keys(productsByCategory)) {
+      const categoryProducts = productsByCategory[category];
+      if (!categoryProducts || categoryProducts.length === 0) continue;
 
-      // Top product gets "top" treatment (video if available)
-      const top = domainProducts[0];
+      // One product per category
+      const top = categoryProducts[0];
       result.push({
         type: 'product',
         product: top,
-        rank: 'top',
+        rank: 'runner-up', // Use runner-up rank so it shows as image, not video
       });
-
-      // Next 2 are runner-ups (image cards)
-      for (let i = 1; i < Math.min(3, domainProducts.length); i++) {
-        result.push({
-          type: 'product',
-          product: domainProducts[i],
-          rank: 'runner-up',
-        });
-      }
     }
 
     return result;
@@ -194,11 +205,10 @@ export function HeroCarousel({ products, announcements = [], fallbackVideoUrl }:
   return (
     <div
       ref={containerRef}
-      className={`relative w-full overflow-hidden cyber-card ${
-        isFullscreen
-          ? 'h-screen max-h-screen rounded-none'
-          : 'aspect-[2/1] max-h-[400px] rounded-lg'
-      }`}
+      className={`relative w-full overflow-hidden cyber-card ${isFullscreen
+        ? 'h-screen max-h-screen rounded-none'
+        : 'aspect-[2/1] max-h-[400px] rounded-lg'
+        }`}
     >
       {slides.map((slide, index) => {
         const isActive = index === current;
@@ -210,9 +220,8 @@ export function HeroCarousel({ products, announcements = [], fallbackVideoUrl }:
           return (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-500 ${
-                isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'
-              }`}
+              className={`absolute inset-0 transition-opacity duration-500 ${isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                }`}
             >
               {showVideo ? (
                 <video
@@ -238,15 +247,15 @@ export function HeroCarousel({ products, announcements = [], fallbackVideoUrl }:
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               {(slide.title || slide.tagline) && (
-                <div className="absolute inset-0 flex items-end px-8 md:px-16 pb-16">
-                  <div className="max-w-2xl">
+                <div className="absolute top-6 left-6 md:left-12">
+                  <div className="max-w-xl">
                     {slide.title && (
-                      <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 text-glow-green">
+                      <h2 className="text-xl md:text-2xl font-bold text-white mb-2 text-glow-green">
                         {slide.title}
                       </h2>
                     )}
                     {slide.tagline && (
-                      <p className="text-gray-200 text-lg md:text-xl">{slide.tagline}</p>
+                      <p className="text-gray-200 text-sm md:text-base">{slide.tagline}</p>
                     )}
                   </div>
                 </div>
@@ -270,9 +279,8 @@ export function HeroCarousel({ products, announcements = [], fallbackVideoUrl }:
         return (
           <div
             key={`${product.id}-${rank}`}
-            className={`absolute inset-0 transition-opacity duration-500 ${
-              isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'
-            }`}
+            className={`absolute inset-0 transition-opacity duration-500 ${isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'
+              }`}
           >
             {showProductVideo ? (
               <video
@@ -289,45 +297,54 @@ export function HeroCarousel({ products, announcements = [], fallbackVideoUrl }:
               <img
                 src={productImage}
                 alt={product.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain object-right bg-black/50"
               />
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-            <div className="absolute inset-0 flex items-end px-8 md:px-16 pb-16">
-              <div className="max-w-lg">
-                {/* Rank indicator + Class badge + Domain */}
-                <div className="flex items-center gap-3 mb-3">
-                  {rank === 'top' && (
-                    <span className="px-2 py-0.5 text-xs font-bold bg-cyber-green/20 text-cyber-green border border-cyber-green/40 rounded">
-                      #1 in {domainLabel}
-                    </span>
-                  )}
-                  {product.class && (
-                    <span
-                      className="px-2 py-0.5 text-xs font-bold rounded border"
-                      style={{
-                        color: classColor,
-                        backgroundColor: `${classColor}20`,
-                        borderColor: `${classColor}40`,
-                      }}
-                    >
-                      {product.class}
-                    </span>
-                  )}
-                  {rank !== 'top' && (
-                    <span className="text-gray-400 text-sm uppercase tracking-wider">
-                      {domainLabel}
-                    </span>
-                  )}
-                </div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-2">
-                  {product.title}
-                </h2>
-                <p className="text-gray-300 mb-4 line-clamp-2">{product.description}</p>
-                <Link to={`/product/${product.slug}`} className="cyber-btn inline-block">
-                  View Details
-                </Link>
+
+            {/* Top Left: Title + Category + Class */}
+            <div className="absolute top-6 left-6 md:left-12">
+              <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
+                {product.title}
+              </h2>
+              <div className="flex items-center gap-2">
+                {/* Category badge with per-category colors */}
+                <span
+                  className="px-2 py-0.5 text-xs font-bold rounded border"
+                  style={{
+                    color: CATEGORY_COLORS[product.category] || '#00b4ff',
+                    backgroundColor: `${CATEGORY_COLORS[product.category] || '#00b4ff'}20`,
+                    borderColor: `${CATEGORY_COLORS[product.category] || '#00b4ff'}40`,
+                  }}
+                >
+                  {product.category}
+                </span>
+                {/* Class badge with per-class colors */}
+                {product.class && (
+                  <span
+                    className="px-2 py-0.5 text-xs font-bold rounded border"
+                    style={{
+                      color: classColor,
+                      backgroundColor: `${classColor}20`,
+                      borderColor: `${classColor}40`,
+                    }}
+                  >
+                    {product.class}
+                  </span>
+                )}
               </div>
+            </div>
+
+            {/* Center Left: Description */}
+            <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-12 max-w-md">
+              <p className="text-gray-300 text-sm line-clamp-2">{product.description}</p>
+            </div>
+
+            {/* Bottom Right: View Details Button */}
+            <div className="absolute bottom-6 right-6 md:right-12">
+              <Link to={`/product/${product.slug}`} className="cyber-btn inline-block text-sm px-3 py-1.5">
+                View Details
+              </Link>
             </div>
           </div>
         );
@@ -395,11 +412,10 @@ export function HeroCarousel({ products, announcements = [], fallbackVideoUrl }:
               <button
                 key={index}
                 onClick={() => setCurrent(index)}
-                className={`h-2 rounded-full transition-all ${
-                  index === current
-                    ? `${getColor()} w-6`
-                    : 'bg-white/30 w-2 hover:bg-white/50'
-                }`}
+                className={`h-2 rounded-full transition-all ${index === current
+                  ? `${getColor()} w-6`
+                  : 'bg-white/30 w-2 hover:bg-white/50'
+                  }`}
                 title={
                   isAnnouncement
                     ? 'Announcement'

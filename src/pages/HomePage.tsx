@@ -186,7 +186,6 @@ export function HomePage() {
   return (
     <div className="min-h-screen pt-20">
       {/* Title and Hero Carousel - Main Page View */}
-      {/* Sequential carousel: [Announcement] → [Domain1: #1 video, #2, #3] → [Domain2: #1 video, #2, #3] → ... */}
       {!activeCategory && !activeDomain && !searchQuery && (
         <section className="py-8 px-4">
           <div className="max-w-7xl mx-auto">

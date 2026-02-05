@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
-import { ShoppingCart, User, ChevronDown, Menu, X, LogOut, Library, Store, Filter, Star, Settings, Heart } from 'lucide-react';
+import { ShoppingCart, User, ChevronDown, Menu, X, LogOut, Library, Store, Filter, Settings, Heart } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
-import { Domain, ALL_DOMAINS, DOMAIN_LABELS } from '../types';
+import { useWishlist } from '../context/WishlistContext';
+import { CATEGORY_COLORS } from '../types';
 
 type SortOption = 'popular' | 'newest' | 'price-low' | 'price-high' | 'rating';
 
@@ -16,6 +17,7 @@ export function Header() {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
   const { cartItems } = useCart();
+  const { wishlistCount } = useWishlist();
 
   // Refs for click-outside detection
   const filterRef = useRef<HTMLDivElement>(null);
@@ -24,7 +26,7 @@ export function Header() {
   const currentSort = (searchParams.get('sort') as SortOption) || 'popular';
   const freeOnly = searchParams.get('free') === 'true';
   const minRating = parseInt(searchParams.get('rating') || '0', 10);
-  const activeDomain = searchParams.get('domain') as Domain | null;
+  const activeCategory = searchParams.get('category');
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -67,12 +69,12 @@ export function Header() {
     setSearchParams(params);
   };
 
-  const handleDomainChange = (domain: Domain | null) => {
+  const handleCategoryChange = (category: string | null) => {
     const params = new URLSearchParams(searchParams);
-    if (domain === null) {
-      params.delete('domain');
+    if (category === null) {
+      params.delete('category');
     } else {
-      params.set('domain', domain);
+      params.set('category', category);
     }
     setSearchParams(params);
     setShowFilters(false);
@@ -83,12 +85,12 @@ export function Header() {
     params.delete('sort');
     params.delete('free');
     params.delete('rating');
-    params.delete('domain');
+    params.delete('category');
     setSearchParams(params);
     setShowFilters(false);
   };
 
-  const hasActiveFilters = currentSort !== 'popular' || freeOnly || minRating > 0 || activeDomain !== null;
+  const hasActiveFilters = activeCategory !== null;
 
   const sortOptions: { value: SortOption; label: string }[] = [
     { value: 'popular', label: 'Most Popular' },
@@ -96,6 +98,24 @@ export function Header() {
     { value: 'price-low', label: 'Price: Low to High' },
     { value: 'price-high', label: 'Price: High to Low' },
     { value: 'rating', label: 'Highest Rated' },
+  ];
+
+  // Categories from catalog
+  const ALL_CATEGORIES = [
+    'Healthcare',
+    'Finance',
+    'Government',
+    'Legal',
+    'Storage',
+    'Developer Tools',
+    'Productivity',
+    'Media',
+    'Entertainment',
+    'Analytics',
+    'Security',
+    'Communications',
+    'Education',
+    'Research',
   ];
 
   const handleSearch = (e: React.FormEvent) => {
@@ -227,103 +247,46 @@ export function Header() {
                 <ChevronDown className="w-4 h-4" />
               </button>
               {showFilters && (
-                <div className="absolute top-full mt-2 right-0 cyber-panel p-4 min-w-[300px] max-h-[70vh] overflow-y-auto">
-                  {/* Domain Filter */}
-                  <div className="mb-4">
-                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-2">Domain</div>
+                <div className="absolute top-full mt-2 right-0 cyber-panel p-4 min-w-[200px] max-h-[60vh] overflow-y-auto">
+                  {/* Category Filter */}
+                  <div>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-2">Category</div>
                     <div className="space-y-1">
                       <button
-                        onClick={() => handleDomainChange(null)}
-                        className={`w-full text-left px-3 py-2 text-sm rounded transition-colors ${activeDomain === null
+                        onClick={() => handleCategoryChange(null)}
+                        className={`w-full text-left px-3 py-2 text-sm rounded transition-colors ${activeCategory === null
                           ? 'bg-cyber-green/20 text-cyber-green'
                           : 'text-gray-300 hover:bg-white/5'
                           }`}
                       >
-                        All Domains
+                        All Categories
                       </button>
-                      {ALL_DOMAINS.map((domain) => (
+                      {ALL_CATEGORIES.map((category) => (
                         <button
-                          key={domain}
-                          onClick={() => handleDomainChange(domain)}
-                          className={`w-full text-left px-3 py-2 text-sm rounded transition-colors ${activeDomain === domain
+                          key={category}
+                          onClick={() => handleCategoryChange(category)}
+                          className={`w-full text-left px-3 py-2 text-sm rounded transition-colors ${activeCategory === category
                             ? 'bg-cyber-green/20 text-cyber-green'
                             : 'text-gray-300 hover:bg-white/5'
                             }`}
+                          style={{
+                            color: activeCategory === category ? (CATEGORY_COLORS[category] || '#00ff99') : undefined,
+                            backgroundColor: activeCategory === category ? `${CATEGORY_COLORS[category] || '#00ff99'}20` : undefined,
+                          }}
                         >
-                          {DOMAIN_LABELS[domain]}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Sort By */}
-                  <div className="mb-4 border-t border-white/10 pt-4">
-                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-2">Sort By</div>
-                    <div className="space-y-1">
-                      {sortOptions.map((opt) => (
-                        <button
-                          key={opt.value}
-                          onClick={() => handleSortChange(opt.value)}
-                          className={`w-full text-left px-3 py-2 text-sm rounded transition-colors ${currentSort === opt.value
-                            ? 'bg-cyber-green/20 text-cyber-green'
-                            : 'text-gray-300 hover:bg-white/5'
-                            }`}
-                        >
-                          {opt.label}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Price Filter */}
-                  <div className="mb-4 border-t border-white/10 pt-4">
-                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-2">Price</div>
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={freeOnly}
-                        onChange={handleFreeToggle}
-                        className="rounded border-white/30 bg-white/10 text-cyber-green focus:ring-cyber-green"
-                      />
-                      <span className="text-sm text-gray-300">Free Only</span>
-                    </label>
-                  </div>
-
-                  {/* Rating Filter */}
-                  <div className="mb-4 border-t border-white/10 pt-4">
-                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-2">Min Rating</div>
-                    <div className="space-y-1">
-                      {[4, 3, 2, 1, 0].map((rating) => (
-                        <button
-                          key={rating}
-                          onClick={() => handleRatingChange(rating)}
-                          className={`w-full text-left px-3 py-2 text-sm rounded transition-colors flex items-center gap-2 ${minRating === rating
-                            ? 'bg-cyber-green/20'
-                            : 'hover:bg-white/5'
-                            }`}
-                        >
-                          {rating > 0 ? (
-                            <>
-                              {[...Array(rating)].map((_, i) => (
-                                <Star key={i} className="w-3 h-3 text-yellow-400 fill-yellow-400" />
-                              ))}
-                              <span className="text-gray-400 text-xs">& up</span>
-                            </>
-                          ) : (
-                            <span className="text-gray-400">Any rating</span>
-                          )}
+                          {category}
                         </button>
                       ))}
                     </div>
                   </div>
 
                   {/* Clear Filters */}
-                  {hasActiveFilters && (
+                  {activeCategory && (
                     <button
                       onClick={clearFilters}
-                      className="w-full text-center text-sm text-cyber-pink hover:underline"
+                      className="w-full text-center text-sm text-cyber-pink hover:underline mt-4"
                     >
-                      Clear All Filters
+                      Clear Filter
                     </button>
                   )}
                 </div>
@@ -332,12 +295,17 @@ export function Header() {
 
             {/* Wishlist */}
             <Link
-              to="/library"
-              className="flex items-center gap-1.5 text-sm text-gray-300 hover:text-cyber-green transition-colors"
+              to="/wishlist"
+              className="relative flex items-center gap-1.5 text-sm text-gray-300 hover:text-cyber-pink transition-colors"
               title="Wishlist"
             >
               <Heart className="w-4 h-4" />
-              <span className="hidden lg:inline">Wishlist</span>
+              <span>Wishlist</span>
+              {wishlistCount > 0 && (
+                <span className="absolute -top-2 -right-2 w-4 h-4 bg-cyber-pink text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                  {wishlistCount > 9 ? '9+' : wishlistCount}
+                </span>
+              )}
             </Link>
 
             {/* Cart - Links to checkout, badge only shows when items present */}

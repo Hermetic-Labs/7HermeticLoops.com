@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatPrice(price: number): string {
-  if (price === 0) return 'Free';
+  if (price === 0) return 'Coming Soon';
   return price.toLocaleString('en-US', {
     style: 'currency',
     currency: 'USD',

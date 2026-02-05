@@ -14,7 +14,7 @@ import {
   subscribeToVaultStatus,
   VaultPackage
 } from '../lib/download-handler';
-import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
 import {
   ShoppingCart,
   Heart,
@@ -46,7 +46,7 @@ export function ProductPage() {
   const [vaultStatus, setVaultStatus] = useState<VaultPackage[]>([]);
   const [gettingPackage, setGettingPackage] = useState(false);
   const [installing, setInstalling] = useState(false);
-  const { addToCart, isInCart } = useCart();
+  const { addToWishlist, isInWishlist } = useWishlist();
 
   // Subscribe to vault status updates from parent app
   useEffect(() => {
@@ -102,9 +102,9 @@ export function ProductPage() {
     }
   };
 
-  const handleAddToCart = () => {
+  const handleAddToWishlist = () => {
     if (!product) return;
-    addToCart(product);
+    addToWishlist(product);
     setJustAdded(true);
     setTimeout(() => setJustAdded(false), 2000);
   };
@@ -380,8 +380,8 @@ export function ProductPage() {
                             onClick={() => handleHelpful(review.id)}
                             disabled={helpfulIds.has(review.id)}
                             className={`flex items-center gap-2 text-xs transition-colors ${helpfulIds.has(review.id)
-                                ? 'text-cyber-cyan'
-                                : 'text-gray-500 hover:text-cyber-cyan'
+                              ? 'text-cyber-cyan'
+                              : 'text-gray-500 hover:text-cyber-cyan'
                               }`}
                           >
                             <ThumbsUp className="w-3 h-3" />
@@ -468,47 +468,44 @@ export function ProductPage() {
                       )}
                     </button>
                   ) : (
-                    /* Not in vault - show Get Package */
-                    <button
-                      onClick={() => {
-                        setGettingPackage(true);
-                        handlePackageDownload(
-                          product.slug,
-                          product.title,
-                          product.downloadUrl,
-                          { author: product.author?.name, version: product.techSpecs?.find(s => s.label === 'Version')?.value }
-                        );
-                        // Reset after 3 seconds (vault status update will happen independently)
-                        setTimeout(() => setGettingPackage(false), 3000);
-                      }}
-                      disabled={gettingPackage}
-                      className="cyber-btn flex-1 flex items-center justify-center gap-2 disabled:opacity-75"
-                    >
-                      {gettingPackage ? (
-                        <>
-                          <Loader2 className="w-4 h-4 animate-spin" />
-                          Getting...
-                        </>
-                      ) : (
-                        <>
-                          <Download className="w-4 h-4" />
-                          Get Package
-                        </>
-                      )}
-                    </button>
+                    /* Not in vault - show Join Wishlist */
+                    isInWishlist(product.id) ? (
+                      <Link
+                        to="/wishlist"
+                        className="cyber-btn flex-1 flex items-center justify-center gap-2"
+                      >
+                        <Check className="w-4 h-4" /> View Wishlist
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={handleAddToWishlist}
+                        disabled={justAdded}
+                        className="cyber-btn flex-1 flex items-center justify-center gap-2 disabled:opacity-50"
+                      >
+                        {justAdded ? (
+                          <>
+                            <Check className="w-4 h-4" /> Added!
+                          </>
+                        ) : (
+                          <>
+                            <Heart className="w-4 h-4" /> Join Wishlist
+                          </>
+                        )}
+                      </button>
+                    )
                   )
                 ) : product.price === 0 || product.stripePriceId ? (
                   /* Production: All items go to cart (free or paid) */
-                  isInCart(product.id) ? (
+                  isInWishlist(product.id) ? (
                     <Link
-                      to="/checkout"
+                      to="/wishlist"
                       className="cyber-btn flex-1 flex items-center justify-center gap-2"
                     >
-                      <Check className="w-4 h-4" /> View Cart
+                      <Check className="w-4 h-4" /> View Wishlist
                     </Link>
                   ) : (
                     <button
-                      onClick={handleAddToCart}
+                      onClick={handleAddToWishlist}
                       disabled={justAdded}
                       className="cyber-btn flex-1 flex items-center justify-center gap-2 disabled:opacity-50"
                     >
@@ -518,7 +515,7 @@ export function ProductPage() {
                         </>
                       ) : (
                         <>
-                          <ShoppingCart className="w-4 h-4" /> Add to Cart
+                          <Heart className="w-4 h-4" /> Join Wishlist
                         </>
                       )}
                     </button>

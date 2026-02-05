@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Product, PackageClass, CLASS_COLORS, CLASS_BG_COLORS, DOMAIN_LABELS } from '../types';
+import { Product, PackageClass, CLASS_COLORS, CLASS_BG_COLORS, CATEGORY_COLORS } from '../types';
 import { Star } from 'lucide-react';
 import { formatPrice, resolveAssetUrl } from '../lib/utils';
 
@@ -55,14 +55,8 @@ export function ProductCard({ product }: Props) {
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
         )}
-        {/* Class badge - top left */}
-        {product.class && (
-          <div className="absolute top-2 left-2">
-            <ClassBadge packageClass={product.class} />
-          </div>
-        )}
-        {/* NEW badge - only if no class badge */}
-        {!product.class && product.isNew && (
+        {/* NEW badge - if isNew */}
+        {product.isNew && (
           <span className="absolute top-2 left-2 px-2 py-1 bg-cyber-cyan text-black text-xs font-bold rounded">
             NEW
           </span>
@@ -78,12 +72,22 @@ export function ProductCard({ product }: Props) {
         <h3 className="font-semibold text-white mb-1 truncate group-hover:text-cyber-green transition-colors">
           {product.title}
         </h3>
-        {/* Domain label */}
-        {product.domain && (
-          <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">
-            {DOMAIN_LABELS[product.domain]}
-          </p>
-        )}
+        {/* Category + Class badges under title */}
+        <div className="flex items-center gap-2 mb-2">
+          <span
+            className="px-2 py-0.5 text-xs font-bold rounded border"
+            style={{
+              color: CATEGORY_COLORS[product.category] || '#00b4ff',
+              backgroundColor: `${CATEGORY_COLORS[product.category] || '#00b4ff'}20`,
+              borderColor: `${CATEGORY_COLORS[product.category] || '#00b4ff'}40`,
+            }}
+          >
+            {product.category}
+          </span>
+          {product.class && (
+            <ClassBadge packageClass={product.class} />
+          )}
+        </div>
         <p className="text-sm text-gray-400 mb-2">{product.author.name}</p>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1">
