@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { Loader2, Mail, Lock, AlertCircle } from 'lucide-react';
+import { Loader2, AlertCircle } from 'lucide-react';
 
 export function AuthPage() {
   const [searchParams] = useSearchParams();
@@ -76,45 +76,39 @@ export function AuthPage() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm text-gray-400 mb-1">Email</label>
-            <div className="relative">
-              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" />
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="cyber-input w-full pl-10"
-                autoComplete="email"
-              />
-            </div>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="cyber-input w-full"
+              autoComplete="email"
+              placeholder="you@example.com"
+            />
           </div>
 
           <div>
             <label className="block text-sm text-gray-400 mb-1">Password</label>
-            <div className="relative">
-              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" />
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="cyber-input w-full pl-10"
-                autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
-              />
-            </div>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="cyber-input w-full"
+              autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
+              placeholder="••••••••"
+            />
           </div>
 
           {mode === 'register' && (
             <div>
               <label className="block text-sm text-gray-400 mb-1">Confirm Password</label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" />
-                <input
-                  type="password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="cyber-input w-full pl-10"
-                  autoComplete="new-password"
-                />
-              </div>
+              <input
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                className="cyber-input w-full"
+                autoComplete="new-password"
+                placeholder="••••••••"
+              />
             </div>
           )}
 

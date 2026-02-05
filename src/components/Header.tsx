@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
-import { ShoppingCart, User, ChevronDown, Menu, X, LogOut, Library, Store, Filter, Star, Settings, Download } from 'lucide-react';
+import { ShoppingCart, User, ChevronDown, Menu, X, LogOut, Library, Store, Filter, Star, Settings, Heart } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import { Domain, ALL_DOMAINS, DOMAIN_LABELS } from '../types';
@@ -110,7 +110,10 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 shrink-0">
+          <Link
+            to="/"
+            className="flex items-center gap-2 shrink-0 hover:opacity-80 transition-opacity"
+          >
             <img
               src={`${import.meta.env.BASE_URL}images/Hermetci Labs Exchange Logo.png`}
               alt="Hermetic Labs Exchange"
@@ -231,11 +234,10 @@ export function Header() {
                     <div className="space-y-1">
                       <button
                         onClick={() => handleDomainChange(null)}
-                        className={`w-full text-left px-3 py-2 text-sm rounded transition-colors ${
-                          activeDomain === null
-                            ? 'bg-cyber-green/20 text-cyber-green'
-                            : 'text-gray-300 hover:bg-white/5'
-                        }`}
+                        className={`w-full text-left px-3 py-2 text-sm rounded transition-colors ${activeDomain === null
+                          ? 'bg-cyber-green/20 text-cyber-green'
+                          : 'text-gray-300 hover:bg-white/5'
+                          }`}
                       >
                         All Domains
                       </button>
@@ -243,11 +245,10 @@ export function Header() {
                         <button
                           key={domain}
                           onClick={() => handleDomainChange(domain)}
-                          className={`w-full text-left px-3 py-2 text-sm rounded transition-colors ${
-                            activeDomain === domain
-                              ? 'bg-cyber-green/20 text-cyber-green'
-                              : 'text-gray-300 hover:bg-white/5'
-                          }`}
+                          className={`w-full text-left px-3 py-2 text-sm rounded transition-colors ${activeDomain === domain
+                            ? 'bg-cyber-green/20 text-cyber-green'
+                            : 'text-gray-300 hover:bg-white/5'
+                            }`}
                         >
                           {DOMAIN_LABELS[domain]}
                         </button>
@@ -263,11 +264,10 @@ export function Header() {
                         <button
                           key={opt.value}
                           onClick={() => handleSortChange(opt.value)}
-                          className={`w-full text-left px-3 py-2 text-sm rounded transition-colors ${
-                            currentSort === opt.value
-                              ? 'bg-cyber-green/20 text-cyber-green'
-                              : 'text-gray-300 hover:bg-white/5'
-                          }`}
+                          className={`w-full text-left px-3 py-2 text-sm rounded transition-colors ${currentSort === opt.value
+                            ? 'bg-cyber-green/20 text-cyber-green'
+                            : 'text-gray-300 hover:bg-white/5'
+                            }`}
                         >
                           {opt.label}
                         </button>
@@ -297,11 +297,10 @@ export function Header() {
                         <button
                           key={rating}
                           onClick={() => handleRatingChange(rating)}
-                          className={`w-full text-left px-3 py-2 text-sm rounded transition-colors flex items-center gap-2 ${
-                            minRating === rating
-                              ? 'bg-cyber-green/20'
-                              : 'hover:bg-white/5'
-                          }`}
+                          className={`w-full text-left px-3 py-2 text-sm rounded transition-colors flex items-center gap-2 ${minRating === rating
+                            ? 'bg-cyber-green/20'
+                            : 'hover:bg-white/5'
+                            }`}
                         >
                           {rating > 0 ? (
                             <>
@@ -331,16 +330,15 @@ export function Header() {
               )}
             </div>
 
-            {/* EVE OS Download */}
-            <a
-              href={`${import.meta.env.BASE_URL}downloads/eve-os-latest.zip`}
-              download
+            {/* Wishlist */}
+            <Link
+              to="/library"
               className="flex items-center gap-1.5 text-sm text-gray-300 hover:text-cyber-green transition-colors"
-              title="Download EVE OS"
+              title="Wishlist"
             >
-              <Download className="w-4 h-4" />
-              <span className="hidden lg:inline">EVE OS</span>
-            </a>
+              <Heart className="w-4 h-4" />
+              <span className="hidden lg:inline">Wishlist</span>
+            </Link>
 
             {/* Cart - Links to checkout, badge only shows when items present */}
             <Link to="/checkout" className="relative p-2 text-gray-300 hover:text-cyber-cyan transition-colors">

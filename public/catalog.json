@@ -1,6 +1,6 @@
 {
   "version": "3.0.0",
-  "generated": "2026-02-02T09:37:26.680Z",
+  "generated": "2026-02-04T03:45:23.032Z",
   "baseUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages",
   "products": [
     {
@@ -35,7 +35,7 @@
           "url": "packages/aws-s3-connector/assets/hero/AWS 1.jpg"
         }
       ],
-      "description": "Amazon S3 storage integration with buckets, objects, presigned URLs, and multipart uploads",
+      "description": "Securely connect to Amazon S3 to store and manage files at scale. Support for buckets, objects, secure upload and download links, and large file transfers makes it easy to handle documents, media, and data without managing infrastructure.",
       "techSpecs": [
         {
           "label": "Type",
@@ -74,10 +74,10 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.6,
-      "reviewCount": 48,
-      "releaseDate": "2024-12-01",
-      "featured": true,
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
+      "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/aws-s3-connector.zip",
       "bundleUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/bundles/aws-s3-connector.bundle.js",
@@ -128,7 +128,7 @@
           "url": "packages/azure-blob-connector/assets/hero/AZURE.jpg"
         }
       ],
-      "description": "Azure Blob Storage integration with containers, blobs, and SAS tokens",
+      "description": "Easily connect to Azure Blob Storage to store and manage files in the cloud. Supports containers, blobs, and secure access links, making it simple to upload, retrieve, and share data at scale without added complexity.",
       "techSpecs": [
         {
           "label": "Type",
@@ -167,10 +167,10 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.3,
-      "reviewCount": 137,
-      "releaseDate": "2024-12-01",
-      "featured": true,
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
+      "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/azure-blob-connector.zip",
       "bundleUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/bundles/azure-blob-connector.bundle.js",
@@ -219,9 +219,17 @@
         {
           "type": "image",
           "url": "packages/beat-bubble-vr/assets/hero/VR BEAT BUBBLE.jpg"
+        },
+        {
+          "type": "image",
+          "url": "packages/beat-bubble-vr/assets/gallery_1/Image_fx (6).png"
+        },
+        {
+          "type": "image",
+          "url": "packages/beat-bubble-vr/assets/gallery_2/Image_fx (2).png"
         }
       ],
-      "description": "Immersive 3D spherical beat mixer game. Place beats on a spinning sphere inside a VR-ready environment. Features Web Audio API synthesis for kick, snare, hi-hat, bass, and synth sounds. Perfect for music creation and relaxation.",
+      "description": "Create music in an immersive 3D environment by placing beats on a spinning sphere inside a VR-ready experience. Design rhythmic patterns, layer sounds, and explore music creation in a visually engaging space—perfect for creativity, focus, and relaxation.",
       "techSpecs": [
         {
           "label": "Type",
@@ -264,10 +272,10 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.5,
-      "reviewCount": 34,
-      "releaseDate": "2024-12-01",
-      "featured": true,
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
+      "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/beat-bubble-vr.zip",
       "bundleUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/bundles/beat-bubble-vr.bundle.js",
@@ -322,7 +330,7 @@
           "url": "packages/bp-pump-connector/assets/hero/BPM.jpg"
         }
       ],
-      "description": "Connect to Omron and other BP monitors via their cloud portals for blood pressure data access",
+      "description": "Connect to Omron and other blood pressure monitors through their cloud platforms to securely access blood pressure readings. Easily bring remote measurements into your workflows to support monitoring, insights, and care coordination.",
       "techSpecs": [
         {
           "label": "Type",
@@ -365,10 +373,10 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.2,
-      "reviewCount": 21,
-      "releaseDate": "2024-12-01",
-      "featured": true,
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
+      "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/bp-pump-connector.zip",
       "bundleUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/bundles/bp-pump-connector.bundle.js",
@@ -389,6 +397,103 @@
     },
     {
       "id": "p5",
+      "title": "Developer Portal",
+      "slug": "dev-portal",
+      "price": 0,
+      "discountPrice": null,
+      "stripePriceId": null,
+      "author": {
+        "id": "hermetic",
+        "name": "Hermetic Labs",
+        "avatar": "",
+        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "socialLinks": {
+          "website": "https://hermetic.dev",
+          "discord": "#"
+        },
+        "productCount": 7,
+        "totalSales": 8500
+      },
+      "category": "Developer Tools",
+      "class": "Component",
+      "domain": "dev",
+      "domains": [
+        "dev"
+      ],
+      "relationships": null,
+      "media": [
+        {
+          "type": "image",
+          "url": "packages/dev-portal/assets/hero/Image_fx (19).png"
+        }
+      ],
+      "description": "Complete IDE and development toolkit for EVE-OS. Includes Code Graph visualization, Node Editor, API Harness, LLM Console, and the Remix IDE for creating new packages from existing components.",
+      "techSpecs": [
+        {
+          "label": "Type",
+          "value": "Component"
+        },
+        {
+          "label": "Version",
+          "value": "1.0.0"
+        },
+        {
+          "label": "Feature",
+          "value": "Code Graph IDE with AST visualization"
+        },
+        {
+          "label": "Feature",
+          "value": "Visual Node Editor with drag-and-drop workflows"
+        },
+        {
+          "label": "Feature",
+          "value": "API Harness for endpoint testing"
+        },
+        {
+          "label": "Feature",
+          "value": "LLM Console for direct AI model access"
+        },
+        {
+          "label": "Feature",
+          "value": "Remix IDE for creating packages from components"
+        },
+        {
+          "label": "Feature",
+          "value": "Personas management for AI personalities"
+        }
+      ],
+      "links": [
+        {
+          "label": "Documentation",
+          "url": "#"
+        }
+      ],
+      "questions": [],
+      "reviews": [],
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
+      "featured": false,
+      "isNew": false,
+      "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/dev-portal.zip",
+      "bundleUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/bundles/dev-portal.bundle.js",
+      "documentation": {
+        "card": {
+          "title": "Developer Portal",
+          "description": "Complete IDE and development toolkit for EVE-OS",
+          "icon": "Code",
+          "color": "purple"
+        },
+        "summary": {
+          "overview": "The Developer Portal is the central hub for building, testing, and remixing EVE-OS components. It provides a visual code graph IDE, node-based workflow editor, and tools for API testing and AI model interaction.",
+          "exampleUseCase": "Use the Remix IDE to browse installed packages, select components you need, and generate a new package with automatic dependency resolution. Test your APIs with the built-in harness before deployment.",
+          "whatMakesThisDifferent": "Unlike traditional IDEs, the Developer Portal visualizes code as interconnected nodes and supports remixing existing components into new packages without writing boilerplate."
+        },
+        "readme": "./README.md"
+      }
+    },
+    {
+      "id": "p6",
       "title": "FedRAMP Compliance Suite",
       "slug": "fedramp-compliance",
       "price": 0,
@@ -417,9 +522,29 @@
         {
           "type": "image",
           "url": "packages/fedramp-compliance/assets/hero/FedRamp.jpg"
+        },
+        {
+          "type": "image",
+          "url": "packages/fedramp-compliance/assets/gallery_2/Image_fx (14).png"
+        },
+        {
+          "type": "image",
+          "url": "packages/fedramp-compliance/assets/gallery_3/Image_fx (14).png"
+        },
+        {
+          "type": "image",
+          "url": "packages/fedramp-compliance/assets/gallery_4/Image_fx (14).png"
+        },
+        {
+          "type": "image",
+          "url": "packages/fedramp-compliance/assets/gallery_5/Image_fx (14).png"
+        },
+        {
+          "type": "image",
+          "url": "packages/fedramp-compliance/assets/gallery_8/Image_fx (14).png"
         }
       ],
-      "description": "FedRAMP authorization compliance with security controls, continuous monitoring, and documentation",
+      "description": "Meet federal security requirements with built-in FedRAMP-aligned controls, ongoing security monitoring, and structured compliance documentation. Designed to support government and regulated workloads without slowing down deployment.",
       "techSpecs": [
         {
           "label": "Type",
@@ -458,10 +583,10 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.3,
-      "reviewCount": 131,
-      "releaseDate": "2024-12-01",
-      "featured": true,
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
+      "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/fedramp-compliance.zip",
       "bundleUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/bundles/fedramp-compliance.bundle.js",
@@ -481,7 +606,7 @@
       }
     },
     {
-      "id": "p6",
+      "id": "p7",
       "title": "FHIR Compliance Suite",
       "slug": "fhir-compliance",
       "price": 70,
@@ -512,7 +637,7 @@
           "url": "packages/fhir-compliance/assets/hero/FHIR.jpg"
         }
       ],
-      "description": "HL7 FHIR R4 compliance validation, resource management, and healthcare interoperability. Powered by the Eve OS",
+      "description": "Enable seamless healthcare data exchange with built-in HL7 FHIR R4 support. Validate and manage clinical resources with confidence while connecting systems, applications, and workflows across the healthcare ecosystem—powered by Eve OS.",
       "techSpecs": [
         {
           "label": "Type",
@@ -551,10 +676,10 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.2,
-      "reviewCount": 11,
-      "releaseDate": "2024-12-01",
-      "featured": true,
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
+      "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/fhir-compliance.zip",
       "bundleUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/bundles/fhir-compliance.bundle.js",
@@ -574,7 +699,7 @@
       }
     },
     {
-      "id": "p7",
+      "id": "p8",
       "title": "Form Builder",
       "slug": "form-builder",
       "price": 0,
@@ -605,7 +730,7 @@
           "url": "packages/form-builder/assets/hero/Form Builder.jpg"
         }
       ],
-      "description": "Drag-and-drop form builder with field palette, live preview, form sharing via URL encoding, and form submission handling. Supports text, email, number, date, select, checkbox, radio, textarea, signature, and file upload fields.",
+      "description": "Build and share forms in minutes with an intuitive drag-and-drop editor and live preview. Create custom forms, share them instantly via secure links, and collect submissions seamlessly. Supports a wide range of field types, including text, selections, signatures, and file uploads—no coding required.",
       "techSpecs": [
         {
           "label": "Type",
@@ -648,9 +773,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.2,
-      "reviewCount": 94,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/form-builder.zip",
@@ -671,7 +796,7 @@
       }
     },
     {
-      "id": "p8",
+      "id": "p9",
       "title": "Google Cloud Storage Connector",
       "slug": "gcs-connector",
       "price": 0,
@@ -700,9 +825,25 @@
         {
           "type": "image",
           "url": "packages/gcs-connector/assets/hero/Google.jpg"
+        },
+        {
+          "type": "image",
+          "url": "packages/gcs-connector/assets/gallery_2/Image_fx (14).png"
+        },
+        {
+          "type": "image",
+          "url": "packages/gcs-connector/assets/gallery_3/Image_fx (14).png"
+        },
+        {
+          "type": "image",
+          "url": "packages/gcs-connector/assets/gallery_4/Image_fx (14).png"
+        },
+        {
+          "type": "image",
+          "url": "packages/gcs-connector/assets/gallery_9/Image_fx (14).png"
         }
       ],
-      "description": "Google Cloud Storage integration with buckets, objects, and signed URLs",
+      "description": "Connect to Google Cloud Storage to securely store and access files at scale. Manage buckets and objects with ease, and use secure access links to upload and retrieve data without added infrastructure overhead.",
       "techSpecs": [
         {
           "label": "Type",
@@ -741,9 +882,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.3,
-      "reviewCount": 13,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/gcs-connector.zip",
@@ -764,7 +905,7 @@
       }
     },
     {
-      "id": "p9",
+      "id": "p10",
       "title": "Globe Data Visualization",
       "slug": "globe-viz",
       "price": 0,
@@ -795,7 +936,7 @@
           "url": "packages/globe-viz/assets/hero/Globe Visualization.jpg"
         }
       ],
-      "description": "Interactive 3D globe visualization with pluggable data adapters. Supports points, arcs, heatmaps, and flight paths. Perfect for displaying geographic data, network traffic, logistics, and analytics.",
+      "description": "Explore data on a fully interactive 3D globe with flexible data adapters. Display points, arcs, heatmaps, and animated paths to visualize geographic activity, network flows, logistics, and analytics in a clear, engaging way.",
       "techSpecs": [
         {
           "label": "Type",
@@ -838,9 +979,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.1,
-      "reviewCount": 161,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/globe-viz.zip",
@@ -861,7 +1002,7 @@
       }
     },
     {
-      "id": "p10",
+      "id": "p11",
       "title": "HIPAA Privacy Suite",
       "slug": "hipaa-compliance",
       "price": 0,
@@ -892,7 +1033,7 @@
           "url": "packages/hipaa-compliance/assets/hero/HIPAA.jpg"
         }
       ],
-      "description": "HIPAA Privacy Rule compliance with PHI handling, access controls, and audit logging",
+      "description": "Protect patient data with built-in HIPAA Privacy Rule safeguards. Enforce secure handling of PHI, role-based access controls, and detailed audit logs to support compliance and accountability across healthcare workflows.",
       "techSpecs": [
         {
           "label": "Type",
@@ -931,9 +1072,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.1,
-      "reviewCount": 101,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/hipaa-compliance.zip",
@@ -954,7 +1095,7 @@
       }
     },
     {
-      "id": "p11",
+      "id": "p12",
       "title": "HR & Payroll Portal",
       "slug": "hr-payroll-portal",
       "price": 0,
@@ -985,7 +1126,7 @@
           "url": "packages/hr-payroll-portal/assets/hero/HR and Payroll.jpg"
         }
       ],
-      "description": "Complete HR management and payroll processing portal. Manage employees, departments, job postings, banking, payroll calculations, pay stubs, and integrations. Full-featured white-label HR solution.",
+      "description": "Run your entire HR and payroll operation from one unified platform. Manage employees, departments, job postings, payroll, banking, and pay stubs with built-in integrations. A full-featured, white-label solution designed to scale with your organization.",
       "techSpecs": [
         {
           "label": "Type",
@@ -1028,9 +1169,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.4,
-      "reviewCount": 37,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/hr-payroll-portal.zip",
@@ -1051,7 +1192,7 @@
       }
     },
     {
-      "id": "p12",
+      "id": "p13",
       "title": "iChoice Medical Connector",
       "slug": "ichoice-connector",
       "price": 0,
@@ -1086,7 +1227,7 @@
           "url": "packages/ichoice-connector/assets/hero/iChoice.jpg"
         }
       ],
-      "description": "Connect to iChoice SpO2 devices via their cloud portal for vitals data access",
+      "description": "Connect to iChoice and other pulse oximeter devices through their cloud platforms to securely access oxygen saturation data. Easily bring vital readings into your workflows to support monitoring, insights, and care coordination.",
       "techSpecs": [
         {
           "label": "Type",
@@ -1125,9 +1266,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.4,
-      "reviewCount": 40,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/ichoice-connector.zip",
@@ -1148,7 +1289,7 @@
       }
     },
     {
-      "id": "p13",
+      "id": "p14",
       "title": "IoT Device Connector",
       "slug": "iot-connector",
       "price": 0,
@@ -1183,7 +1324,7 @@
           "url": "packages/iot-connector/assets/hero/IoT.jpg"
         }
       ],
-      "description": "Universal IoT device discovery, protocol handlers (HTTP/WebSocket/MQTT), workflow automation, and safety rules engine for smart home, medical devices, and industrial IoT",
+      "description": "Discover and connect IoT devices across environments with built-in protocol support and automation workflows. Orchestrate smart home, medical, and industrial devices using flexible rules and safety controls to ensure reliable, coordinated operation at scale.",
       "techSpecs": [
         {
           "label": "Type",
@@ -1226,9 +1367,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.5,
-      "reviewCount": 28,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/iot-connector.zip",
@@ -1249,7 +1390,7 @@
       }
     },
     {
-      "id": "p14",
+      "id": "p15",
       "title": "ITAR Compliance Suite",
       "slug": "itar-compliance",
       "price": 0,
@@ -1280,7 +1421,7 @@
           "url": "packages/itar-compliance/assets/hero/ITAR.jpg"
         }
       ],
-      "description": "ITAR export control compliance for defense articles and technical data",
+      "description": "Support ITAR export control requirements for defense-related data and technology. Enforce access restrictions, data handling controls, and compliance safeguards to help manage sensitive technical information with confidence.",
       "techSpecs": [
         {
           "label": "Type",
@@ -1319,9 +1460,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.3,
-      "reviewCount": 18,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/itar-compliance.zip",
@@ -1342,7 +1483,7 @@
       }
     },
     {
-      "id": "p15",
+      "id": "p16",
       "title": "LexisNexis Connector",
       "slug": "lexisnexis-connector",
       "price": 0,
@@ -1373,7 +1514,7 @@
           "url": "packages/lexisnexis-connector/assets/hero/LexisNexis.jpg"
         }
       ],
-      "description": "LexisNexis legal research integration with document search, case law, and statutes",
+      "description": "Access powerful legal research directly within your workflows. Search documents, case law, and statutes to quickly find authoritative legal information and support informed decision-making.",
       "techSpecs": [
         {
           "label": "Type",
@@ -1412,9 +1553,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.2,
-      "reviewCount": 36,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/lexisnexis-connector.zip",
@@ -1435,10 +1576,10 @@
       }
     },
     {
-      "id": "p16",
+      "id": "p17",
       "title": "Medical Professional Suite",
       "slug": "medical-module",
-      "price": 7000,
+      "price": 50,
       "discountPrice": null,
       "stripePriceId": "price_1Soeh8RrheLnW1znPVCR7nap",
       "author": {
@@ -1463,10 +1604,10 @@
       "media": [
         {
           "type": "image",
-          "url": "packages/medical-module/assets/hero/Image_fx-11.jpg"
+          "url": "packages/medical-module/assets/hero/download.jpg"
         }
       ],
-      "description": "Complete medical module with bedside assistant, nurse station dashboard, FHIR integration, vitals monitoring, and fall detection. Optimized for Raspberry Pi deployment.  Test",
+      "description": "Helps healthcare teams make safer, faster decisions at the point of care. It provides real-time clinical guidance, safety checks, and alerts while keeping sensitive patient data private and secure. Designed for hospitals, clinics, and regulated healthcare environments, it supports confident decision-making, reduces risk, and fits seamlessly into existing workflows—without adding operational complexity.",
       "techSpecs": [
         {
           "label": "Type",
@@ -1474,7 +1615,7 @@
         },
         {
           "label": "Version",
-          "value": "2.2.7"
+          "value": "2.2.0"
         },
         {
           "label": "Feature",
@@ -1509,9 +1650,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.1,
-      "reviewCount": 90,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/medical-module.zip",
@@ -1532,7 +1673,7 @@
       }
     },
     {
-      "id": "p17",
+      "id": "p18",
       "title": "PCI DSS Compliance Suite",
       "slug": "pci-compliance",
       "price": 0,
@@ -1563,7 +1704,7 @@
           "url": "packages/pci-compliance/assets/hero/PCI DSS.jpg"
         }
       ],
-      "description": "PCI DSS compliance for payment card security, cardholder data protection, and network security",
+      "description": "Protect payment card data with built-in PCI DSS security controls. Safeguard cardholder information, secure payment workflows, and maintain strong network protections to support compliant, trusted transactions.",
       "techSpecs": [
         {
           "label": "Type",
@@ -1602,9 +1743,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.1,
-      "reviewCount": 92,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/pci-compliance.zip",
@@ -1625,7 +1766,7 @@
       }
     },
     {
-      "id": "p18",
+      "id": "p19",
       "title": "Plaid Connector",
       "slug": "plaid-connector",
       "price": 0,
@@ -1656,7 +1797,7 @@
           "url": "packages/plaid-connector/assets/hero/Plaid.jpg"
         }
       ],
-      "description": "Full Plaid integration with Link token flow, transactions, identity, auth, balances, investments, liabilities, and webhooks",
+      "description": "Connect securely to financial institutions using Plaid’s trusted platform. Access account data, transactions, balances, identity, and more to power payments, insights, and financial workflows—all with built-in support for real-time updates.",
       "techSpecs": [
         {
           "label": "Type",
@@ -1699,9 +1840,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.4,
-      "reviewCount": 28,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/plaid-connector.zip",
@@ -1722,7 +1863,7 @@
       }
     },
     {
-      "id": "p19",
+      "id": "p20",
       "title": "Super Platformer",
       "slug": "platformer-game",
       "price": 0,
@@ -1752,7 +1893,7 @@
           "url": "packages/platformer-game/assets/hero/Platformer.jpg"
         }
       ],
-      "description": "Classic side-scrolling platformer game in the style of Mario. Features pixel art graphics, coin collection, enemies to defeat, platforms to navigate, and a flag to reach. Mobile-ready with touch controls.",
+      "description": "Jump into a nostalgic side-scrolling adventure inspired by classic platformers. Navigate pixel-art worlds, collect coins, defeat enemies, and reach the goal flag. Designed for smooth play on desktop and mobile with responsive touch controls.",
       "techSpecs": [
         {
           "label": "Type",
@@ -1795,9 +1936,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.4,
-      "reviewCount": 29,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/platformer-game.zip",
@@ -1818,7 +1959,7 @@
       }
     },
     {
-      "id": "p20",
+      "id": "p21",
       "title": "Salesforce Connector",
       "slug": "salesforce-connector",
       "price": 0,
@@ -1849,7 +1990,7 @@
           "url": "packages/salesforce-connector/assets/hero/Salesforce.jpg"
         }
       ],
-      "description": "Full Salesforce CRM integration with objects, SOQL queries, bulk operations, and streaming API",
+      "description": "Connect seamlessly to Salesforce to access and manage CRM data at scale. Work with standard and custom objects, run powerful queries, handle bulk operations, and receive real-time updates to keep your workflows in sync.",
       "techSpecs": [
         {
           "label": "Type",
@@ -1888,9 +2029,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.8,
-      "reviewCount": 189,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/salesforce-connector.zip",
@@ -1911,7 +2052,7 @@
       }
     },
     {
-      "id": "p21",
+      "id": "p22",
       "title": "SAM.gov Connector",
       "slug": "sam-gov-connector",
       "price": 0,
@@ -1942,7 +2083,7 @@
           "url": "packages/sam-gov-connector/assets/hero/sam.gov.jpg"
         }
       ],
-      "description": "SAM.gov federal contractor registration and entity search integration",
+      "description": "Streamline federal contractor workflows with direct integration to SAM.gov. Register entities, search contractor records, and access up-to-date registration data to support compliance and government contracting activities.",
       "techSpecs": [
         {
           "label": "Type",
@@ -1981,9 +2122,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.1,
-      "reviewCount": 14,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/sam-gov-connector.zip",
@@ -2004,7 +2145,7 @@
       }
     },
     {
-      "id": "p22",
+      "id": "p23",
       "title": "SAP Connector",
       "slug": "sap-connector",
       "price": 0,
@@ -2035,7 +2176,7 @@
           "url": "packages/sap-connector/assets/hero/Image_fx (23).jpg"
         }
       ],
-      "description": "SAP ERP integration with RFC, BAPI, OData services, and IDoc support",
+      "description": "Connect seamlessly to SAP to streamline enterprise workflows. Access core SAP data and processes through secure integration, enabling automation, reporting, and system synchronization across your organization.",
       "techSpecs": [
         {
           "label": "Type",
@@ -2074,9 +2215,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.4,
-      "reviewCount": 20,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/sap-connector.zip",
@@ -2097,7 +2238,7 @@
       }
     },
     {
-      "id": "p23",
+      "id": "p24",
       "title": "SOX Compliance Suite",
       "slug": "sox-compliance",
       "price": 0,
@@ -2128,7 +2269,7 @@
           "url": "packages/sox-compliance/assets/hero/SOX.jpg"
         }
       ],
-      "description": "Sarbanes-Oxley compliance for financial controls, audit trails, and internal controls",
+      "description": "Support SOX requirements with built-in financial controls, detailed audit trails, and internal control monitoring. Help ensure transparency, accountability, and confidence in financial reporting.",
       "techSpecs": [
         {
           "label": "Type",
@@ -2167,9 +2308,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.4,
-      "reviewCount": 122,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/sox-compliance.zip",
@@ -2190,10 +2331,10 @@
       }
     },
     {
-      "id": "p24",
+      "id": "p25",
       "title": "3D Stock Visualizer",
       "slug": "stock-visualizer",
-      "price": 0,
+      "price": 0.07,
       "discountPrice": null,
       "stripePriceId": null,
       "author": {
@@ -2221,7 +2362,7 @@
           "url": "packages/stock-visualizer/assets/hero/add_a_professional_label_matching_the_styling.jpeg"
         }
       ],
-      "description": "Interactive 3D candlestick chart with real-time strategy coding. Write trading strategies in a simple DSL, see buy/sell signals visualized on the chart. Supports 2D/3D views, SMA/EMA indicators, and timeline scrubbing.",
+      "description": "Explore markets with an interactive candlestick chart and real-time strategy coding. Write simple rules in an easy DSL and instantly visualize buy/sell signals on the chart. Includes 2D/3D views, SMA/EMA indicators, and timeline scrubbing for fast back testing and exploration.",
       "techSpecs": [
         {
           "label": "Type",
@@ -2264,9 +2405,9 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 5,
-      "reviewCount": 185,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
       "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/stock-visualizer.zip",
@@ -2287,7 +2428,7 @@
       }
     },
     {
-      "id": "p25",
+      "id": "p26",
       "title": "Stripe Connector",
       "slug": "stripe-connector",
       "price": 0,
@@ -2318,7 +2459,7 @@
           "url": "packages/stripe-connector/assets/hero/Stripe.jpg"
         }
       ],
-      "description": "Stripe payment integration with charges, subscriptions, customers, and webhooks",
+      "description": "Accept payments and manage billing with native Stripe support. Create customers, process one-time charges, run subscriptions, and use webhooks to keep orders, access, and receipts automatically in sync.",
       "techSpecs": [
         {
           "label": "Type",
@@ -2357,11 +2498,11 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.8,
-      "reviewCount": 169,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
-      "isNew": true,
+      "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/stripe-connector.zip",
       "bundleUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/bundles/stripe-connector.bundle.js",
       "documentation": {
@@ -2380,7 +2521,7 @@
       }
     },
     {
-      "id": "p26",
+      "id": "p27",
       "title": "USASpending Connector",
       "slug": "usaspending-connector",
       "price": 0,
@@ -2411,7 +2552,7 @@
           "url": "packages/usaspending-connector/assets/hero/USA Spending.jpg"
         }
       ],
-      "description": "USASpending.gov federal spending data integration for awards, agencies, and recipients",
+      "description": "Access federal spending data directly from USASpending.gov. Explore awards, agencies, and recipient information to support transparency, reporting, and government market analysis.",
       "techSpecs": [
         {
           "label": "Type",
@@ -2450,11 +2591,11 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4,
-      "reviewCount": 121,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
-      "isNew": true,
+      "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/usaspending-connector.zip",
       "bundleUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/bundles/usaspending-connector.bundle.js",
       "documentation": {
@@ -2473,10 +2614,10 @@
       }
     },
     {
-      "id": "p27",
+      "id": "p28",
       "title": "Video Narration Editor",
-      "slug": "video-narration-component",
-      "price": 0,
+      "slug": "video-narration-editor",
+      "price": 0.5,
       "discountPrice": null,
       "stripePriceId": null,
       "author": {
@@ -2501,7 +2642,11 @@
       "media": [
         {
           "type": "image",
-          "url": "packages/video-narration-component/assets/hero/hero.png"
+          "url": "packages/video-narration-editor/assets/hero/Image_fx (24).png"
+        },
+        {
+          "type": "image",
+          "url": "packages/video-narration-editor/assets/gallery_1/Image_fx (2).png"
         }
       ],
       "description": "Timeline-based video editor with TTS narration. Drop a script, chunk it, assign voices and speeds per chunk, overlay on video, and export. Supports configurable TTS endpoints (Kokoro compatible).",
@@ -2547,13 +2692,13 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.8,
-      "reviewCount": 118,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
-      "isNew": true,
-      "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/video-narration-component.zip",
-      "bundleUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/bundles/video-narration-component.bundle.js",
+      "isNew": false,
+      "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/video-narration-editor.zip",
+      "bundleUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/bundles/video-narration-editor.bundle.js",
       "documentation": {
         "card": {
           "title": "Video Narration Editor",
@@ -2570,7 +2715,7 @@
       }
     },
     {
-      "id": "p28",
+      "id": "p29",
       "title": "Voice Connector",
       "slug": "voice-connector",
       "price": 0,
@@ -2605,7 +2750,7 @@
           "url": "packages/voice-connector/assets/hero/Voice Connector.jpg"
         }
       ],
-      "description": "Voice recognition, command processing, and voice-to-reflex-card integration for hands-free operation",
+      "description": "Enable voice-driven, hands-free operation with built-in speech recognition and command processing. Turn spoken requests into actionable workflows (Reflex Cards) so users can move faster, stay focused, and operate without touching a keyboard or screen.",
       "techSpecs": [
         {
           "label": "Type",
@@ -2644,11 +2789,11 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.5,
-      "reviewCount": 40,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
-      "isNew": true,
+      "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/voice-connector.zip",
       "bundleUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/bundles/voice-connector.bundle.js",
       "documentation": {
@@ -2667,7 +2812,7 @@
       }
     },
     {
-      "id": "p29",
+      "id": "p30",
       "title": "VR Spatial Engine",
       "slug": "vr-spatial-engine",
       "price": 0,
@@ -2702,7 +2847,7 @@
           "url": "packages/vr-spatial-engine/assets/hero/VR Spatial.jpg"
         }
       ],
-      "description": "VR/XR capability component - enables VR mode across EVE-OS when installed",
+      "description": "Unlock immersive VR and XR experiences across EVE-OS with a single install. Enable VR mode system-wide to interact with applications, data, and workflows in fully immersive environments.",
       "techSpecs": [
         {
           "label": "Type",
@@ -2745,11 +2890,11 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4,
-      "reviewCount": 192,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
-      "isNew": true,
+      "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/vr-spatial-engine.zip",
       "bundleUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/bundles/vr-spatial-engine.bundle.js",
       "documentation": {
@@ -2768,7 +2913,7 @@
       }
     },
     {
-      "id": "p30",
+      "id": "p31",
       "title": "VRM Companion",
       "slug": "vrm-companion",
       "price": 0,
@@ -2802,7 +2947,7 @@
           "url": "packages/vrm-companion/assets/hero/AI Companion.jpg"
         }
       ],
-      "description": "3D VRM avatar companion with lip-syncing, phoneme-driven animation, and EVE Core integration. Can swap EVE's sphere representation with a full VRM character.",
+      "description": "Bring EVE to life with a fully animated VRM avatar companion. Features natural lip-syncing and expressive animations that respond in real time, letting you replace EVE’s sphere with a personable 3D character for more engaging, human-like interactions.",
       "techSpecs": [
         {
           "label": "Type",
@@ -2845,11 +2990,11 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.5,
-      "reviewCount": 30,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
-      "isNew": true,
+      "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/vrm-companion.zip",
       "bundleUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/bundles/vrm-companion.bundle.js",
       "documentation": {
@@ -2868,7 +3013,7 @@
       }
     },
     {
-      "id": "p31",
+      "id": "p32",
       "title": "Westlaw Connector",
       "slug": "westlaw-connector",
       "price": 0,
@@ -2899,7 +3044,7 @@
           "url": "packages/westlaw-connector/assets/hero/Westlaw.jpg"
         }
       ],
-      "description": "Westlaw legal research integration with KeyCite, documents, and statutes",
+      "description": "Access trusted legal research directly within your workflows. Search documents, statutes, and case law with KeyCite support to stay current, validate authority, and make confident legal decisions faster.",
       "techSpecs": [
         {
           "label": "Type",
@@ -2938,11 +3083,11 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.9,
-      "reviewCount": 91,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
-      "isNew": true,
+      "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/westlaw-connector.zip",
       "bundleUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/bundles/westlaw-connector.bundle.js",
       "documentation": {
@@ -2961,7 +3106,7 @@
       }
     },
     {
-      "id": "p32",
+      "id": "p33",
       "title": "Workday Connector",
       "slug": "workday-connector",
       "price": 0,
@@ -3031,11 +3176,11 @@
       ],
       "questions": [],
       "reviews": [],
-      "rating": 4.9,
-      "reviewCount": 85,
-      "releaseDate": "2024-12-01",
+      "rating": 0,
+      "reviewCount": 0,
+      "releaseDate": null,
       "featured": false,
-      "isNew": true,
+      "isNew": false,
       "downloadUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/zips/workday-connector.zip",
       "bundleUrl": "https://hermeticlabs9f36.blob.core.windows.net/packages/bundles/workday-connector.bundle.js",
       "documentation": {
@@ -3075,114 +3220,120 @@
     },
     {
       "id": "c4",
+      "name": "Developer Tools",
+      "icon": "package",
+      "productCount": 1
+    },
+    {
+      "id": "c5",
       "name": "Government",
       "icon": "package",
       "productCount": 3
     },
     {
-      "id": "c5",
+      "id": "c6",
       "name": "Healthcare ai",
       "icon": "package",
       "productCount": 1
     },
     {
-      "id": "c6",
+      "id": "c7",
       "name": "Productivity",
       "icon": "package",
       "productCount": 1
     },
     {
-      "id": "c7",
+      "id": "c8",
       "name": "Analytics",
       "icon": "package",
       "productCount": 1
     },
     {
-      "id": "c8",
+      "id": "c9",
       "name": "Business",
       "icon": "package",
       "productCount": 1
     },
     {
-      "id": "c9",
+      "id": "c10",
       "name": "Connectivity",
       "icon": "package",
       "productCount": 1
     },
     {
-      "id": "c10",
+      "id": "c11",
       "name": "Defense",
       "icon": "package",
       "productCount": 1
     },
     {
-      "id": "c11",
+      "id": "c12",
       "name": "Legal",
       "icon": "package",
       "productCount": 2
     },
     {
-      "id": "c12",
+      "id": "c13",
       "name": "Medical",
       "icon": "package",
       "productCount": 1
     },
     {
-      "id": "c13",
+      "id": "c14",
       "name": "Payments",
       "icon": "package",
       "productCount": 2
     },
     {
-      "id": "c14",
+      "id": "c15",
       "name": "Financial",
       "icon": "package",
       "productCount": 2
     },
     {
-      "id": "c15",
+      "id": "c16",
       "name": "CRM",
       "icon": "package",
       "productCount": 1
     },
     {
-      "id": "c16",
+      "id": "c17",
       "name": "ERP",
       "icon": "package",
       "productCount": 1
     },
     {
-      "id": "c17",
+      "id": "c18",
       "name": "Finance",
       "icon": "package",
       "productCount": 1
     },
     {
-      "id": "c18",
+      "id": "c19",
       "name": "Media",
       "icon": "package",
       "productCount": 1
     },
     {
-      "id": "c19",
+      "id": "c20",
       "name": "Accessibility",
       "icon": "package",
       "productCount": 1
     },
     {
-      "id": "c20",
+      "id": "c21",
       "name": "VR/XR",
       "icon": "package",
       "productCount": 1
     },
     {
-      "id": "c21",
+      "id": "c22",
       "name": "AI",
       "icon": "package",
       "productCount": 1
     },
     {
-      "id": "c22",
+      "id": "c23",
       "name": "HR",
       "icon": "package",
       "productCount": 1
@@ -3205,14 +3356,14 @@
       "productCount": 4
     },
     {
-      "id": "gov",
-      "name": "Government",
+      "id": "dev",
+      "name": "Developer Tools",
       "productCount": 3
     },
     {
-      "id": "dev",
-      "name": "Developer Tools",
-      "productCount": 2
+      "id": "gov",
+      "name": "Government",
+      "productCount": 3
     },
     {
       "id": "enterprise",
@@ -3244,7 +3395,7 @@
     {
       "id": "Component",
       "name": "Component",
-      "productCount": 9
+      "productCount": 10
     },
     {
       "id": "Module",

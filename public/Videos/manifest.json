@@ -1,11 +1,11 @@
 {
   "announcements": [
     {
-      "id": "Overview (5)",
+      "id": "Hermetic Labs Medical Module",
       "mediaType": "video",
-      "src": "/Videos/Overview%20(5).mp4",
-      "title": "EVE OS",
-      "tagline": "Compliant by Design. Sealed by Architecture. We are Hermetic Labs."
+      "src": "/Videos/Hermetic%20Labs%20Medical%20Module.mp4",
+      "title": "Hermetic Labs Medical Module",
+      "tagline": ""
     }
   ],
   "domainFeatured": {

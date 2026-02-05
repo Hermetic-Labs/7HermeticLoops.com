@@ -41,7 +41,7 @@ const PRICES_PATH = resolve(ROOT_DIR, 'prices.json');
 const AZURE_BASE_URL = process.env.AZURE_STORAGE_URL || 'https://hermeticlabs9f36.blob.core.windows.net/packages';
 
 // Packages to skip
-const SKIP_PACKAGES = ['_shared', '_template', 'dev-portal', 'index.ts', 'package.json', 'tsconfig.json', 'pyproject.toml', 'pyrightconfig.json'];
+const SKIP_PACKAGES = ['_shared', '_template', 'index.ts', 'package.json', 'tsconfig.json', 'pyproject.toml', 'pyrightconfig.json'];
 
 // Template directory for auto-fixes
 const TEMPLATE_DIR = resolve(PACKAGES_DIR, '_template');
@@ -606,10 +606,9 @@ async function generateCatalog() {
     const category = manifest.category || "Tools";
     categories[category] = (categories[category] || 0) + 1;
 
-    // Generate consistent rating from package name
-    const nameHash = Math.abs(pkgName.split('').reduce((a, c) => a + c.charCodeAt(0), 0)) % 10000;
-    const rating = Math.round((4.0 + (nameHash % 100) / 100.0) * 10) / 10;
-    const reviewCount = 10 + (nameHash % 190);
+    // Ratings - initialize to zero (real data comes from user reviews)
+    const rating = 0.0;
+    const reviewCount = 0;
 
     // Tech specs
     const techSpecs = [
@@ -634,6 +633,39 @@ async function generateCatalog() {
     // Infer taxonomy from manifest
     const taxonomy = inferClassAndDomain(manifest);
 
+    // Build media array by scanning assets folder
+    const media = [];
+    const pkgAssetsDir = join(PACKAGES_DIR, pkgName, 'assets');
+
+    // Scan hero folder for any image
+    const heroDir = join(pkgAssetsDir, 'hero');
+    if (existsSync(heroDir)) {
+      try {
+        const heroFiles = (await readdir(heroDir)).filter(f => !f.startsWith('.') && /\.(png|jpg|jpeg|gif|webp|svg)$/i.test(f));
+        if (heroFiles.length > 0) {
+          media.push({ type: "image", url: `packages/${pkgName}/assets/hero/${heroFiles[0]}` });
+        }
+      } catch (e) { /* ignore */ }
+    }
+
+    // Fallback if no hero found
+    if (media.length === 0) {
+      media.push({ type: "image", url: `packages/${pkgName}/assets/hero/hero.png` });
+    }
+
+    // Scan gallery_1 through gallery_12 for additional images
+    for (let i = 1; i <= 12; i++) {
+      const galleryDir = join(pkgAssetsDir, `gallery_${i}`);
+      if (existsSync(galleryDir)) {
+        try {
+          const galleryFiles = (await readdir(galleryDir)).filter(f => !f.startsWith('.') && /\.(png|jpg|jpeg|gif|webp|svg)$/i.test(f));
+          if (galleryFiles.length > 0) {
+            media.push({ type: "image", url: `packages/${pkgName}/assets/gallery_${i}/${galleryFiles[0]}` });
+          }
+        } catch (e) { /* ignore */ }
+      }
+    }
+
     const product = {
       id: `p${idx}`,
       title: manifest.displayName || pkgName,
@@ -648,20 +680,17 @@ async function generateCatalog() {
       domain: taxonomy.domain,
       domains: taxonomy.domains,
       relationships: taxonomy.relationships,
-      // Use local path for images (served from public/packages by Vite)
-      // In production, these will be served from GitHub Pages at /hermetic-labs-exchange/packages/
-      // Structure: assets/hero/hero.png for images
-      media: [{ type: "image", url: `packages/${pkgName}/assets/hero/hero.png` }],
+      media,
       description: manifest.description || "",
       techSpecs,
       links: [{ label: "Documentation", url: "#" }],
       questions: [],
       reviews: [],
-      rating,
+      rating: parseFloat(rating.toFixed(1)),  // Truncate to 1 decimal
       reviewCount,
-      releaseDate: "2024-12-01",
-      featured: idx <= 6,
-      isNew: idx > 24,
+      releaseDate: null,  // Real release dates come from manifest
+      featured: false,    // Real featured status set manually
+      isNew: false,       // Real new status set manually
       // Azure URLs for downloads and bundles
       downloadUrl: `${AZURE_BASE_URL}/zips/${pkgName}.zip`,
       bundleUrl: `${AZURE_BASE_URL}/bundles/${pkgName}.bundle.js`,

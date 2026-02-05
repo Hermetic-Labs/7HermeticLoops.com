@@ -11,7 +11,7 @@ const PLACEHOLDER = `${import.meta.env.BASE_URL}images/connector-placeholder.svg
 
 function getImageSrc(url: string | undefined): string {
   if (!url) return PLACEHOLDER;
-  return url;
+  return resolveAssetUrl(url);
 }
 
 // Class badge component
