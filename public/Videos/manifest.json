@@ -1,13 +1,5 @@
 {
-  "announcements": [
-    {
-      "id": "Hermetic Labs Medical Module",
-      "mediaType": "video",
-      "src": "/Videos/Hermetic%20Labs%20Medical%20Module.mp4",
-      "title": "Hermetic Labs Medical Module",
-      "tagline": ""
-    }
-  ],
+  "announcements": [],
   "domainFeatured": {
     "health": null,
     "compliance": null,
