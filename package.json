@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm install --prefer-offline && vite",
-    "build": "pnpm install --prefer-offline && node -e \"const fs=require('fs');const p='node_modules/.vite-temp';if(fs.existsSync(p))fs.rmSync(p,{recursive:true,force:true})\" && tsc -b && vite build",
-    "build:prod": "pnpm install --prefer-offline && node -e \"const fs=require('fs');const p='node_modules/.vite-temp';if(fs.existsSync(p))fs.rmSync(p,{recursive:true,force:true})\" && tsc -b && BUILD_MODE=prod vite build",
+    "build": "node scripts/build-all.mjs --assets --catalog && pnpm install --prefer-offline && node -e \"const fs=require('fs');const p='node_modules/.vite-temp';if(fs.existsSync(p))fs.rmSync(p,{recursive:true,force:true})\" && tsc -b && vite build",
+    "build:prod": "node scripts/build-all.mjs --assets --catalog && pnpm install --prefer-offline && node -e \"const fs=require('fs');const p='node_modules/.vite-temp';if(fs.existsSync(p))fs.rmSync(p,{recursive:true,force:true})\" && tsc -b && BUILD_MODE=prod vite build",
     "build:all": "node scripts/build-all.mjs",
     "build:bundles": "node scripts/build-all.mjs --bundles",
     "build:zips": "node scripts/build-all.mjs --zips",

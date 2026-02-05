@@ -18,6 +18,21 @@ export function formatPrice(price: number): string {
 export function resolveAssetUrl(url: string | undefined): string {
   if (!url) return '';
   if (url.startsWith('http') || url.startsWith('data:') || url.startsWith('blob:')) return url;
-  if (url.startsWith('/')) return url;
-  return `${import.meta.env.BASE_URL}${url}`;
+
+  const base = import.meta.env.BASE_URL; // e.g. "/hermetic-labs-exchange/" or "/"
+
+  // If URL already includes the base path, return it as is
+  // (Handling both with and without trailing slash cases)
+  const baseNoSlash = base.replace(/\/$/, '');
+  if (baseNoSlash && url.startsWith(baseNoSlash)) {
+    return url;
+  }
+
+  // Ensure base ends with slash for joining
+  const cleanBase = base.endsWith('/') ? base : `${base}/`;
+
+  // Clean URL (remove leading slash if present) so we can join cleanly
+  const cleanUrl = url.startsWith('/') ? url.slice(1) : url;
+
+  return `${cleanBase}${cleanUrl}`;
 }

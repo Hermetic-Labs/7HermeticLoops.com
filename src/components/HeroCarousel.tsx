@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { ChevronLeft, ChevronRight, Volume2, VolumeX, Maximize, Minimize } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { resolveAssetUrl } from '../lib/utils';
 import { Product, Domain, ALL_DOMAINS, DOMAIN_LABELS, CLASS_COLORS, DOMAIN_COLORS, DOMAIN_BG_COLORS, CATEGORY_COLORS } from '../types';
 
 // Announcement slide type (videos/images from /Videos folder)
@@ -145,27 +146,8 @@ export function HeroCarousel({ products, announcements = [], fallbackVideoUrl }:
     return result;
   }, [products, announcements]);
 
-  // Auto-advance timer
-  useEffect(() => {
-    if (slides.length === 0) return;
-
-    const currentSlide = slides[current];
-
-    // Determine if current is a video
-    // All announcement videos and all top-ranked products get video treatment (using fallback)
-    const isAnnouncementVideo = currentSlide?.type === 'announcement' && currentSlide.mediaType === 'video';
-    const isTopProduct = currentSlide?.type === 'product' && currentSlide.rank === 'top';
-
-    const isVideo = isAnnouncementVideo || isTopProduct;
-
-    // Don't auto-advance if current slide is a video (let it play through)
-    if (isVideo && !videoError) return;
-
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [slides.length, current, videoError]);
+  // Auto-advance DISABLED - button navigation only
+  // Users can manually navigate using prev/next buttons
 
   // Reset video error state and play video when slide changes
   useEffect(() => {
@@ -185,7 +167,11 @@ export function HeroCarousel({ products, announcements = [], fallbackVideoUrl }:
   const next = () => setCurrent((current + 1) % slides.length);
 
   const handleVideoEnd = () => {
-    setCurrent((prev) => (prev + 1) % slides.length);
+    // Video ended - do NOT auto-advance, just let it loop or stop
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play().catch(() => { });
+    }
   };
 
   const handleVideoError = () => {
@@ -202,90 +188,78 @@ export function HeroCarousel({ products, announcements = [], fallbackVideoUrl }:
   const isCurrentVideo = currentSlide?.type === 'announcement' && currentSlide.mediaType === 'video';
   const isCurrentTopProduct = currentSlide?.type === 'product' && currentSlide.rank === 'top';
 
-  return (
-    <div
-      ref={containerRef}
-      className={`relative w-full overflow-hidden cyber-card ${isFullscreen
-        ? 'h-screen max-h-screen rounded-none'
-        : 'aspect-[2/1] max-h-[400px] rounded-lg'
-        }`}
-    >
-      {slides.map((slide, index) => {
-        const isActive = index === current;
+  // Calculate visible slide indices (prev, current, next) with wrapping
+  const getVisibleIndices = () => {
+    const len = slides.length;
+    if (len === 1) return [0];
+    if (len === 2) return [(current - 1 + len) % len, current];
+    return [
+      (current - 1 + len) % len,
+      current,
+      (current + 1) % len,
+    ];
+  };
 
-        if (slide.type === 'announcement') {
-          const isVideo = slide.mediaType === 'video';
-          const showVideo = isVideo && !videoError;
+  const visibleIndices = getVisibleIndices();
 
-          return (
-            <div
-              key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-500 ${isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                }`}
-            >
-              {showVideo ? (
-                <video
-                  ref={isActive ? videoRef : null}
-                  src={slide.src}
-                  className={`w-full h-full ${isFullscreen ? 'object-contain bg-black' : 'object-cover'}`}
-                  autoPlay={isActive}
-                  muted={isMuted}
-                  playsInline
-                  onEnded={handleVideoEnd}
-                  onError={handleVideoError}
-                />
-              ) : (
-                <div className="w-full h-full bg-gradient-to-br from-cyber-bg via-cyber-green/10 to-cyber-cyan/10">
-                  {slide.mediaType === 'image' || videoError ? (
-                    <img
-                      src={videoError ? `${import.meta.env.BASE_URL}images/connector-placeholder.svg` : slide.src}
-                      alt={slide.title || 'Announcement'}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : null}
-                </div>
-              )}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              {(slide.title || slide.tagline) && (
-                <div className="absolute top-6 left-6 md:left-12">
-                  <div className="max-w-xl">
-                    {slide.title && (
-                      <h2 className="text-xl md:text-2xl font-bold text-white mb-2 text-glow-green">
-                        {slide.title}
-                      </h2>
-                    )}
-                    {slide.tagline && (
-                      <p className="text-gray-200 text-sm md:text-base">{slide.tagline}</p>
-                    )}
-                  </div>
-                </div>
-              )}
-            </div>
-          );
-        }
+  // Get transform style based on position relative to current
+  const getSlidePosition = (index: number): 'prev' | 'current' | 'next' | 'hidden' => {
+    const len = slides.length;
+    const prevIndex = (current - 1 + len) % len;
+    const nextIndex = (current + 1) % len;
+    if (index === current) return 'current';
+    if (index === prevIndex) return 'prev';
+    if (index === nextIndex) return 'next';
+    return 'hidden';
+  };
 
-        // Product slide
-        const { product, rank } = slide;
-        const classColor = product.class ? CLASS_COLORS[product.class] : '#00b4ff';
-        const domainLabel = product.domain ? DOMAIN_LABELS[product.domain] : product.category;
+  const getSlideTransform = (index: number): React.CSSProperties => {
+    const position = getSlidePosition(index);
+    if (position === 'current') {
+      return {
+        transform: 'translateX(0) scale(1)',
+        zIndex: 10,
+        opacity: 1,
+      };
+    } else if (position === 'prev') {
+      return {
+        transform: 'translateX(-60%) scale(0.75)',
+        zIndex: 1,
+        opacity: 0.6,
+      };
+    } else if (position === 'next') {
+      return {
+        transform: 'translateX(60%) scale(0.75)',
+        zIndex: 1,
+        opacity: 0.6,
+      };
+    }
+    return {
+      display: 'none',
+    };
+  };
 
-        // For "top" products, show video (use fallback if no product-specific video)
-        const productVideo = product.media.find(m => m.type === 'video');
-        const productImage = product.media[0]?.url || `${import.meta.env.BASE_URL}images/connector-placeholder.svg`;
-        // Top products always get video treatment - use product video if available, else fallback
-        const videoUrl = productVideo?.url || (rank === 'top' ? videoForTopProducts : null);
-        const showProductVideo = rank === 'top' && videoUrl && !videoError;
+  // Render a single slide
+  const renderSlide = (slide: Slide, index: number) => {
+    const isActive = index === current;
+    const transformStyle = getSlideTransform(index);
+    const slidePosition = getSlidePosition(index);
 
-        return (
-          <div
-            key={`${product.id}-${rank}`}
-            className={`absolute inset-0 transition-opacity duration-500 ${isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'
-              }`}
-          >
-            {showProductVideo ? (
+    if (slide.type === 'announcement') {
+      const isVideo = slide.mediaType === 'video';
+      const showVideo = isVideo && !videoError;
+
+      return (
+        <div
+          key={slide.id}
+          className="absolute inset-0 transition-all duration-500 ease-out"
+          style={transformStyle}
+        >
+          <div className="w-full h-full rounded-lg overflow-hidden shadow-2xl">
+            {showVideo ? (
               <video
                 ref={isActive ? videoRef : null}
-                src={videoUrl!}
+                src={slide.src}
                 className={`w-full h-full ${isFullscreen ? 'object-contain bg-black' : 'object-cover'}`}
                 autoPlay={isActive}
                 muted={isMuted}
@@ -294,138 +268,227 @@ export function HeroCarousel({ products, announcements = [], fallbackVideoUrl }:
                 onError={handleVideoError}
               />
             ) : (
-              <img
-                src={productImage}
-                alt={product.title}
-                className="w-full h-full object-contain object-right bg-black/50"
-              />
+              <div className="w-full h-full bg-gradient-to-br from-cyber-bg via-cyber-green/10 to-cyber-cyan/10">
+                {slide.mediaType === 'image' || videoError ? (
+                  <img
+                    src={videoError ? `${import.meta.env.BASE_URL}images/connector-placeholder.svg` : slide.src}
+                    alt={slide.title || 'Announcement'}
+                    className="w-full h-full object-contain bg-black/90"
+                  />
+                ) : null}
+              </div>
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-            {/* Top Left: Title + Category + Class */}
-            <div className="absolute top-6 left-6 md:left-12">
-              <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
-                {product.title}
-              </h2>
-              <div className="flex items-center gap-2">
-                {/* Category badge with per-category colors */}
-                <span
-                  className="px-2 py-0.5 text-xs font-bold rounded border"
-                  style={{
-                    color: CATEGORY_COLORS[product.category] || '#00b4ff',
-                    backgroundColor: `${CATEGORY_COLORS[product.category] || '#00b4ff'}20`,
-                    borderColor: `${CATEGORY_COLORS[product.category] || '#00b4ff'}40`,
-                  }}
-                >
-                  {product.category}
-                </span>
-                {/* Class badge with per-class colors */}
-                {product.class && (
-                  <span
-                    className="px-2 py-0.5 text-xs font-bold rounded border"
-                    style={{
-                      color: classColor,
-                      backgroundColor: `${classColor}20`,
-                      borderColor: `${classColor}40`,
-                    }}
-                  >
-                    {product.class}
-                  </span>
-                )}
+            {(slide.title || slide.tagline) && (
+              <div className="absolute top-6 left-6 md:left-12">
+                <div className="max-w-xl">
+                  {slide.title && (
+                    <h2 className="text-xl md:text-2xl font-bold text-white mb-2 text-glow-green">
+                      {slide.title}
+                    </h2>
+                  )}
+                  {slide.tagline && (
+                    <p className="text-gray-200 text-sm md:text-base">{slide.tagline}</p>
+                  )}
+                </div>
               </div>
-            </div>
-
-            {/* Center Left: Description */}
-            <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-12 max-w-md">
-              <p className="text-gray-300 text-sm line-clamp-2">{product.description}</p>
-            </div>
-
-            {/* Bottom Right: View Details Button */}
-            <div className="absolute bottom-6 right-6 md:right-12">
-              <Link to={`/product/${product.slug}`} className="cyber-btn inline-block text-sm px-3 py-1.5">
-                View Details
-              </Link>
-            </div>
+            )}
           </div>
-        );
-      })}
-
-      {/* Video Controls: Mute/Unmute + Fullscreen */}
-      {(isCurrentVideo || isCurrentTopProduct) && !videoError && (
-        <div className="absolute top-4 right-4 z-20 flex gap-2">
-          <button
-            onClick={() => setIsMuted(!isMuted)}
-            className="p-2 bg-black/50 rounded backdrop-blur hover:bg-black/70 transition-colors"
-            title={isMuted ? 'Unmute' : 'Mute'}
-          >
-            {isMuted ? <VolumeX className="w-5 h-5 text-white" /> : <Volume2 className="w-5 h-5 text-white" />}
-          </button>
-          <button
-            onClick={toggleFullscreen}
-            className="p-2 bg-black/50 rounded backdrop-blur hover:bg-black/70 transition-colors"
-            title={isFullscreen ? 'Exit Fullscreen' : 'Fullscreen'}
-          >
-            {isFullscreen ? <Minimize className="w-5 h-5 text-white" /> : <Maximize className="w-5 h-5 text-white" />}
-          </button>
         </div>
-      )}
+      );
+    }
 
-      {/* Navigation */}
+    // Product slide
+    const { product, rank } = slide;
+    const classColor = product.class ? CLASS_COLORS[product.class] : '#00b4ff';
+    const domainLabel = product.domain ? DOMAIN_LABELS[product.domain] : product.category;
+
+    // For "top" products, show video (use fallback if no product-specific video)
+    const productVideo = product.media.find(m => m.type === 'video');
+    // Normalize image URL using standard utility
+    const rawImageUrl = product.media[0]?.url;
+    const productImage = rawImageUrl
+      ? resolveAssetUrl(rawImageUrl)
+      : `${import.meta.env.BASE_URL}images/connector-placeholder.svg`;
+
+    // Top products always get video treatment - use product video if available, else fallback
+    const videoUrl = productVideo?.url
+      ? resolveAssetUrl(productVideo.url) // Ensure video URL is also resolved
+      : (rank === 'top' ? videoForTopProducts : null);
+
+    const showProductVideo = rank === 'top' && videoUrl && !videoError;
+
+    return (
+      <div
+        key={`${product.id}-${rank}`}
+        className="absolute inset-0 transition-all duration-500 ease-out"
+        style={transformStyle}
+      >
+        <div className={`w-full h-full rounded-lg overflow-hidden shadow-2xl bg-black/90 ${slidePosition === 'current' ? 'ring-1 ring-cyber-green/60' : ''}`}>
+          {/* Image/Video */}
+          {showProductVideo ? (
+            <video
+              ref={isActive ? videoRef : null}
+              src={videoUrl!}
+              className={`w-full h-full ${isFullscreen ? 'object-contain bg-black' : 'object-cover'}`}
+              autoPlay={isActive}
+              muted={isMuted}
+              playsInline
+              onEnded={handleVideoEnd}
+              onError={handleVideoError}
+            />
+          ) : (
+            <img
+              src={productImage}
+              alt={product.title}
+              className="w-full h-full object-contain bg-black/90 pb-16"
+            />
+          )}
+
+          {/* Fade overlay for side slides */}
+          {slidePosition === 'prev' && (
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent pointer-events-none" />
+          )}
+          {slidePosition === 'next' && (
+            <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-transparent to-transparent pointer-events-none" />
+          )}
+
+          {/* Top Left: Badges (overlay) */}
+          <div className="absolute top-4 left-4 md:left-6 flex items-center gap-2 z-10">
+            <span
+              className="px-2 py-0.5 text-xs font-bold rounded border backdrop-blur-sm"
+              style={{
+                color: CATEGORY_COLORS[product.category] || '#00b4ff',
+                backgroundColor: `${CATEGORY_COLORS[product.category] || '#00b4ff'}30`,
+                borderColor: `${CATEGORY_COLORS[product.category] || '#00b4ff'}60`,
+              }}
+            >
+              {product.category}
+            </span>
+            {product.class && (
+              <span
+                className="px-2 py-0.5 text-xs font-bold rounded border backdrop-blur-sm"
+                style={{
+                  color: classColor,
+                  backgroundColor: `${classColor}30`,
+                  borderColor: `${classColor}60`,
+                }}
+              >
+                {product.class}
+              </span>
+            )}
+          </div>
+
+          {/* Bottom: Full-width description bar */}
+          <div className="absolute bottom-0 left-0 right-0 bg-black/80 backdrop-blur-sm px-4 md:px-6 py-3 flex items-center justify-between gap-4 border-t border-cyber-green/50">
+            <p className="text-gray-200 text-sm flex-1 line-clamp-2">
+              {product.description}
+            </p>
+            <Link to={`/product/${product.slug}`} className="cyber-btn text-sm px-4 py-2 shrink-0">
+              View Details
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <div className="flex flex-col">
+      {/* Carousel container - Frameless floating 3D */}
+      <div
+        ref={containerRef}
+        className={`relative w-full max-w-full overflow-hidden ${isFullscreen
+          ? 'h-screen'
+          : 'aspect-[2/1] min-h-[300px] max-h-[50vh]'
+          }`}
+        style={{ perspective: '1000px' }}
+      >
+        {/* Slides wrapper - centered */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div
+            className="relative w-[70%] h-[85%]"
+            style={{ transformStyle: 'preserve-3d' }}
+          >
+            {slides.map((slide, index) => {
+              // Only render visible slides (prev, current, next)
+              if (!visibleIndices.includes(index)) return null;
+              return renderSlide(slide, index);
+            })}
+
+            {/* Video Controls: Mute/Unmute + Fullscreen - Inside slides wrapper */}
+            {(isCurrentVideo || isCurrentTopProduct) && !videoError && (
+              <div className="absolute top-4 right-4 z-20 flex gap-2">
+                <button
+                  onClick={() => setIsMuted(!isMuted)}
+                  className="p-2 bg-black/50 rounded backdrop-blur hover:bg-black/70 transition-colors"
+                  title={isMuted ? 'Unmute' : 'Mute'}
+                >
+                  {isMuted ? <VolumeX className="w-5 h-5 text-white" /> : <Volume2 className="w-5 h-5 text-white" />}
+                </button>
+                <button
+                  onClick={toggleFullscreen}
+                  className="p-2 bg-black/50 rounded backdrop-blur hover:bg-black/70 transition-colors"
+                  title={isFullscreen ? 'Exit Fullscreen' : 'Fullscreen'}
+                >
+                  {isFullscreen ? <Minimize className="w-5 h-5 text-white" /> : <Maximize className="w-5 h-5 text-white" />}
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+
+      </div>
+
+      {/* Navigation row with dots and prev/next buttons */}
       {slides.length > 1 && (
-        <>
+        <div className="flex justify-center items-center gap-4 py-3">
           <button
             onClick={prev}
-            className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded backdrop-blur hover:bg-black/70 transition-colors z-10"
+            className="p-2 bg-black/60 rounded-full backdrop-blur hover:bg-black/80 transition-colors"
           >
-            <ChevronLeft className="w-6 h-6 text-white" />
+            <ChevronLeft className="w-5 h-5 text-white" />
           </button>
+
+          <div className="flex gap-2">
+            {slides.map((slide, index) => {
+              const isAnnouncement = slide.type === 'announcement';
+              const isVideo = isAnnouncement && (slide as AnnouncementSlide).mediaType === 'video';
+              const isTop = slide.type === 'product' && (slide as ProductSlide).rank === 'top';
+
+              const getColor = () => {
+                if (isVideo) return 'bg-cyber-green';
+                if (isAnnouncement) return 'bg-cyber-cyan';
+                if (isTop) return 'bg-cyber-pink';
+                return 'bg-white/70';
+              };
+
+              return (
+                <button
+                  key={index}
+                  onClick={() => setCurrent(index)}
+                  className={`h-2 rounded-full transition-all ${index === current
+                    ? `${getColor()} w-6`
+                    : 'bg-white/30 w-2 hover:bg-white/50'
+                    }`}
+                  title={
+                    isAnnouncement
+                      ? 'Announcement'
+                      : isTop
+                        ? `#1 in ${DOMAIN_LABELS[(slide as ProductSlide).product.domain || 'dev']}`
+                        : (slide as ProductSlide).product.title
+                  }
+                />
+              );
+            })}
+          </div>
+
           <button
             onClick={next}
-            className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded backdrop-blur hover:bg-black/70 transition-colors z-10"
+            className="p-2 bg-black/60 rounded-full backdrop-blur hover:bg-black/80 transition-colors"
           >
-            <ChevronRight className="w-6 h-6 text-white" />
+            <ChevronRight className="w-5 h-5 text-white" />
           </button>
-        </>
-      )}
-
-      {/* Dots with type/rank indicators */}
-      {slides.length > 1 && (
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-          {slides.map((slide, index) => {
-            const isAnnouncement = slide.type === 'announcement';
-            const isVideo = isAnnouncement && (slide as AnnouncementSlide).mediaType === 'video';
-            const isTop = slide.type === 'product' && (slide as ProductSlide).rank === 'top';
-
-            // Color coding:
-            // - Green: Video (announcement or top product with video)
-            // - Cyan: Image announcement
-            // - Pink: Top product (non-video)
-            // - White/Gray: Runner-up products
-            const getColor = () => {
-              if (isVideo) return 'bg-cyber-green';
-              if (isAnnouncement) return 'bg-cyber-cyan';
-              if (isTop) return 'bg-cyber-pink';
-              return 'bg-white/70';
-            };
-
-            return (
-              <button
-                key={index}
-                onClick={() => setCurrent(index)}
-                className={`h-2 rounded-full transition-all ${index === current
-                  ? `${getColor()} w-6`
-                  : 'bg-white/30 w-2 hover:bg-white/50'
-                  }`}
-                title={
-                  isAnnouncement
-                    ? 'Announcement'
-                    : isTop
-                      ? `#1 in ${DOMAIN_LABELS[(slide as ProductSlide).product.domain || 'dev']}`
-                      : (slide as ProductSlide).product.title
-                }
-              />
-            );
-          })}
         </div>
       )}
     </div>
