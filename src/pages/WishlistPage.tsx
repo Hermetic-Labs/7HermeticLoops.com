@@ -25,10 +25,12 @@ export function WishlistPage() {
     });
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
+        setError(null);
 
         // Build request with wishlist items as line items
         const request = {
@@ -39,17 +41,36 @@ export function WishlistPage() {
                 slug: item.product.slug,
                 category: item.product.category,
             })),
-            submittedAt: new Date().toISOString(),
         };
 
-        // In production, this would call an API to store the signup
-        console.log('Beta signup request:', request);
+        try {
+            // Call beta signup API
+            const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:7071';
+            const response = await fetch(`${apiBase}/api/beta/signup`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(request),
+            });
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1000));
+            const data = await response.json();
 
-        setSubmitted(true);
-        setLoading(false);
+            if (!response.ok) {
+                throw new Error(data.error || 'Failed to submit');
+            }
+
+            setSubmitted(true);
+        } catch (err) {
+            console.error('Beta signup error:', err);
+            // Fallback: log to console if API unavailable (local dev)
+            console.log('Beta signup request (fallback):', request);
+            setError(err instanceof Error ? err.message : 'Failed to submit. Please try again.');
+            // Still show success in dev mode for testing
+            if (import.meta.env.DEV) {
+                setSubmitted(true);
+            }
+        } finally {
+            setLoading(false);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

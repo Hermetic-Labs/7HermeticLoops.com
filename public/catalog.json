@@ -560,7 +560,7 @@
       "slug": "fhir-compliance",
       "description": "Enable seamless healthcare data exchange with built-in HL7 FHIR R4 support. Validate and manage clinical resources with confidence while connecting systems, applications, and workflows across the healthcare ecosystem—powered by Eve OS.",
       "category": "Healthcare ai",
-      "price": 0,
+      "price": 7000,
       "downloadUrl": "http://localhost:5174/fhir-compliance.zip",
       "bundleUrl": "http://localhost:5174/bundles/fhir-compliance.bundle.js",
       "author": {
@@ -3091,5 +3091,5 @@
       "totalSales": 0
     }
   ],
-  "generatedAt": "2026-02-05T16:25:09.818Z"
+  "generatedAt": "2026-02-05T18:56:29.875Z"
 }
