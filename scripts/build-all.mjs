@@ -30,6 +30,13 @@ const __dirname = dirname(__filename);
 const ROOT_DIR = resolve(__dirname, '..');
 // Source of truth: market_source (managed by Shipyard in Hermetic Labs API)
 const MARKET_SOURCE_DIR = resolve(ROOT_DIR, '..', 'market_source', 'packages');
+
+if (!existsSync(MARKET_SOURCE_DIR)) {
+  console.log(`\n[CI/CD Bypass] External market_source directory not found.`);
+  console.log(`[CI/CD Bypass] Gracefully preserving existing committed catalog and bundles.`);
+  process.exit(0);
+}
+
 const PACKAGES_DIR = MARKET_SOURCE_DIR;
 const DIST_DIR = resolve(ROOT_DIR, 'dist');
 const BUNDLES_DIR = resolve(DIST_DIR, 'bundles');
