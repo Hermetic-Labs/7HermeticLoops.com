@@ -12,13 +12,22 @@ export function Footer() {
                         © {currentYear} Hermetic Labs, LLC. All rights reserved.
                     </div>
 
-                    {/* Legal Links */}
-                    <div className="flex items-center gap-6 text-sm">
+                    {/* Ecosystem & Legal Links */}
+                    <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-sm">
+                        <a href="https://7hermeticlabs.com" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-cyber-green transition-colors">
+                            Main Website
+                        </a>
+                        <a href="https://hermeticlabs.health" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-cyber-green transition-colors">
+                            HALT Triage
+                        </a>
+                        <a href="https://github.com/Hermetic-Labs" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-cyber-green transition-colors">
+                            GitHub
+                        </a>
                         <Link to="/terms" className="text-gray-400 hover:text-cyber-green transition-colors">
-                            Terms of Service
+                            Terms
                         </Link>
                         <Link to="/privacy" className="text-gray-400 hover:text-cyber-green transition-colors">
-                            Privacy Policy
+                            Privacy
                         </Link>
                         <Link to="/cookies" className="text-gray-400 hover:text-cyber-green transition-colors">
                             Cookies
