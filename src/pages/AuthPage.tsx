@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { verifyEmail } from '../api/exchange';
 import { Loader2, AlertCircle } from 'lucide-react';
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
 export function AuthPage() {
   const [searchParams] = useSearchParams();
@@ -16,7 +17,7 @@ export function AuthPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const { login, register } = useAuth();
+  const { login, loginGoogle, register } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -76,6 +77,7 @@ export function AuthPage() {
 
   return (
     <div className="min-h-screen pt-20 flex items-center justify-center px-4">
+    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID || 'UNSET_GOOGLE_CLIENT_ID'}>
       <div className="cyber-panel p-8 w-full max-w-md">
         <h1 className="text-2xl font-bold text-white mb-2 text-center">
           {mode === 'login' ? 'Welcome Back' : 'Create Account'}
@@ -92,6 +94,38 @@ export function AuthPage() {
             {error}
           </div>
         )}
+
+        <div className="mb-6 flex justify-center w-full">
+          <GoogleLogin
+            onSuccess={async (credentialResponse) => {
+              if (credentialResponse.credential) {
+                try {
+                  setLoading(true);
+                  await loginGoogle(credentialResponse.credential);
+                  navigate(redirectTo);
+                } catch(err) {
+                  setError(err instanceof Error ? err.message : 'Google authentication failed');
+                  setLoading(false);
+                }
+              }
+            }}
+            onError={() => {
+              setError('Google login popup failed to initialize');
+            }}
+            useOneTap
+            shape="rectangular"
+            theme="filled_black"
+          />
+        </div>
+
+        <div className="relative mb-6">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-gray-800"></div>
+          </div>
+          <div className="relative flex justify-center text-sm">
+            <span className="px-2 bg-[#0a0a0a] text-gray-500">or continue with email</span>
+          </div>
+        </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -180,6 +214,7 @@ export function AuthPage() {
           </Link>
         </div>
       </div>
+    </GoogleOAuthProvider>
     </div>
   );
 }

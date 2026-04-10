@@ -333,6 +333,30 @@ export async function verifyEmail(email: string, token: string): Promise<{ user:
 }
 
 /**
+ * Login via Google OAuth credential
+ */
+export async function apiLoginGoogle(credential: string): Promise<{ user: AuthUser; token: string }> {
+  const response = await fetch(`${API_BASE_URL}/auth/google`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ credential }),
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.error || 'Failed to authenticate via Google');
+  }
+
+  if (data.data && data.data.token && data.data.user) {
+    localStorage.setItem(AUTH_TOKEN_KEY, data.data.token);
+    localStorage.setItem(AUTH_USER_KEY, JSON.stringify(data.data.user));
+  }
+
+  return data.data;
+}
+
+/**
  * Login an existing user
  */
 export async function login(email: string, password: string): Promise<{ user: AuthUser; token: string }> {

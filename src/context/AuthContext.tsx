@@ -3,6 +3,7 @@ import {
   AuthUser,
   getCurrentUser,
   login as apiLogin,
+  apiLoginGoogle,
   register as apiRegister,
   logout as apiLogout,
 } from '../api/exchange';
@@ -12,6 +13,7 @@ interface AuthContextType {
   loading: boolean;
   isAuthenticated: boolean;
   login: (email: string, password: string) => Promise<void>;
+  loginGoogle: (credential: string) => Promise<void>;
   register: (email: string, password: string) => Promise<void>;
   logout: () => void;
 }
@@ -34,6 +36,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(result.user);
   };
 
+  const loginGoogle = async (credential: string) => {
+    const result = await apiLoginGoogle(credential);
+    setUser(result.user);
+  };
+
   const register = async (email: string, password: string) => {
     await apiRegister(email, password);
     // User is created but must verify email before logging in.
@@ -48,7 +55,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const isAuthenticated = user !== null;
 
   return (
-    <AuthContext.Provider value={{ user, loading, isAuthenticated, login, register, logout }}>
+    <AuthContext.Provider value={{ user, loading, isAuthenticated, login, loginGoogle, register, logout }}>
       {children}
     </AuthContext.Provider>
   );
