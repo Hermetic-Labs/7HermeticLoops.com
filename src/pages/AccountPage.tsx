@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { updateProfile } from '../api/exchange';
 import { User, Camera, Save, Loader2, ArrowLeft } from 'lucide-react';
 
 export function AccountPage() {
@@ -41,24 +42,11 @@ export function AccountPage() {
         throw new Error('Not authenticated');
       }
 
-      const response = await fetch('/api/profile', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          displayName,
-          bio,
-          avatarUrl: avatarPreview,
-        }),
+      await updateProfile({
+        displayName,
+        bio,
+        avatarUrl: avatarPreview || undefined
       });
-
-      const data = await response.json();
-
-      if (!response.ok || !data.success) {
-        throw new Error(data.error || 'Failed to update profile');
-      }
 
       setMessage({ type: 'success', text: 'Profile updated successfully!' });
     } catch (err) {

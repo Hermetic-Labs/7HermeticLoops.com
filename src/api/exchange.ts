@@ -290,7 +290,7 @@ export interface LibraryItem {
 /**
  * Register a new user
  */
-export async function register(email: string, password: string): Promise<{ user: AuthUser; token: string }> {
+export async function register(email: string, password: string): Promise<{ message: string }> {
   const response = await fetch(`${API_BASE_URL}/auth/register`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -303,9 +303,31 @@ export async function register(email: string, password: string): Promise<{ user:
     throw new Error(data.error || 'Registration failed');
   }
 
-  // Store auth data
-  localStorage.setItem(AUTH_TOKEN_KEY, data.data.token);
-  localStorage.setItem(AUTH_USER_KEY, JSON.stringify(data.data.user));
+  // Registration no longer logs you in automatically - wait for email verification
+  return data.data;
+}
+
+/**
+ * Verify email using token
+ */
+export async function verifyEmail(email: string, token: string): Promise<{ user: AuthUser; token: string }> {
+  const response = await fetch(`${API_BASE_URL}/auth/verify`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, token }),
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.error || 'Verification failed');
+  }
+
+  // Auto-login after successful verification
+  if (data.data && data.data.token && data.data.user) {
+    localStorage.setItem(AUTH_TOKEN_KEY, data.data.token);
+    localStorage.setItem(AUTH_USER_KEY, JSON.stringify(data.data.user));
+  }
 
   return data.data;
 }
@@ -367,6 +389,38 @@ export function getAuthToken(): string | null {
  */
 export function isAuthenticated(): boolean {
   return !!getAuthToken();
+}
+
+/**
+ * Update user profile
+ */
+export async function updateProfile(profileData: { displayName?: string; bio?: string; avatarUrl?: string }): Promise<AuthUser> {
+  const token = getAuthToken();
+  if (!token) {
+    throw new Error('Authentication required');
+  }
+
+  const response = await fetch(`${API_BASE_URL}/profile`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,
+    },
+    body: JSON.stringify(profileData),
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.error || 'Failed to update profile');
+  }
+
+  // Update stored user data
+  if (data.data) {
+    localStorage.setItem(AUTH_USER_KEY, JSON.stringify(data.data));
+  }
+
+  return data.data;
 }
 
 /**

@@ -12,16 +12,22 @@ export function Footer() {
                         © {currentYear} Hermetic Labs, LLC. All rights reserved.
                     </div>
 
-                    {/* Ecosystem & Legal Links */}
+                    {/* Ecosystem Links */}
                     <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-sm">
                         <a href="https://7hermeticlabs.com" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-cyber-green transition-colors">
-                            Main Website
+                            Hermetic Labs
                         </a>
-                        <a href="https://hermeticlabs.health" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-cyber-green transition-colors">
-                            HALT Triage
+                        <a href="https://7hermeticlabs.health" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-cyber-green transition-colors">
+                            HALT — Field Triage
+                        </a>
+                        <a href="https://7hermeticlaws.com" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-cyber-green transition-colors">
+                            The Laws
                         </a>
                         <a href="https://github.com/Hermetic-Labs" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-cyber-green transition-colors">
                             GitHub
+                        </a>
+                        <a href="mailto:FrontDesk@7hermeticlabs.com" className="text-gray-400 hover:text-cyber-green transition-colors">
+                            Contact
                         </a>
                         <Link to="/terms" className="text-gray-400 hover:text-cyber-green transition-colors">
                             Terms
@@ -32,16 +38,6 @@ export function Footer() {
                         <Link to="/cookies" className="text-gray-400 hover:text-cyber-green transition-colors">
                             Cookies
                         </Link>
-                    </div>
-
-                    {/* Contact */}
-                    <div className="text-gray-500 text-sm">
-                        <a
-                            href="mailto:DwayneTillman@7HermeticLabs.Dev"
-                            className="hover:text-cyber-green transition-colors"
-                        >
-                            Contact
-                        </a>
                     </div>
                 </div>
             </div>

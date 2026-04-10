@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { verifyEmail } from '../api/exchange';
 import { Loader2, AlertCircle } from 'lucide-react';
 
 export function AuthPage() {
@@ -17,6 +18,23 @@ export function AuthPage() {
 
   const { login, register } = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const verifyToken = searchParams.get('verifyToken');
+    const verifyEmailParam = searchParams.get('email');
+    if (verifyToken && verifyEmailParam) {
+      setLoading(true);
+      verifyEmail(verifyEmailParam, verifyToken)
+        .then(() => {
+          // Completely verified and logged in, redirect to the dashboard
+          window.location.href = '/';
+        })
+        .catch(err => {
+          setError(err instanceof Error ? err.message : 'Link expired or invalid.');
+          setLoading(false);
+        });
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,10 +61,12 @@ export function AuthPage() {
     try {
       if (mode === 'login') {
         await login(email, password);
+        navigate(redirectTo);
       } else {
         await register(email, password);
+        window.alert('Account created successfully! Please check your email inbox to verify your address before logging in.');
+        setMode('login');
       }
-      navigate(redirectTo);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Authentication failed');
     } finally {

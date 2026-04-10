@@ -35,8 +35,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const register = async (email: string, password: string) => {
-    const result = await apiRegister(email, password);
-    setUser(result.user);
+    await apiRegister(email, password);
+    // User is created but must verify email before logging in.
+    // We intentionally do not call setUser here.
   };
 
   const logout = () => {
