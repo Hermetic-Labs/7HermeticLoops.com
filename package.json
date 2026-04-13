@@ -17,6 +17,7 @@
     "clean": "node -e \"const fs=require('fs');['node_modules','.pnpm-store','pnpm-lock.yaml'].forEach(p=>{if(fs.existsSync(p))fs.rmSync(p,{recursive:true,force:true})})\" && pnpm store prune"
   },
   "dependencies": {
+    "@azure/msal-browser": "^5.6.3",
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "^1.2.2",
     "@radix-ui/react-alert-dialog": "^1.1.4",
@@ -47,6 +48,7 @@
     "@radix-ui/react-tooltip": "^1.1.6",
     "@react-oauth/google": "^0.13.5",
     "@stripe/stripe-js": "^8.6.1",
+    "@types/qrcode": "^1.5.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.0.0",
@@ -56,6 +58,7 @@
     "lucide-react": "^0.562.0",
     "next-themes": "^0.4.4",
     "playwright": "1.57.0",
+    "qrcode": "^1.5.4",
     "react": "^18.3.1",
     "react-day-picker": "8.10.1",
     "react-dom": "^18.3.1",

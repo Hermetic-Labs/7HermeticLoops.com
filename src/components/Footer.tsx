@@ -38,6 +38,9 @@ export function Footer() {
                         <Link to="/cookies" className="text-gray-400 hover:text-cyber-green transition-colors">
                             Cookies
                         </Link>
+                        <Link to="/evenomics" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                            Evenomics
+                        </Link>
                     </div>
                 </div>
             </div>

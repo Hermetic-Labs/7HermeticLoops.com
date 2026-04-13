@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { updateProfile } from '../api/exchange';
 import { User, Camera, Save, Loader2, ArrowLeft } from 'lucide-react';
+import { TwoFactorSetup } from '../components/TwoFactorSetup';
 
 export function AccountPage() {
   const { user, isAuthenticated } = useAuth();
@@ -170,6 +171,12 @@ export function AccountPage() {
               )}
             </button>
           </div>
+        </div>
+
+        {/* Security Section */}
+        <div className="mt-6">
+          <h2 className="text-lg font-semibold text-white mb-3">Security</h2>
+          <TwoFactorSetup />
         </div>
 
         {/* Danger Zone */}

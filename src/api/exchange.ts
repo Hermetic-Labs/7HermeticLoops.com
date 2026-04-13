@@ -290,11 +290,11 @@ export interface LibraryItem {
 /**
  * Register a new user
  */
-export async function register(email: string, password: string): Promise<{ message: string }> {
+export async function register(email: string, password: string, displayName?: string): Promise<{ message: string }> {
   const response = await fetch(`${API_BASE_URL}/auth/register`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, password }),
+    body: JSON.stringify({ email, password, ...(displayName ? { displayName } : {}) }),
   });
 
   const data = await response.json();
@@ -357,9 +357,34 @@ export async function apiLoginGoogle(credential: string): Promise<{ user: AuthUs
 }
 
 /**
- * Login an existing user
+ * Login via Microsoft OAuth credential (MSAL ID token)
  */
-export async function login(email: string, password: string): Promise<{ user: AuthUser; token: string }> {
+export async function apiLoginMicrosoft(credential: string): Promise<{ user: AuthUser; token: string }> {
+  const response = await fetch(`${API_BASE_URL}/auth/microsoft`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ credential }),
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.error || 'Failed to authenticate via Microsoft');
+  }
+
+  if (data.data && data.data.token && data.data.user) {
+    localStorage.setItem(AUTH_TOKEN_KEY, data.data.token);
+    localStorage.setItem(AUTH_USER_KEY, JSON.stringify(data.data.user));
+  }
+
+  return data.data;
+}
+
+/**
+ * Login an existing user.
+ * If the user has 2FA enabled, this returns { requires2FA, tempToken } instead of { user, token }.
+ */
+export async function login(email: string, password: string): Promise<{ user?: AuthUser; token?: string; requires2FA?: boolean; tempToken?: string }> {
   const response = await fetch(`${API_BASE_URL}/auth/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -372,10 +397,78 @@ export async function login(email: string, password: string): Promise<{ user: Au
     throw new Error(data.error || 'Login failed');
   }
 
-  // Store auth data
+  // 2FA gate — don't store auth yet
+  if (data.data.requires2FA) {
+    return { requires2FA: true, tempToken: data.data.tempToken };
+  }
+
+  // Normal login — store auth data
   localStorage.setItem(AUTH_TOKEN_KEY, data.data.token);
   localStorage.setItem(AUTH_USER_KEY, JSON.stringify(data.data.user));
 
+  return data.data;
+}
+
+/**
+ * Complete 2FA login with a TOTP code
+ */
+export async function api2faLogin(tempToken: string, code: string): Promise<{ user: AuthUser; token: string }> {
+  const response = await fetch(`${API_BASE_URL}/auth/2fa/verify`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ tempToken, code }),
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.error || '2FA verification failed');
+  }
+
+  localStorage.setItem(AUTH_TOKEN_KEY, data.data.token);
+  localStorage.setItem(AUTH_USER_KEY, JSON.stringify(data.data.user));
+
+  return data.data;
+}
+
+/**
+ * Set up 2FA — generates a TOTP secret and QR URI
+ */
+export async function api2faSetup(): Promise<{ secret: string; otpauthUri: string }> {
+  const token = getAuthToken();
+  if (!token) throw new Error('Not authenticated');
+
+  const response = await fetch(`${API_BASE_URL}/auth/2fa/setup`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,
+    },
+  });
+
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.error || '2FA setup failed');
+  return data.data;
+}
+
+/**
+ * Confirm 2FA setup with a valid code — enables 2FA and returns backup codes
+ */
+export async function api2faConfirm(code: string): Promise<{ enabled: boolean; backupCodes: string[] }> {
+  const token = getAuthToken();
+  if (!token) throw new Error('Not authenticated');
+
+  const response = await fetch(`${API_BASE_URL}/auth/2fa/verify`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,
+    },
+    body: JSON.stringify({ code }),
+  });
+
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.error || '2FA confirmation failed');
   return data.data;
 }
 

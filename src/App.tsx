@@ -15,6 +15,7 @@ import { WishlistPage } from './pages/WishlistPage';
 import { TermsPage } from './pages/TermsPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { CookiePolicyPage } from './pages/CookiePolicyPage';
+import { EvenomicsPage } from './pages/EvenomicsPage';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
@@ -47,6 +48,7 @@ function App() {
                   <Route path="/terms" element={<TermsPage />} />
                   <Route path="/privacy" element={<PrivacyPage />} />
                   <Route path="/cookies" element={<CookiePolicyPage />} />
+                  <Route path="/evenomics" element={<EvenomicsPage />} />
                 </Routes>
               </main>
               <Footer />
