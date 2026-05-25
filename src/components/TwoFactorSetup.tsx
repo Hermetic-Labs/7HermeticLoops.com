@@ -4,7 +4,7 @@
  */
 
 import { useState } from 'react';
-import { api2faSetup, api2faConfirm } from '../api/exchange';
+import { api2faSetup, api2faConfirm } from '../api/auth';
 import { Loader2, Shield, ShieldCheck, Copy, CheckCircle2 } from 'lucide-react';
 
 type SetupStep = 'idle' | 'scanning' | 'confirming' | 'complete';

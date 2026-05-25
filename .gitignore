@@ -24,14 +24,12 @@ dist-ssr
 *.sw?
 
 # ============================================
-# Marketplace Packages (Source of Truth)
+# Marketplace Packages (PROPRIETARY — DO NOT SHIP)
 # ============================================
-# The packages/ folder contains the source code for all marketplace packages.
-# We DO want to track these in git as they are the single source of truth.
-# However, build outputs go to dist/ which is already ignored.
-
-# Ignore package node_modules (each package may have its own)
-packages/**/node_modules/
+# Package source code is uploaded separately to Azure Blob Storage.
+# The catalog.json in public/ is the only thing the frontend needs.
+# Shipping packages/ to GitHub = giving away the product for free.
+packages/
 
 # Ignore build artifacts within packages
 packages/**/*.bundle.js

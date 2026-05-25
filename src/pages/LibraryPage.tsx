@@ -3,7 +3,8 @@ import { Link, Navigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useWishlist } from '../context/WishlistContext';
 import { useCart } from '../context/CartContext';
-import { fetchLibrary, getPackageDownload, fetchProductBySlug, LibraryItem } from '../api/exchange';
+import { fetchLibrary, getPackageDownload, LibraryItem } from '../api/library';
+import { fetchProductBySlug } from '../api/catalog';
 import { Product } from '../types';
 import { Loader2, Download, Package, Calendar, AlertCircle, Heart, ShoppingCart, Check, Sparkles } from 'lucide-react';
 

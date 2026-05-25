@@ -8,7 +8,7 @@ import {
   api2faLogin,
   register as apiRegister,
   logout as apiLogout,
-} from '../api/exchange';
+} from '../api/auth';
 
 interface AuthContextType {
   user: AuthUser | null;

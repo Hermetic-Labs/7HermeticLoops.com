@@ -1,7 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect, useCallback } from 'react';
-import { fetchProductBySlug, createCheckoutSession, fetchReviews, markReviewHelpful, ReviewsResponse } from '../api/exchange';
-import { Product } from '../types';
+import { fetchProductBySlug } from '../api/catalog';
+import { createCheckoutSession } from '../api/checkout';
+import { fetchReviews, markReviewHelpful, ReviewsResponse } from '../api/reviews';
+import { fetchQuestions, submitQuestion, Question, QuestionsResponse } from '../api/questions';
+import { isAuthenticated } from '../api/auth';
+import { Product, Domain, DOMAIN_LABELS } from '../types';
 import { MediaCarousel } from '../components/MediaCarousel';
 import { StarRating } from '../components/StarRating';
 import { formatPrice } from '../lib/utils';
@@ -42,6 +46,10 @@ export function ProductPage() {
   const [reviewsData, setReviewsData] = useState<ReviewsResponse | null>(null);
   const [reviewsLoading, setReviewsLoading] = useState(false);
   const [helpfulIds, setHelpfulIds] = useState<Set<string>>(new Set());
+  const [questionsData, setQuestionsData] = useState<QuestionsResponse | null>(null);
+  const [questionsLoading, setQuestionsLoading] = useState(false);
+  const [submittingQuestion, setSubmittingQuestion] = useState(false);
+  const [questionError, setQuestionError] = useState<string | null>(null);
   const [justAdded, setJustAdded] = useState(false);
   const [vaultStatus, setVaultStatus] = useState<VaultPackage[]>([]);
   const [gettingPackage, setGettingPackage] = useState(false);
@@ -76,6 +84,38 @@ export function ProductPage() {
       setReviewsLoading(false);
     }
   }, [slug]);
+
+  const loadQuestions = useCallback(async () => {
+    if (!slug) return;
+    setQuestionsLoading(true);
+    try {
+      const data = await fetchQuestions(slug);
+      setQuestionsData(data);
+    } catch (err) {
+      console.error('Failed to load questions:', err);
+    } finally {
+      setQuestionsLoading(false);
+    }
+  }, [slug]);
+
+  const handleSubmitQuestion = async () => {
+    if (!slug || !newQuestion.trim()) return;
+    if (!isAuthenticated()) {
+      setQuestionError('Please sign in to ask a question');
+      return;
+    }
+    setSubmittingQuestion(true);
+    setQuestionError(null);
+    try {
+      await submitQuestion(slug, newQuestion.trim());
+      setNewQuestion('');
+      loadQuestions();
+    } catch (err) {
+      setQuestionError(err instanceof Error ? err.message : 'Failed to submit question');
+    } finally {
+      setSubmittingQuestion(false);
+    }
+  };
 
   const handleHelpful = async (reviewId: string) => {
     if (helpfulIds.has(reviewId)) return;
@@ -133,6 +173,13 @@ export function ProductPage() {
     }
   }, [activeTab, slug, reviewsData, loadReviews]);
 
+  // Load questions when Q&A tab is selected
+  useEffect(() => {
+    if (activeTab === 'qa' && slug && !questionsData) {
+      loadQuestions();
+    }
+  }, [activeTab, slug, questionsData, loadQuestions]);
+
   if (loading) {
     return (
       <div className="min-h-screen pt-20 flex items-center justify-center">
@@ -166,8 +213,8 @@ export function ProductPage() {
             Home
           </Link>
           <span className="mx-2">/</span>
-          <Link to={`/?category=${product.category}`} className="hover:text-cyber-green">
-            {product.category}
+          <Link to={`/?domain=${product.domain || ''}`} className="hover:text-cyber-green">
+            {product.domain ? DOMAIN_LABELS[product.domain as Domain] || product.category : product.category}
           </Link>
           <span className="mx-2">/</span>
           <span className="text-gray-300">{product.title}</span>
@@ -205,8 +252,8 @@ export function ProductPage() {
               <div className="flex gap-6">
                 {[
                   { key: 'description', label: 'Description' },
-                  { key: 'qa', label: `Q&A (${product.questions.length})` },
-                  { key: 'reviews', label: `Reviews (${product.reviews.length})` },
+                  { key: 'qa', label: `Q&A (${questionsData?.total ?? product.questions.length})` },
+                  { key: 'reviews', label: `Reviews (${reviewsData?.summary.totalReviews ?? product.reviews.length})` },
                 ].map((tab) => (
                   <button
                     key={tab.key}
@@ -260,20 +307,40 @@ export function ProductPage() {
                         placeholder="Type your question..."
                         value={newQuestion}
                         onChange={(e) => setNewQuestion(e.target.value)}
+                        onKeyDown={(e) => e.key === 'Enter' && handleSubmitQuestion()}
                         className="cyber-input flex-1"
                       />
-                      <button className="cyber-btn">Submit</button>
+                      <button
+                        onClick={handleSubmitQuestion}
+                        disabled={submittingQuestion || !newQuestion.trim()}
+                        className="cyber-btn flex items-center gap-2 disabled:opacity-50"
+                      >
+                        {submittingQuestion ? (
+                          <><Loader2 className="w-4 h-4 animate-spin" /> Sending...</>
+                        ) : (
+                          'Submit'
+                        )}
+                      </button>
                     </div>
+                    {questionError && (
+                      <div className="mt-2 p-2 bg-red-500/20 border border-red-500/50 rounded text-red-400 text-sm">
+                        {questionError}
+                      </div>
+                    )}
                   </div>
 
                   {/* Questions List */}
-                  {product.questions.length === 0 ? (
+                  {questionsLoading ? (
+                    <div className="text-center py-8">
+                      <Loader2 className="w-6 h-6 text-cyber-green animate-spin mx-auto" />
+                    </div>
+                  ) : (questionsData?.questions ?? product.questions).length === 0 ? (
                     <div className="text-center py-8 text-gray-500">
                       <MessageCircle className="w-8 h-8 mx-auto mb-2 opacity-50" />
                       No questions yet. Be the first to ask!
                     </div>
                   ) : (
-                    product.questions.map((q) => (
+                    (questionsData?.questions ?? product.questions).map((q) => (
                       <div key={q.id} className="cyber-card p-4">
                         <div className="flex items-start gap-3">
                           <div className="w-8 h-8 rounded-full bg-cyber-cyan/20 flex items-center justify-center shrink-0">

@@ -104,7 +104,7 @@ async function fetchCatalog(): Promise<Catalog> {
  * Fetch all products from the catalog
  */
 export async function fetchProducts(options?: {
-  category?: string;
+  domain?: string;
   author?: string;
   freeOnly?: boolean;
   search?: string;
@@ -113,8 +113,8 @@ export async function fetchProducts(options?: {
   let products = catalog.products;
 
   // Apply filters
-  if (options?.category) {
-    products = products.filter(p => p.category === options.category);
+  if (options?.domain) {
+    products = products.filter(p => p.domain === options.domain || p.domains?.includes(options.domain as any));
   }
   if (options?.author) {
     products = products.filter(p => p.author.id === options.author);

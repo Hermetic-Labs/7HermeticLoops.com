@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Product, PackageClass, CLASS_COLORS, CLASS_BG_COLORS, CATEGORY_COLORS } from '../types';
+import { Product, PackageClass, CLASS_COLORS, CLASS_BG_COLORS, DOMAIN_COLORS, DOMAIN_LABELS, Domain } from '../types';
 import { Star } from 'lucide-react';
 import { formatPrice, resolveAssetUrl } from '../lib/utils';
 
@@ -77,12 +77,12 @@ export function ProductCard({ product }: Props) {
           <span
             className="px-2 py-0.5 text-xs font-bold rounded border"
             style={{
-              color: CATEGORY_COLORS[product.category] || '#00b4ff',
-              backgroundColor: `${CATEGORY_COLORS[product.category] || '#00b4ff'}20`,
-              borderColor: `${CATEGORY_COLORS[product.category] || '#00b4ff'}40`,
+              color: product.domain ? DOMAIN_COLORS[product.domain as Domain] || '#00b4ff' : '#00b4ff',
+              backgroundColor: `${product.domain ? DOMAIN_COLORS[product.domain as Domain] || '#00b4ff' : '#00b4ff'}20`,
+              borderColor: `${product.domain ? DOMAIN_COLORS[product.domain as Domain] || '#00b4ff' : '#00b4ff'}40`,
             }}
           >
-            {product.category}
+            {product.domain ? DOMAIN_LABELS[product.domain as Domain] || product.category : product.category}
           </span>
           {product.class && (
             <ClassBadge packageClass={product.class} />

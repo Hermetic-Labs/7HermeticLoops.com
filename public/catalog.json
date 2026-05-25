@@ -609,7 +609,7 @@
       "id": "p7",
       "title": "FHIR Compliance Suite",
       "slug": "fhir-compliance",
-      "price": 70,
+      "price": 0,
       "discountPrice": null,
       "stripePriceId": null,
       "author": {
@@ -2338,7 +2338,7 @@
       "id": "p25",
       "title": "3D Stock Visualizer",
       "slug": "stock-visualizer",
-      "price": 0.07,
+      "price": 0,
       "discountPrice": null,
       "stripePriceId": null,
       "author": {

@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { verifyEmail } from '../api/exchange';
+import { verifyEmail } from '../api/auth';
 import { Loader2, AlertCircle, CheckCircle2, Mail, Eye, EyeOff } from 'lucide-react';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { PublicClientApplication } from '@azure/msal-browser';

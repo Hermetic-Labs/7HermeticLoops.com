@@ -8,7 +8,7 @@ import {
   startSellerOnboarding,
   SellerDashboardResponse,
   SellerSalesResponse,
-} from '../api/exchange';
+} from '../api/seller';
 
 export function SellerDashboardPage() {
   const { user, isAuthenticated } = useAuth();

@@ -4,9 +4,9 @@ import {
     fetchWishlist,
     addToBackendWishlist,
     removeFromBackendWishlist,
-    isAuthenticated,
     WishlistItem as BackendWishlistItem
-} from '../api/exchange';
+} from '../api/wishlist';
+import { isAuthenticated } from '../api/auth';
 import { useAuth } from './AuthContext';
 
 interface WishlistItem {

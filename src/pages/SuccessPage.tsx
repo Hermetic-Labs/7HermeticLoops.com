@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import { verifyPurchase, verifyBulkPurchase } from '../api/exchange';
+import { verifyPurchase, verifyBulkPurchase } from '../api/checkout';
 import { useCart } from '../context/CartContext';
 import { CheckCircle, Download, Loader2, AlertCircle, Package } from 'lucide-react';
 

@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { updateProfile } from '../api/exchange';
+import { updateProfile } from '../api/auth';
 import { User, Camera, Save, Loader2, ArrowLeft } from 'lucide-react';
 import { TwoFactorSetup } from '../components/TwoFactorSetup';
 

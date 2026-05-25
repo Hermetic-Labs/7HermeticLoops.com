@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { fetchAuthorById, fetchProducts } from '../api/exchange';
+import { fetchAuthorById, fetchProducts } from '../api/catalog';
 import { Author, Product } from '../types';
 import { ProductCard } from '../components/ProductCard';
 import { Twitter, Globe, MessageCircle, UserPlus, Mail, Loader2 } from 'lucide-react';

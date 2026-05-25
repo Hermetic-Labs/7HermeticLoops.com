@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ShoppingCart, ArrowLeft, Trash2, Loader2 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { formatPrice } from '../lib/utils';
-import { createBulkCheckoutSession } from '../api/exchange';
+import { createBulkCheckoutSession } from '../api/checkout';
 
 export function CheckoutPage() {
   const { cartItems, removeFromCart, cartTotal, clearCart } = useCart();

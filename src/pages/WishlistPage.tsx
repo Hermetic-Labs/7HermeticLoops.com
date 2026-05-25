@@ -39,7 +39,7 @@ export function WishlistPage() {
                 id: item.product.id,
                 title: item.product.title,
                 slug: item.product.slug,
-                category: item.product.category,
+                domain: item.product.domain,
             })),
         };
 

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { ChevronLeft, ChevronRight, Volume2, VolumeX, Maximize, Minimize } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { resolveAssetUrl } from '../lib/utils';
-import { Product, Domain, ALL_DOMAINS, DOMAIN_LABELS, CLASS_COLORS, DOMAIN_COLORS, DOMAIN_BG_COLORS, CATEGORY_COLORS } from '../types';
+import { Product, Domain, ALL_DOMAINS, DOMAIN_LABELS, CLASS_COLORS, DOMAIN_COLORS, DOMAIN_BG_COLORS } from '../types';
 
 // Announcement slide type (videos/images from /Videos folder)
 interface AnnouncementSlide {
@@ -114,28 +114,28 @@ export function HeroCarousel({ products, announcements = [], fallbackVideoUrl }:
       });
     });
 
-    // Group products by category and sort by reviewCount within each
-    const productsByCategory: Record<string, Product[]> = {};
+    // Group products by domain and sort by reviewCount within each
+    const productsByDomain: Record<string, Product[]> = {};
     for (const product of products) {
-      const category = product.category || 'Other';
-      if (!productsByCategory[category]) {
-        productsByCategory[category] = [];
+      const domain = product.domain || 'dev';
+      if (!productsByDomain[domain]) {
+        productsByDomain[domain] = [];
       }
-      productsByCategory[category].push(product);
+      productsByDomain[domain].push(product);
     }
 
-    // Sort products within each category by popularity
-    for (const category of Object.keys(productsByCategory)) {
-      productsByCategory[category].sort((a, b) => b.reviewCount - a.reviewCount);
+    // Sort products within each domain by popularity
+    for (const domain of Object.keys(productsByDomain)) {
+      productsByDomain[domain].sort((a, b) => b.reviewCount - a.reviewCount);
     }
 
-    // Add slides: one product per category (top by review count)
-    for (const category of Object.keys(productsByCategory)) {
-      const categoryProducts = productsByCategory[category];
-      if (!categoryProducts || categoryProducts.length === 0) continue;
+    // Add slides: one product per domain (top by review count)
+    for (const domain of Object.keys(productsByDomain)) {
+      const domainProducts = productsByDomain[domain];
+      if (!domainProducts || domainProducts.length === 0) continue;
 
-      // One product per category
-      const top = categoryProducts[0];
+      // One product per domain
+      const top = domainProducts[0];
       result.push({
         type: 'product',
         product: top,
@@ -358,12 +358,12 @@ export function HeroCarousel({ products, announcements = [], fallbackVideoUrl }:
             <span
               className="px-2 py-0.5 text-xs font-bold rounded border backdrop-blur-sm"
               style={{
-                color: CATEGORY_COLORS[product.category] || '#00b4ff',
-                backgroundColor: `${CATEGORY_COLORS[product.category] || '#00b4ff'}30`,
-                borderColor: `${CATEGORY_COLORS[product.category] || '#00b4ff'}60`,
+                color: product.domain ? DOMAIN_COLORS[product.domain as Domain] || '#00b4ff' : '#00b4ff',
+                backgroundColor: `${product.domain ? DOMAIN_COLORS[product.domain as Domain] || '#00b4ff' : '#00b4ff'}30`,
+                borderColor: `${product.domain ? DOMAIN_COLORS[product.domain as Domain] || '#00b4ff' : '#00b4ff'}60`,
               }}
             >
-              {product.category}
+              {domainLabel}
             </span>
             {product.class && (
               <span

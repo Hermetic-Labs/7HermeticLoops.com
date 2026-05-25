@@ -6,7 +6,8 @@
 
 import { useState } from 'react';
 import { Star, Loader2, CheckCircle } from 'lucide-react';
-import { submitReview, isAuthenticated } from '../api/exchange';
+import { submitReview } from '../api/reviews';
+import { isAuthenticated } from '../api/auth';
 
 interface ReviewFormProps {
     packageSlug: string;

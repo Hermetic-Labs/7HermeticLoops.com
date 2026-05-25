@@ -4,7 +4,7 @@ import { ShoppingCart, User, ChevronDown, Menu, X, LogOut, Library, Store, Filte
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
-import { CATEGORY_COLORS } from '../types';
+import { Domain, ALL_DOMAINS, DOMAIN_LABELS, DOMAIN_COLORS } from '../types';
 
 type SortOption = 'popular' | 'newest' | 'price-low' | 'price-high' | 'rating';
 
@@ -26,7 +26,7 @@ export function Header() {
   const currentSort = (searchParams.get('sort') as SortOption) || 'popular';
   const freeOnly = searchParams.get('free') === 'true';
   const minRating = parseInt(searchParams.get('rating') || '0', 10);
-  const activeCategory = searchParams.get('category');
+  const activeDomain = searchParams.get('domain') as Domain | null;
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -69,12 +69,12 @@ export function Header() {
     setSearchParams(params);
   };
 
-  const handleCategoryChange = (category: string | null) => {
+  const handleDomainChange = (domain: Domain | null) => {
     const params = new URLSearchParams(searchParams);
-    if (category === null) {
-      params.delete('category');
+    if (domain === null) {
+      params.delete('domain');
     } else {
-      params.set('category', category);
+      params.set('domain', domain);
     }
     setSearchParams(params);
     setShowFilters(false);
@@ -85,12 +85,12 @@ export function Header() {
     params.delete('sort');
     params.delete('free');
     params.delete('rating');
-    params.delete('category');
+    params.delete('domain');
     setSearchParams(params);
     setShowFilters(false);
   };
 
-  const hasActiveFilters = activeCategory !== null;
+  const hasActiveFilters = activeDomain !== null;
 
   const sortOptions: { value: SortOption; label: string }[] = [
     { value: 'popular', label: 'Most Popular' },
@@ -100,23 +100,6 @@ export function Header() {
     { value: 'rating', label: 'Highest Rated' },
   ];
 
-  // Categories from catalog
-  const ALL_CATEGORIES = [
-    'Healthcare',
-    'Finance',
-    'Government',
-    'Legal',
-    'Storage',
-    'Developer Tools',
-    'Productivity',
-    'Media',
-    'Entertainment',
-    'Analytics',
-    'Security',
-    'Communications',
-    'Education',
-    'Research',
-  ];
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -248,40 +231,40 @@ export function Header() {
               </button>
               {showFilters && (
                 <div className="absolute top-full mt-2 right-0 cyber-panel p-4 min-w-[200px] max-h-[60vh] overflow-y-auto">
-                  {/* Category Filter */}
+                  {/* Domain Filter */}
                   <div>
-                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-2">Category</div>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-2">Domain</div>
                     <div className="space-y-1">
                       <button
-                        onClick={() => handleCategoryChange(null)}
-                        className={`w-full text-left px-3 py-2 text-sm rounded transition-colors ${activeCategory === null
+                        onClick={() => handleDomainChange(null)}
+                        className={`w-full text-left px-3 py-2 text-sm rounded transition-colors ${activeDomain === null
                           ? 'bg-cyber-green/20 text-cyber-green'
                           : 'text-gray-300 hover:bg-white/5'
                           }`}
                       >
-                        All Categories
+                        All Domains
                       </button>
-                      {ALL_CATEGORIES.map((category) => (
+                      {ALL_DOMAINS.map((domain) => (
                         <button
-                          key={category}
-                          onClick={() => handleCategoryChange(category)}
-                          className={`w-full text-left px-3 py-2 text-sm rounded transition-colors ${activeCategory === category
+                          key={domain}
+                          onClick={() => handleDomainChange(domain)}
+                          className={`w-full text-left px-3 py-2 text-sm rounded transition-colors ${activeDomain === domain
                             ? 'bg-cyber-green/20 text-cyber-green'
                             : 'text-gray-300 hover:bg-white/5'
                             }`}
                           style={{
-                            color: activeCategory === category ? (CATEGORY_COLORS[category] || '#00ff99') : undefined,
-                            backgroundColor: activeCategory === category ? `${CATEGORY_COLORS[category] || '#00ff99'}20` : undefined,
+                            color: activeDomain === domain ? (DOMAIN_COLORS[domain] || '#00ff99') : undefined,
+                            backgroundColor: activeDomain === domain ? `${DOMAIN_COLORS[domain] || '#00ff99'}20` : undefined,
                           }}
                         >
-                          {category}
+                          {DOMAIN_LABELS[domain]}
                         </button>
                       ))}
                     </div>
                   </div>
 
                   {/* Clear Filters */}
-                  {activeCategory && (
+                  {activeDomain && (
                     <button
                       onClick={clearFilters}
                       className="w-full text-center text-sm text-cyber-pink hover:underline mt-4"
