@@ -65,8 +65,12 @@ export function AuthorPage() {
         <div className="cyber-panel p-8 mb-8">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
             {/* Avatar */}
-            <div className="w-32 h-32 rounded-xl bg-gradient-to-br from-cyber-cyan to-cyber-green flex items-center justify-center shrink-0">
-              <span className="text-black font-bold text-5xl">{author.name.charAt(0)}</span>
+            <div className="w-32 h-32 rounded-xl bg-gradient-to-br from-cyber-cyan to-cyber-green flex items-center justify-center shrink-0 overflow-hidden">
+              {author.avatar ? (
+                <img src={`${import.meta.env.BASE_URL}${author.avatar}`} alt={author.name} className="w-full h-full object-contain p-2" />
+              ) : (
+                <span className="text-black font-bold text-5xl">{author.name.charAt(0)}</span>
+              )}
             </div>
 
             {/* Info */}
@@ -128,9 +132,14 @@ export function AuthorPage() {
               <button className="cyber-btn flex items-center gap-2">
                 <UserPlus className="w-4 h-4" /> Follow
               </button>
-              <button className="cyber-btn-outline flex items-center gap-2">
-                <Mail className="w-4 h-4" /> Contact
-              </button>
+              {author.socialLinks.email && (
+                <a
+                  href={author.socialLinks.email}
+                  className="cyber-btn-outline flex items-center gap-2"
+                >
+                  <Mail className="w-4 h-4" /> Contact
+                </a>
+              )}
             </div>
           </div>
         </div>

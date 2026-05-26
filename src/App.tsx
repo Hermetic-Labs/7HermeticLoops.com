@@ -16,6 +16,8 @@ import { TermsPage } from './pages/TermsPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { CookiePolicyPage } from './pages/CookiePolicyPage';
 import { EvenomicsPage } from './pages/EvenomicsPage';
+import { CertificatePage } from './pages/CertificatePage';
+import { CertificationsPage } from './pages/CertificationsPage';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
@@ -49,6 +51,8 @@ function App() {
                   <Route path="/privacy" element={<PrivacyPage />} />
                   <Route path="/cookies" element={<CookiePolicyPage />} />
                   <Route path="/evenomics" element={<EvenomicsPage />} />
+                  <Route path="/certificate/:certId" element={<CertificatePage />} />
+                  <Route path="/certifications" element={<CertificationsPage />} />
                 </Routes>
               </main>
               <Footer />

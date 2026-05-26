@@ -191,3 +191,17 @@ select.cyber-input option {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 255, 153, 0.5);
 }
+
+/* ─── Print Styles (Certificate) ─── */
+@media print {
+  header, footer, .print\\:hidden {
+    display: none !important;
+  }
+  body, .min-h-screen {
+    background: white !important;
+    padding: 0 !important;
+  }
+  .pt-20 {
+    padding-top: 0 !important;
+  }
+}

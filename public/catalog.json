@@ -13,11 +13,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -94,7 +94,8 @@
           "whatMakesThisDifferent": "Runs locally with your AWS credentials - no third-party intermediary. Supports multipart uploads for files over 5GB and integrates with EVE's unified storage abstraction layer."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p2",
@@ -106,11 +107,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -187,7 +188,8 @@
           "whatMakesThisDifferent": "Direct Azure connectivity without intermediaries. Supports lease handling for concurrent access control and integrates with EVE's unified storage layer alongside S3 and GCS."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p3",
@@ -199,11 +201,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -292,7 +294,8 @@
           "whatMakesThisDifferent": "Pure Web Audio synthesis means zero loading time and works offline. The spherical interface is intuitive for VR but works great with mouse/touch. Perfect for creative breaks or focus sessions."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p4",
@@ -304,11 +307,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -393,7 +396,8 @@
           "whatMakesThisDifferent": "Portal API integration for BP monitors. Supports multiple vendors including Omron Health Cloud. Pairs with Medical Module for comprehensive vitals monitoring."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p5",
@@ -405,11 +409,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -490,7 +494,8 @@
           "whatMakesThisDifferent": "Unlike traditional IDEs, the Developer Portal visualizes code as interconnected nodes and supports remixing existing components into new packages without writing boilerplate."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p6",
@@ -502,11 +507,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -603,7 +608,8 @@
           "whatMakesThisDifferent": "Pre-mapped control baselines reduce manual mapping. POA&M tracking integrated with workflow engine. SSP templates follow current 3PAO expectations."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p7",
@@ -615,11 +621,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -696,7 +702,8 @@
           "whatMakesThisDifferent": "Local FHIR validation without cloud dependencies. Pairs with HIPAA compliance module for complete healthcare data governance. Medical module uses this for import/export."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p8",
@@ -708,11 +715,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -793,7 +800,8 @@
           "whatMakesThisDifferent": "URL-encoded sharing means forms work offline and don't require a database. Signature capture built-in for compliance workflows. Integrates with EVE's storage connectors for submission handling."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p9",
@@ -805,11 +813,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -902,7 +910,8 @@
           "whatMakesThisDifferent": "Direct GCP connectivity using service account credentials. Works alongside S3 and Azure Blob in EVE's unified storage layer. IAM-aware for enterprise deployments."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p10",
@@ -914,11 +923,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -999,7 +1008,8 @@
           "whatMakesThisDifferent": "Pluggable adapter system means any data source works - just transform to lat/lng. Auto-rotation mode for ambient dashboards. Click-to-select for drill-down details."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p11",
@@ -1011,11 +1021,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -1092,7 +1102,8 @@
           "whatMakesThisDifferent": "Local-first means PHI never leaves your infrastructure for compliance checking. Pairs with medical module and FHIR compliance for complete healthcare data governance."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p12",
@@ -1104,11 +1115,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -1189,7 +1200,8 @@
           "whatMakesThisDifferent": "White-label ready with company branding. Integrates with major payroll providers. Local data storage with optional cloud sync. Dashboard analytics for HR insights."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p13",
@@ -1201,11 +1213,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -1286,7 +1298,8 @@
           "whatMakesThisDifferent": "Portal API integration for devices that restrict direct BLE access. Pairs with Medical Module for comprehensive vitals monitoring."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p14",
@@ -1298,11 +1311,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -1387,7 +1400,8 @@
           "whatMakesThisDifferent": "Safety-first design with rate limiting and error recovery built-in. Medical device support with proper isolation. Template engine handles manufacturer quirks so you don't have to."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p15",
@@ -1399,11 +1413,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -1480,7 +1494,8 @@
           "whatMakesThisDifferent": "Local processing ensures controlled technical data never leaves your infrastructure. Integrates with user management for foreign person access controls."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p16",
@@ -1492,11 +1507,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -1573,7 +1588,8 @@
           "whatMakesThisDifferent": "Direct LexisNexis API access with your credentials. Pairs with Westlaw connector for comprehensive legal research coverage."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p17",
@@ -1585,11 +1601,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -1674,7 +1690,8 @@
           "whatMakesThisDifferent": "Unlike cloud-dependent solutions, this runs locally for data sovereignty. The Lite viewport ensures 24 FPS on Raspberry Pi hardware. Six-language terminology support and automatic network discovery make deployment frictionless across facilities."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p18",
@@ -1686,11 +1703,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -1767,7 +1784,8 @@
           "whatMakesThisDifferent": "Local validation means cardholder data patterns are checked without external transmission. Integrates with Stripe connector for end-to-end payment compliance."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p19",
@@ -1779,11 +1797,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -1864,7 +1882,8 @@
           "whatMakesThisDifferent": "Direct Plaid API access with your credentials. Webhook handling built-in for real-time updates. Pairs with PCI compliance for secure payment workflows."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p20",
@@ -1876,10 +1895,11 @@
       "author": {
         "id": "eve-core",
         "name": "EVE Core Team",
-        "avatar": "",
-        "bio": "Core development team building enterprise-grade connectors and compliance modules for EVE-OS.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Core development team building enterprise-grade connectors, compliance modules, and platform infrastructure for EVE-OS.",
         "socialLinks": {
-          "website": "https://eve-os.dev"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 21,
         "totalSales": 15000
@@ -1960,7 +1980,8 @@
           "whatMakesThisDifferent": "Pure Canvas rendering means no dependencies and instant load. Mobile-first touch controls work naturally. Perfect for quick breaks or demoing EVE's component system."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p21",
@@ -1972,11 +1993,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -2053,7 +2074,8 @@
           "whatMakesThisDifferent": "Direct Salesforce API access without middleware. Bulk operations handle millions of records. Streaming API enables real-time CRM-to-EVE workflows."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p22",
@@ -2065,11 +2087,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -2146,7 +2168,8 @@
           "whatMakesThisDifferent": "Direct SAM.gov API access without third-party intermediaries. Integrates with USAspending connector for complete federal procurement workflows."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p23",
@@ -2158,11 +2181,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -2239,7 +2262,8 @@
           "whatMakesThisDifferent": "Native SAP protocol support - no middleware required. IDoc processing for EDI integration. Works with S/4HANA and legacy ECC systems."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p24",
@@ -2251,11 +2275,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -2332,7 +2356,8 @@
           "whatMakesThisDifferent": "Immutable audit trails for SOX 404 compliance. Automated segregation of duties checks. Integrates with workflow engine for control testing documentation."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p25",
@@ -2344,11 +2369,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -2429,7 +2454,8 @@
           "whatMakesThisDifferent": "Strategy DSL is readable English, not code. 3D view reveals patterns invisible in 2D. Timeline scrubbing lets you backtest without leaving the visual interface."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p26",
@@ -2441,11 +2467,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -2522,7 +2548,8 @@
           "whatMakesThisDifferent": "Direct Stripe API access with built-in webhook signature verification. Pairs with PCI compliance for secure payment workflows. Subscription lifecycle events trigger EVE workflows."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p27",
@@ -2534,11 +2561,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -2615,7 +2642,8 @@
           "whatMakesThisDifferent": "Direct API access to public federal data. Pairs with SAM.gov connector for complete procurement intelligence. Geographic and time series analysis built-in."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p28",
@@ -2627,11 +2655,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -2716,7 +2744,8 @@
           "whatMakesThisDifferent": "Per-chunk voice and speed control gives fine-grained narration control. Works with any Kokoro-compatible TTS endpoint. No external software needed."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p29",
@@ -2728,11 +2757,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -2813,7 +2842,8 @@
           "whatMakesThisDifferent": "Voice-to-reflex-card bridge means voice commands create the same structured data as typed inputs. Local processing option for privacy-sensitive environments."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p30",
@@ -2825,11 +2855,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -2914,7 +2944,8 @@
           "whatMakesThisDifferent": "Capability injection means VR mode works across EVE without modifying core. Integrates with VRM Companion for embodied AI presence in VR. Works with Quest, Index, and other WebXR devices."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p31",
@@ -2926,10 +2957,11 @@
       "author": {
         "id": "eve-core",
         "name": "EVE Core Team",
-        "avatar": "",
-        "bio": "Core development team building enterprise-grade connectors and compliance modules for EVE-OS.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Core development team building enterprise-grade connectors, compliance modules, and platform infrastructure for EVE-OS.",
         "socialLinks": {
-          "website": "https://eve-os.dev"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 21,
         "totalSales": 15000
@@ -3014,7 +3046,8 @@
           "whatMakesThisDifferent": "Real phoneme analysis, not just amplitude. Configurable smoothing and mouth limits for natural motion. Capability injection means it works without modifying EVE Core."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p32",
@@ -3026,11 +3059,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -3107,7 +3140,8 @@
           "whatMakesThisDifferent": "Direct Westlaw API access with your Thomson Reuters credentials. Pairs with LexisNexis connector for comprehensive legal research coverage across platforms."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     },
     {
       "id": "p33",
@@ -3119,11 +3153,11 @@
       "author": {
         "id": "hermetic",
         "name": "Hermetic Labs",
-        "avatar": "",
-        "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+        "avatar": "images/hermetic-logo-transparent.png",
+        "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
         "socialLinks": {
-          "website": "https://hermetic.dev",
-          "discord": "#"
+          "website": "https://7hermeticlabs.com",
+          "email": "mailto:Frontdesk@7hermeticlabs.com"
         },
         "productCount": 7,
         "totalSales": 8500
@@ -3200,7 +3234,8 @@
           "whatMakesThisDifferent": "Direct Workday API access for real-time HCM data. Pairs with HR Payroll Portal for local payroll processing. Organization hierarchy enables role-based access in EVE."
         },
         "readme": "./README.md"
-      }
+      },
+      "communityUrl": ""
     }
   ],
   "categories": [
@@ -3411,10 +3446,11 @@
     {
       "id": "eve-core",
       "name": "EVE Core Team",
-      "avatar": "",
-      "bio": "Core development team building enterprise-grade connectors and compliance modules for EVE-OS.",
+      "avatar": "images/hermetic-logo-transparent.png",
+      "bio": "Core development team building enterprise-grade connectors, compliance modules, and platform infrastructure for EVE-OS.",
       "socialLinks": {
-        "website": "https://eve-os.dev"
+        "website": "https://7hermeticlabs.com",
+        "email": "mailto:Frontdesk@7hermeticlabs.com"
       },
       "productCount": 21,
       "totalSales": 15000
@@ -3422,11 +3458,11 @@
     {
       "id": "hermetic",
       "name": "Hermetic Labs",
-      "avatar": "",
-      "bio": "Creators of innovative visualization, gaming, and productivity components for the EVE-OS ecosystem.",
+      "avatar": "images/hermetic-logo-transparent.png",
+      "bio": "Hermetic Labs builds air-gapped, privacy-first software modules for the EVE-OS ecosystem. From medical triage to enterprise connectors — everything ships hermetically sealed.",
       "socialLinks": {
-        "website": "https://hermetic.dev",
-        "discord": "#"
+        "website": "https://7hermeticlabs.com",
+        "email": "mailto:Frontdesk@7hermeticlabs.com"
       },
       "productCount": 7,
       "totalSales": 8500
@@ -3434,10 +3470,11 @@
     {
       "id": "eve-os",
       "name": "EVE OS",
-      "avatar": "",
-      "bio": "Official EVE OS modules and integrations.",
+      "avatar": "images/hermetic-logo-transparent.png",
+      "bio": "Official EVE OS modules and integrations. The autonomous operating system for hermetic computing.",
       "socialLinks": {
-        "website": "https://eve-os.dev"
+        "website": "https://7hermeticlabs.com",
+        "email": "mailto:Frontdesk@7hermeticlabs.com"
       },
       "productCount": 1,
       "totalSales": 12000

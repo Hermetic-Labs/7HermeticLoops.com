@@ -32,6 +32,7 @@ import {
   Flag,
   BadgeCheck,
   Check,
+  Users,
 } from 'lucide-react';
 import { ReviewForm } from '../components/ReviewForm';
 
@@ -166,19 +167,18 @@ export function ProductPage() {
     loadProduct();
   }, [slug]);
 
-  // Load reviews when reviews tab is selected
+  // Load reviews and questions eagerly so tab counts are visible immediately
   useEffect(() => {
-    if (activeTab === 'reviews' && slug && !reviewsData) {
+    if (slug && !reviewsData) {
       loadReviews();
     }
-  }, [activeTab, slug, reviewsData, loadReviews]);
+  }, [slug, reviewsData, loadReviews]);
 
-  // Load questions when Q&A tab is selected
   useEffect(() => {
-    if (activeTab === 'qa' && slug && !questionsData) {
+    if (slug && !questionsData) {
       loadQuestions();
     }
-  }, [activeTab, slug, questionsData, loadQuestions]);
+  }, [slug, questionsData, loadQuestions]);
 
   if (loading) {
     return (
@@ -622,10 +622,14 @@ export function ProductPage() {
             {/* Author Card */}
             <Link to={`/author/${product.author.id}`} className="cyber-card p-4 block group">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyber-cyan to-cyber-green flex items-center justify-center">
-                  <span className="text-black font-bold text-lg">
-                    {product.author.name.charAt(0)}
-                  </span>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyber-cyan to-cyber-green flex items-center justify-center overflow-hidden">
+                  {product.author.avatar ? (
+                    <img src={`${import.meta.env.BASE_URL}${product.author.avatar}`} alt={product.author.name} className="w-full h-full object-contain p-1" />
+                  ) : (
+                    <span className="text-black font-bold text-lg">
+                      {product.author.name.charAt(0)}
+                    </span>
+                  )}
                 </div>
                 <div>
                   <h4 className="font-medium text-white group-hover:text-cyber-green transition-colors">
@@ -635,6 +639,27 @@ export function ProductPage() {
                 </div>
               </div>
             </Link>
+
+            {/* Community */}
+            {product.communityUrl && (
+              <a
+                href={product.communityUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cyber-card p-4 flex items-center gap-3 group hover:border-[#1877F2]/40 transition-colors"
+              >
+                <div className="w-10 h-10 rounded-full bg-[#1877F2]/20 flex items-center justify-center">
+                  <Users className="w-5 h-5 text-[#1877F2]" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-medium text-white group-hover:text-[#1877F2] transition-colors text-sm">
+                    Join Community
+                  </h4>
+                  <p className="text-xs text-gray-500">Discuss, remix, get support</p>
+                </div>
+                <ExternalLink className="w-4 h-4 text-gray-600 group-hover:text-[#1877F2] transition-colors" />
+              </a>
+            )}
           </div>
         </div>
       </div>

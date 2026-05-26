@@ -155,6 +155,7 @@ export interface Author {
     twitter?: string;
     discord?: string;
     website?: string;
+    email?: string;
   };
   productCount: number;
   totalSales: number;
@@ -249,6 +250,9 @@ export interface Product {
   domain?: Domain;                     // Primary domain
   domains?: Domain[];                  // All domains (including primary)
   relationships?: PackageRelationships; // Package relationships
+
+  // Community
+  communityUrl?: string;               // Facebook group/page URL
 }
 
 export interface Category {
