@@ -283,7 +283,7 @@ export function Header() {
               title="Wishlist"
             >
               <Heart className="w-4 h-4" />
-              <span>Early Access</span>
+              <span>Wishlist</span>
               {wishlistCount > 0 && (
                 <span className="absolute -top-2 -right-2 w-4 h-4 bg-cyber-pink text-white text-[10px] font-bold rounded-full flex items-center justify-center">
                   {wishlistCount > 9 ? '9+' : wishlistCount}
