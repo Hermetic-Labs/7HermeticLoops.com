@@ -108,24 +108,21 @@ export function AuthorPage() {
                     <MessageCircle className="w-4 h-4" /> Discord
                   </a>
                 )}
-                {author.socialLinks.website && (
-                  <a
-                    href={author.socialLinks.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cyber-btn-outline flex items-center gap-2 text-sm"
-                  >
-                    <Globe className="w-4 h-4" /> Website
-                  </a>
-                )}
               </div>
             </div>
 
             {/* Action Buttons */}
             <div className="flex flex-col gap-3">
-              <button className="cyber-btn flex items-center gap-2">
-                <UserPlus className="w-4 h-4" /> Follow
-              </button>
+              {author.socialLinks.website && (
+                <a
+                  href={author.socialLinks.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cyber-btn flex items-center gap-2"
+                >
+                  <Globe className="w-4 h-4" /> Website
+                </a>
+              )}
               {author.socialLinks.email && (
                 <a
                   href={author.socialLinks.email}

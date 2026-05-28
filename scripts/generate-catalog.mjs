@@ -15,7 +15,7 @@
  *   node scripts/generate-catalog.mjs
  */
 
-import { readFileSync, readdirSync, existsSync, writeFileSync } from 'fs';
+import { readFileSync, readdirSync, existsSync, writeFileSync, copyFileSync, mkdirSync } from 'fs';
 import { resolve, join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -251,6 +251,20 @@ function generate() {
       console.warn(`  - ${p.slug}: $${p.price}`);
     }
   }
+
+  // ── Sync READMEs to public/packages/ ──────────────────────────
+  const PUBLIC_PACKAGES = join(ROOT, 'public', 'packages');
+  let readmeCopied = 0;
+  for (const pkgName of dirs) {
+    const readmeSrc = join(PACKAGES_DIR, pkgName, 'README.md');
+    if (!existsSync(readmeSrc)) continue;
+
+    const destDir = join(PUBLIC_PACKAGES, pkgName);
+    mkdirSync(destDir, { recursive: true });
+    copyFileSync(readmeSrc, join(destDir, 'README.md'));
+    readmeCopied++;
+  }
+  console.log(`[catalog] ✓ ${readmeCopied} READMEs synced to public/packages/`);
 }
 
 generate();
