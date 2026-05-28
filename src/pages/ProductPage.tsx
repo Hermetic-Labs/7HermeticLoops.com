@@ -228,8 +228,12 @@ export function ProductPage() {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Media Carousel */}
-            <MediaCarousel media={product.media} />
+            {/* Media Carousel — only show hero/icon, skip stock gallery */}
+            <MediaCarousel media={
+              product.media.filter(m => /\/(hero|icon)\//.test(m.url)).length > 0
+                ? product.media.filter(m => /\/(hero|icon)\//.test(m.url))
+                : product.media.slice(0, 1)
+            } />
 
             {/* Title & Price (Mobile) */}
             <div className="lg:hidden">
