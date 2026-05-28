@@ -5,6 +5,7 @@ import { createCheckoutSession } from '../api/checkout';
 import { fetchReviews, markReviewHelpful, ReviewsResponse } from '../api/reviews';
 import { fetchQuestions, submitQuestion, Question, QuestionsResponse } from '../api/questions';
 import { isAuthenticated } from '../api/auth';
+import { useAuth } from '../context/AuthContext';
 import { Product, Domain, DOMAIN_LABELS } from '../types';
 import { MediaCarousel } from '../components/MediaCarousel';
 import { StarRating } from '../components/StarRating';
@@ -33,11 +34,15 @@ import {
   BadgeCheck,
   Check,
   Users,
+  LogIn,
+  Rocket,
+  FileText,
 } from 'lucide-react';
 import { ReviewForm } from '../components/ReviewForm';
 
 export function ProductPage() {
   const { slug } = useParams();
+  const { user } = useAuth();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [purchasing, setPurchasing] = useState(false);
@@ -233,18 +238,20 @@ export function ProductPage() {
                 <StarRating rating={product.rating} />
                 <span className="text-gray-500">({product.reviewCount} reviews)</span>
               </div>
-              <div className="flex items-center gap-4">
-                {product.discountPrice ? (
-                  <>
-                    <span className="text-3xl font-bold text-cyber-green">
-                      {formatPrice(product.discountPrice)}
-                    </span>
-                    <span className="text-xl text-gray-500 line-through">{formatPrice(product.price)}</span>
-                  </>
-                ) : (
-                  <span className="text-3xl font-bold text-cyber-green">{formatPrice(product.price)}</span>
-                )}
-              </div>
+              {product.price > 0 && (
+                <div className="flex items-center gap-4">
+                  {product.discountPrice ? (
+                    <>
+                      <span className="text-3xl font-bold text-cyber-green">
+                        {formatPrice(product.discountPrice)}
+                      </span>
+                      <span className="text-xl text-gray-500 line-through">{formatPrice(product.price)}</span>
+                    </>
+                  ) : (
+                    <span className="text-3xl font-bold text-cyber-green">{formatPrice(product.price)}</span>
+                  )}
+                </div>
+              )}
             </div>
 
             {/* Tabs */}
@@ -252,8 +259,8 @@ export function ProductPage() {
               <div className="flex gap-6">
                 {[
                   { key: 'description', label: 'Description' },
-                  { key: 'qa', label: `Q&A (${questionsData?.total ?? product.questions.length})` },
-                  { key: 'reviews', label: `Reviews (${reviewsData?.summary.totalReviews ?? product.reviews.length})` },
+                  { key: 'qa', label: 'Q&A' },
+                  { key: 'reviews', label: 'Reviews' },
                 ].map((tab) => (
                   <button
                     key={tab.key}
@@ -274,25 +281,31 @@ export function ProductPage() {
               {activeTab === 'description' && (
                 <div className="prose prose-invert max-w-none">
                   <p className="text-gray-300 whitespace-pre-line">{product.description}</p>
-                  {product.links.length > 0 && (
-                    <div className="mt-8">
-                      <h3 className="section-title mb-4">Links & Resources</h3>
-                      <div className="flex flex-wrap gap-3">
-                        {product.links.map((link, i) => (
-                          <a
-                            key={i}
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="cyber-btn-outline flex items-center gap-2 text-sm"
-                          >
-                            {link.label}
-                            <ExternalLink className="w-3 h-3" />
-                          </a>
-                        ))}
-                      </div>
+                  {/* README Link */}
+                  <div className="mt-8">
+                    <h3 className="section-title mb-4">Links & Resources</h3>
+                    <div className="flex flex-wrap gap-3">
+                      <Link
+                        to={`/product/${slug}/readme`}
+                        className="cyber-btn-outline flex items-center gap-2 text-sm"
+                      >
+                        <FileText className="w-3 h-3" />
+                        README
+                      </Link>
+                      {product.links.filter(l => l.url !== '#').map((link, i) => (
+                        <a
+                          key={i}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="cyber-btn-outline flex items-center gap-2 text-sm"
+                        >
+                          {link.label}
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      ))}
                     </div>
-                  )}
+                  </div>
                 </div>
               )}
 
@@ -476,21 +489,30 @@ export function ProductPage() {
                 <span className="text-gray-500 text-sm">({product.reviewCount})</span>
               </div>
 
-              <div className="hidden lg:block mb-6">
-                {product.discountPrice ? (
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl font-bold text-cyber-green">
-                      {formatPrice(product.discountPrice)}
-                    </span>
-                    <span className="text-lg text-gray-500 line-through">{formatPrice(product.price)}</span>
-                    <span className="px-2 py-1 bg-cyber-pink/20 text-cyber-pink text-xs font-bold rounded">
-                      {Math.round(((product.price - product.discountPrice) / product.price) * 100)}%
-                      OFF
-                    </span>
-                  </div>
-                ) : (
-                  <span className="text-3xl font-bold text-cyber-green">{formatPrice(product.price)}</span>
-                )}
+              {product.price > 0 && (
+                <div className="hidden lg:block mb-6">
+                  {product.discountPrice ? (
+                    <div className="flex items-center gap-3">
+                      <span className="text-3xl font-bold text-cyber-green">
+                        {formatPrice(product.discountPrice)}
+                      </span>
+                      <span className="text-lg text-gray-500 line-through">{formatPrice(product.price)}</span>
+                      <span className="px-2 py-1 bg-cyber-pink/20 text-cyber-pink text-xs font-bold rounded">
+                        {Math.round(((product.price - product.discountPrice) / product.price) * 100)}%
+                        OFF
+                      </span>
+                    </div>
+                  ) : (
+                    <span className="text-3xl font-bold text-cyber-green">{formatPrice(product.price)}</span>
+                  )}
+                </div>
+              )}
+              {/* Closed Beta Notice */}
+              <div className="mb-4 px-3 py-2 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-start gap-2">
+                <Rocket className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
+                <p className="text-xs text-gray-400">
+                  <span className="text-amber-400 font-medium">Closed Beta</span> — This module is currently in closed beta. Request access to be notified when it becomes available.
+                </p>
               </div>
 
               <div className="flex gap-3 mb-6">
@@ -516,7 +538,6 @@ export function ProductPage() {
                           product.downloadUrl,
                           { author: product.author?.name, version: product.techSpecs?.find(s => s.label === 'Version')?.value }
                         );
-                        // Reset after 3 seconds (vault status update will happen independently)
                         setTimeout(() => setInstalling(false), 3000);
                       }}
                       disabled={installing}
@@ -535,13 +556,20 @@ export function ProductPage() {
                       )}
                     </button>
                   ) : (
-                    /* Not in vault - show Join Wishlist */
-                    isInWishlist(product.id) ? (
+                    /* Not in vault — auth-aware wishlist */
+                    !user ? (
+                      <Link
+                        to={`/auth?redirect=/product/${slug}`}
+                        className="cyber-btn flex-1 flex items-center justify-center gap-2"
+                      >
+                        <LogIn className="w-4 h-4" /> Sign In
+                      </Link>
+                    ) : isInWishlist(product.id) ? (
                       <Link
                         to="/wishlist"
                         className="cyber-btn flex-1 flex items-center justify-center gap-2"
                       >
-                        <Check className="w-4 h-4" /> View Wishlist
+                        <Check className="w-4 h-4" /> Added to Wishlist
                       </Link>
                     ) : (
                       <button
@@ -551,24 +579,31 @@ export function ProductPage() {
                       >
                         {justAdded ? (
                           <>
-                            <Check className="w-4 h-4" /> Added!
+                            <Check className="w-4 h-4" /> Added to Wishlist
                           </>
                         ) : (
                           <>
-                            <Heart className="w-4 h-4" /> Join Wishlist
+                            <Heart className="w-4 h-4" /> Add to Wishlist
                           </>
                         )}
                       </button>
                     )
                   )
-                ) : product.price === 0 || product.stripePriceId ? (
-                  /* Production: All items go to cart (free or paid) */
-                  isInWishlist(product.id) ? (
+                ) : (
+                  /* Production: auth-aware wishlist for all items */
+                  !user ? (
+                    <Link
+                      to={`/auth?redirect=/product/${slug}`}
+                      className="cyber-btn flex-1 flex items-center justify-center gap-2"
+                    >
+                      <LogIn className="w-4 h-4" /> Sign In
+                    </Link>
+                  ) : isInWishlist(product.id) ? (
                     <Link
                       to="/wishlist"
                       className="cyber-btn flex-1 flex items-center justify-center gap-2"
                     >
-                      <Check className="w-4 h-4" /> View Wishlist
+                      <Check className="w-4 h-4" /> Added to Wishlist
                     </Link>
                   ) : (
                     <button
@@ -578,26 +613,45 @@ export function ProductPage() {
                     >
                       {justAdded ? (
                         <>
-                          <Check className="w-4 h-4" /> Added!
+                          <Check className="w-4 h-4" /> Added to Wishlist
                         </>
                       ) : (
                         <>
-                          <Heart className="w-4 h-4" /> Join Wishlist
+                          <Heart className="w-4 h-4" /> Add to Wishlist
                         </>
                       )}
                     </button>
                   )
-                ) : (
+                )}
+                {/* Request Beta Access */}
+                {!user ? (
+                  <Link
+                    to={`/auth?redirect=/product/${slug}&intent=beta`}
+                    className="cyber-btn-outline p-3 flex items-center gap-2 text-sm"
+                    title="Request Beta Access"
+                  >
+                    <Rocket className="w-5 h-5" />
+                    <span className="hidden xl:inline">Request Beta Access</span>
+                  </Link>
+                ) : isInWishlist(product.id) ? (
                   <button
                     disabled
-                    className="cyber-btn flex-1 flex items-center justify-center gap-2 opacity-50 cursor-not-allowed"
+                    className="cyber-btn-outline p-3 flex items-center gap-2 text-sm opacity-75 cursor-default"
+                    title="Beta Requested"
                   >
-                    <ShoppingCart className="w-4 h-4" /> Coming Soon
+                    <Check className="w-5 h-5 text-green-400" />
+                    <span className="hidden xl:inline">Beta Requested</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={handleAddToWishlist}
+                    className="cyber-btn-outline p-3 flex items-center gap-2 text-sm"
+                    title="Request Beta Access"
+                  >
+                    <Rocket className="w-5 h-5" />
+                    <span className="hidden xl:inline">Request Beta Access</span>
                   </button>
                 )}
-                <button className="cyber-btn-outline p-3">
-                  <Heart className="w-5 h-5" />
-                </button>
               </div>
               {purchaseError && (
                 <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 rounded text-red-400 text-sm">
@@ -622,11 +676,11 @@ export function ProductPage() {
             {/* Author Card */}
             <Link to={`/author/${product.author.id}`} className="cyber-card p-4 block group">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyber-cyan to-cyber-green flex items-center justify-center overflow-hidden">
+                <div className="w-12 h-12 rounded-full bg-black border border-white/10 flex items-center justify-center shrink-0 overflow-hidden">
                   {product.author.avatar ? (
                     <img src={`${import.meta.env.BASE_URL}${product.author.avatar}`} alt={product.author.name} className="w-full h-full object-contain p-1" />
                   ) : (
-                    <span className="text-black font-bold text-lg">
+                    <span className="text-white font-bold text-lg">
                       {product.author.name.charAt(0)}
                     </span>
                   )}

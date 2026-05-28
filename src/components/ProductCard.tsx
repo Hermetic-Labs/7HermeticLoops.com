@@ -95,16 +95,18 @@ export function ProductCard({ product }: Props) {
             <span className="text-sm text-gray-300">{product.rating}</span>
             <span className="text-xs text-gray-500">({product.reviewCount})</span>
           </div>
-          <div className="text-right">
-            {product.discountPrice ? (
-              <>
-                <span className="text-gray-500 line-through text-sm mr-2">{formatPrice(product.price)}</span>
-                <span className="text-cyber-green font-bold">{formatPrice(product.discountPrice)}</span>
-              </>
-            ) : (
-              <span className="text-cyber-green font-bold">{formatPrice(product.price)}</span>
-            )}
-          </div>
+          {product.price > 0 && (
+            <div className="text-right">
+              {product.discountPrice ? (
+                <>
+                  <span className="text-gray-500 line-through text-sm mr-2">{formatPrice(product.price)}</span>
+                  <span className="text-cyber-green font-bold">{formatPrice(product.discountPrice)}</span>
+                </>
+              ) : (
+                <span className="text-cyber-green font-bold">{formatPrice(product.price)}</span>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </Link>

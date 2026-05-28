@@ -18,6 +18,7 @@ import { CookiePolicyPage } from './pages/CookiePolicyPage';
 import { EvenomicsPage } from './pages/EvenomicsPage';
 import { CertificatePage } from './pages/CertificatePage';
 import { CertificationsPage } from './pages/CertificationsPage';
+import { ReadmePage } from './pages/ReadmePage';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
@@ -39,6 +40,7 @@ function App() {
                 <Routes>
                   <Route path="/" element={<HomePage />} />
                   <Route path="/product/:slug" element={<ProductPage />} />
+                  <Route path="/product/:slug/readme" element={<ReadmePage />} />
                   <Route path="/author/:id" element={<AuthorPage />} />
                   <Route path="/success" element={<SuccessPage />} />
                   <Route path="/auth" element={<AuthPage />} />

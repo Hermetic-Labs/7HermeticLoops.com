@@ -65,7 +65,7 @@ export function AuthorPage() {
         <div className="cyber-panel p-8 mb-8">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
             {/* Avatar */}
-            <div className="w-32 h-32 rounded-xl bg-gradient-to-br from-cyber-cyan to-cyber-green flex items-center justify-center shrink-0 overflow-hidden">
+            <div className="w-32 h-32 rounded-xl bg-black border border-white/10 flex items-center justify-center shrink-0 overflow-hidden">
               {author.avatar ? (
                 <img src={`${import.meta.env.BASE_URL}${author.avatar}`} alt={author.name} className="w-full h-full object-contain p-2" />
               ) : (
@@ -81,14 +81,8 @@ export function AuthorPage() {
               {/* Stats */}
               <div className="flex flex-wrap justify-center md:justify-start gap-6 mb-6">
                 <div>
-                  <span className="text-2xl font-bold text-cyber-green">{author.productCount}</span>
-                  <span className="text-gray-500 ml-2">Products</span>
-                </div>
-                <div>
-                  <span className="text-2xl font-bold text-cyber-cyan">
-                    {author.totalSales.toLocaleString()}
-                  </span>
-                  <span className="text-gray-500 ml-2">Sales</span>
+                  <span className="text-2xl font-bold text-cyber-green">{authorProducts.length}</span>
+                  <span className="text-gray-500 ml-2">Modules</span>
                 </div>
               </div>
 
