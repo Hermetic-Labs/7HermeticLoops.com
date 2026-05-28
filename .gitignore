@@ -46,6 +46,11 @@ packages/**/dist/
 # Package zip files (deployed to Azure, not GitHub)
 public/packages/*.zip
 
+# Allow README files in public/packages to be tracked (needed for GitHub Pages)
+!public/packages/
+!public/packages/*/
+!public/packages/*/README.md
+
 # Keep catalog.json tracked (it's the marketplace database for GitHub Pages fallback)
 # !public/catalog.json
 
