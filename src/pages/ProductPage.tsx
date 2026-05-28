@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect, useCallback } from 'react';
-import { fetchProductBySlug } from '../api/catalog';
+import { fetchProductBySlug, fetchProducts } from '../api/catalog';
 import { createCheckoutSession } from '../api/checkout';
 import { fetchReviews, markReviewHelpful, ReviewsResponse } from '../api/reviews';
 import { fetchQuestions, submitQuestion, Question, QuestionsResponse } from '../api/questions';
@@ -60,6 +60,7 @@ export function ProductPage() {
   const [vaultStatus, setVaultStatus] = useState<VaultPackage[]>([]);
   const [gettingPackage, setGettingPackage] = useState(false);
   const [installing, setInstalling] = useState(false);
+  const [authorProductCount, setAuthorProductCount] = useState<number | null>(null);
   const { addToWishlist, isInWishlist } = useWishlist();
 
   // Subscribe to vault status updates from parent app
@@ -162,6 +163,11 @@ export function ProductPage() {
       try {
         const data = await fetchProductBySlug(slug);
         setProduct(data || null);
+        // Fetch real author product count from catalog
+        if (data?.author?.id) {
+          const authorProducts = await fetchProducts({ author: data.author.id });
+          setAuthorProductCount(authorProducts.length);
+        }
       } catch (err) {
         console.error('Failed to load product:', err);
         setProduct(null);
@@ -693,7 +699,7 @@ export function ProductPage() {
                   <h4 className="font-medium text-white group-hover:text-cyber-green transition-colors">
                     {product.author.name}
                   </h4>
-                  <p className="text-sm text-gray-500">{product.author.productCount} products</p>
+                  <p className="text-sm text-gray-500">{authorProductCount ?? product.author.productCount} modules</p>
                 </div>
               </div>
             </Link>
