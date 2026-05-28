@@ -247,7 +247,7 @@ export function LibraryPage() {
                           </Link>
                           <div className="flex items-center gap-3 mt-1 text-sm">
                             <span className="text-cyber-green font-semibold">
-                              {price === 0 ? 'Free' : `$${price.toFixed(2)}`}
+                              {price === 0 ? 'Closed Beta' : `$${price.toFixed(2)}`}
                             </span>
                             {product.author && (
                               <span className="text-gray-500">by {product.author.name}</span>
@@ -281,10 +281,10 @@ export function LibraryPage() {
                             </button>
                           ) : (
                             <Link
-                              to={`/product/${product.slug}`}
+                              to="/wishlist"
                               className="flex items-center gap-2 px-4 py-2 rounded text-sm font-medium bg-cyber-green/10 text-cyber-green hover:bg-cyber-green/20 border border-cyber-green/30 transition-colors"
                             >
-                              <Download className="w-4 h-4" /> Get Free
+                              <Heart className="w-4 h-4" /> Request
                             </Link>
                           )}
                           <button
