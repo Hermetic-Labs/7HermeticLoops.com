@@ -5,6 +5,7 @@ import { HeroCarousel } from '../components/HeroCarousel';
 import { fetchProducts, fetchCategories } from '../api/catalog';
 import { Product, Category, Domain, ALL_DOMAINS, DOMAIN_LABELS } from '../types';
 import { Zap, Clock, Loader2 } from 'lucide-react';
+import { ExchangeListenPill } from '../components/ExchangeAudioPlayer';
 
 type SortOption = 'popular' | 'newest' | 'price-low' | 'price-high' | 'rating';
 
@@ -181,9 +182,12 @@ export function HomePage() {
       {!activeDomain && !searchQuery && (
         <section className="py-8 px-4">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold text-cyber-green text-glow-green text-center mb-8">
+            <h1 className="text-4xl md:text-6xl font-bold text-cyber-green text-glow-green text-center mb-4">
               Hermetic Labs Exchange
             </h1>
+            <div className="flex justify-center mb-8">
+              <ExchangeListenPill />
+            </div>
             <HeroCarousel products={popularProducts} announcements={announcements} />
           </div>
         </section>

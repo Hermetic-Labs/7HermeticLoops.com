@@ -23,6 +23,7 @@ import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
 import { initParentMessageListener } from './lib/download-handler';
+import { ExchangePlayerBar } from './components/ExchangeAudioPlayer';
 
 function App() {
   // Initialize parent message listener for iframe communication
@@ -58,6 +59,7 @@ function App() {
                 </Routes>
               </main>
               <Footer />
+              <ExchangePlayerBar />
             </div>
           </WishlistProvider>
         </CartProvider>
